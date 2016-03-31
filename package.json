@@ -35,7 +35,8 @@
   "scripts": {
     "start": "npm run start-dev",
     "dev": "better-npm-run start-dev",
-    "build-dev": "better-npm-run build-dev"
+    "build-dev": "better-npm-run build-dev",
+    "deploy-dev": "aws s3 sync ./dist s3://dev.annarbor.pictures --exclude '.DS_Store' --profile home"
   },
   "betterScripts": {
     "start-dev": {
