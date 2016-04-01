@@ -43,6 +43,10 @@ export default class Theme extends Component {
                 colors,
                 fontSizes,
                 scale,
+                Toolbar: {
+                    backgroundColor: baseColors.black,
+                    color: baseColors.white
+                },
                 Badge: {
                     fontWeight: 'lighter'
                 },

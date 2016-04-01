@@ -3,8 +3,9 @@ const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin'
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const routes = [
-    '/'
-    // '/contact'
+    '/',
+    '/about',
+    '/contact'
 ]
 
 module.exports = {

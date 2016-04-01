@@ -1,6 +1,13 @@
+$white: #fff;
+
 * { box-sizing: border-box }
 
 body {
     font-family: Tangerine;
     line-height: 1.5;
+}
+
+a {
+    color: $white;
+    text-decoration: none;
 }

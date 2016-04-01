@@ -1,13 +1,18 @@
 import React from 'react'
 import { NavItem, Toolbar } from 'rebass'
+import { Link } from 'react-router'
 
 const TopBar = () =>
     <Toolbar>
-        <NavItem>
-            Contact
+        <NavItem is="div">
+            <Link to="/about">
+                About
+            </Link>
         </NavItem>
-        <NavItem>
-            About
+        <NavItem is="div">
+            <Link to="/contact">
+                Contact
+            </Link>
         </NavItem>
     </Toolbar>
 

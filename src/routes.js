@@ -8,5 +8,13 @@ export default (
         path="/"
     >
         <IndexRoute component={views.Home}/>
+        <Route
+            component={views.About}
+            path="about"
+        />
+        <Route
+            component={views.Contact}
+            path="contact"
+        />
     </Route>
 )
