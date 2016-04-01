@@ -1,9 +1,15 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const routes = [ '/' ]
+const routes = [
+    '/'
+    // '/contact'
+]
 
 module.exports = {
+
+    devtool: 'source-map',
 
     entry: {
         main: __dirname + '/src/index.js'
@@ -16,11 +22,16 @@ module.exports = {
     },
 
     module: {
-        loaders: [{ 
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loaders: ['babel']
-        }]
+        loaders: [
+            { 
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loaders: ['babel']
+            }, {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
+            }
+        ]
     },
 
     resolve: {
@@ -32,6 +43,7 @@ module.exports = {
     },
 
     plugins: [
+        new ExtractTextPlugin('style.css'),
         new StaticSiteGeneratorPlugin('main', routes),
         new CleanWebpackPlugin(['dist'], {
             root: __dirname,
