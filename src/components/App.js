@@ -12,10 +12,13 @@ const App = ({ children }) =>
                 { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css' },
                 { rel: 'stylesheet', href: '/style.css' },
                 { rel: 'shortcut icon', href: '/favicon.png' },
-                { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Tangerine' }
+                { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Dancing+Script:400,700' }
             ]}
             meta={[
                 { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi' }
+            ]}
+            script={[
+                { src: '//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.7.0/lodash.min.js' }
                 /* eslint-enable max-len */
             ]}
             title="Ann Arbor Pictures"

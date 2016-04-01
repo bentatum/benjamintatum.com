@@ -1,11 +1,24 @@
 import React from 'react'
 import { Heading } from 'rebass'
+import { Flex } from 'reflexbox'
+import { PhotoGallery } from '.'
 
 const Home = () =>
-    <div>
-        <Heading level={1}>
+    <Flex
+        column
+        justify="center"
+        mt={4}
+    >
+        <Heading
+            level={1}
+            mb={2}
+            style={{
+                textAlign: "center"
+            }}
+        >
             Ann Arbor Pictures
         </Heading>
-    </div>
+        <PhotoGallery/>
+    </Flex>
 
 export default Home

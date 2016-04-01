@@ -24,7 +24,7 @@ const colors = {
 }
 
 const scale = [0, 10, 25, 48, 64]
-const fontSizes = [64, 50, 33, 19, 18, 14, 12]
+const fontSizes = [64, 40, 33, 19, 18, 14, 12]
 
 export default class Theme extends Component {
 
@@ -46,6 +46,9 @@ export default class Theme extends Component {
                 Toolbar: {
                     backgroundColor: baseColors.black,
                     color: baseColors.white
+                },
+                NavItem: {
+                    fontWeight: 100
                 },
                 Badge: {
                     fontWeight: 'lighter'
