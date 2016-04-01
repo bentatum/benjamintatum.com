@@ -1,8 +1,8 @@
-import React, {Component, PropTypes} from 'react'
+import React, { PropTypes } from 'react'
 import { renderToString } from 'react-dom/server'
 import Helmet from 'react-helmet'
 
-const Html = ({ assets, component, store }) => {
+const Html = ({ assets, component }) => {
     const content = component ? renderToString(component) : ''
     const head = Helmet.rewind()
     return (
@@ -30,8 +30,7 @@ const Html = ({ assets, component, store }) => {
 
 Html.propTypes = {
     assets: PropTypes.object,
-    component: PropTypes.node,
-    store: PropTypes.object
+    component: PropTypes.node
 }
 
 export default Html

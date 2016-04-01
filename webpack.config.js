@@ -22,6 +22,13 @@ module.exports = {
     },
 
     module: {
+        preLoaders: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader"
+            }
+        ],
         loaders: [
             { 
                 test: /\.js$/,
@@ -36,10 +43,10 @@ module.exports = {
 
     resolve: {
         moduleDirectories: [
-            'src',
-            'node_modules'
+            __dirname + '/src',
+            __dirname + '/node_modules'
         ],
-        extensions: ['', '.js']
+        extensions: ['', '.js', '.jsx', '.json']
     },
 
     plugins: [
@@ -50,5 +57,9 @@ module.exports = {
             verbose: true,
             dry: false
         })
-    ]
+    ],
+
+    eslint: {
+        configFile: __dirname + '/.eslintrc'
+    }
 }

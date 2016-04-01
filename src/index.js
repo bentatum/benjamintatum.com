@@ -7,9 +7,11 @@ import routes from './routes'
 import { Html } from './components'
 
 if (typeof document !== 'undefined') {
-    const history = createHistory()
     render(
-        <Router history={history} routes={routes}/>,
+        <Router
+            history={createHistory()}
+            routes={routes}
+        />,
         document.getElementById('content')
     )
 }
