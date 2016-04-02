@@ -29,8 +29,8 @@ const Html = ({ assets, component }) => {
 }
 
 Html.propTypes = {
-    assets: PropTypes.object,
-    component: PropTypes.node
+    assets: PropTypes.object.isRequired,
+    component: PropTypes.node.isRequired
 }
 
 export default Html

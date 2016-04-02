@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -57,7 +58,13 @@ module.exports = {
             root: __dirname,
             verbose: true,
             dry: false
-        })
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                "DEVELOPMENT": true,
+                "DEVTOOLS": true
+            }
+        }),
     ],
 
     eslint: {

@@ -4,16 +4,22 @@ import storageMiddleware from 'redux-simplestorage'
 import { middleware as awaitMiddleware } from 'redux-await'
 import { routerMiddleware } from 'react-router-redux'
 import reducer from './modules/reducer'
-import { DevTools } from 'components'
+import { DevTools } from '../components'
 import { persistState } from 'redux-devtools'
 import createLogger from 'redux-logger'
 
 export default function createStore(client, browserHistory) {
-    const middleware = [ clientMiddleware(client), awaitMiddleware, storageMiddleware, routerMiddleware(browserHistory)]
+    const middleware = [
+        clientMiddleware(client),
+        awaitMiddleware,
+        storageMiddleware,
+        routerMiddleware(browserHistory)
+    ]
+
     if (process.env.LOGGER) {
         middleware.push(createLogger())
     }
-    
+
     let finalCreateStore
     if (process.env.DEVELOPMENT && process.env.DEVTOOLS) {
         finalCreateStore = compose(

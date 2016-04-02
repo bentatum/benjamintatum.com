@@ -39,9 +39,12 @@
     "redux-devtools-dock-monitor": "^1.1.0",
     "redux-devtools-log-monitor": "^1.0.5",
     "redux-logger": "^2.6.1",
+    "redux-router": "^0.1.0",
     "redux-simplestorage": "0.0.4",
     "reflexbox": "^1.1.0",
     "sass-loader": "^3.2.0",
+    "scroll-behavior": "^0.3.4",
+    "serialize-javascript": "^1.2.0",
     "static-site-generator-webpack-plugin": "^2.0.1",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"

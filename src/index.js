@@ -5,13 +5,18 @@ import { createHistory, createMemoryHistory } from 'history'
 import { Router, RouterContext, match } from 'react-router'
 import routes from './routes'
 import { Html } from './components'
+import createStore from './redux/create'
+import { Provider } from 'react-redux'
 
 if (typeof document !== 'undefined') {
+    const store = createStore()
     render(
-        <Router
-            history={createHistory()}
-            routes={routes}
-        />,
+        <Provider store={store}>
+            <Router
+                history={createHistory()}
+                routes={routes}
+            />
+        </Provider>,
         document.getElementById('content')
     )
 }

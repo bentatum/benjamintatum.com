@@ -13,7 +13,7 @@ const Home = () =>
             level={1}
             mb={2}
             style={{
-                textAlign: "center"
+                textAlign: 'center'
             }}
         >
             Ann Arbor Pictures

@@ -1,9 +1,9 @@
 import ApiBro from 'api-bro'
 
 export default new ApiBro(
-    process.env.API_HOST, 
+    process.env.API_HOST,
     {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         'Content-Type': 'application/json',
     }
 )
