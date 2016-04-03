@@ -44,10 +44,7 @@ export function submitLead({ name, email, phone }) {
                             phone: \"${phone}\"
                         ) { id, name }
                     }
-                `,
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                }
+                `
             })
         }
     }

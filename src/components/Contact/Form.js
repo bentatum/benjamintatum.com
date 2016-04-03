@@ -17,7 +17,6 @@ export default class ContactForm extends Component {
 
     @autobind
     handleSubmit() {
-        console.log('ok')
         this.props.submit(this.state)
     }
 

@@ -13,7 +13,9 @@ export default class ApiClient {
                     const url = `${process.env.API_ENDPOINT}`
                     const request = superagent[method](url)
                     request.set('Accept', 'application/json')
-
+                    if (method === 'post') {
+                        request.set('Content-Type', 'application/json')
+                    }
                     if (params) {
                         request.query(params)
                     }
