@@ -1,4 +1,5 @@
 export App from './App'
+export Contact from './Contact/Container'
 export DevTools from './DevTools'
 export Home from './Home'
 export Html from './Html'

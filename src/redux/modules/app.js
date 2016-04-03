@@ -1,5 +1,4 @@
-const CHANGE_STATE = 'btapp/CHANGE_STATE'
-const SCREEN_DIMENSIONS = 'btapp/SCREEN_DIMENSIONS_CHANGE'
+const SCREEN_DIMENSIONS = 'a2pix/SCREEN_DIMENSIONS_CHANGE'
 
 const breakpoints = {
     small: 425,
@@ -32,14 +31,5 @@ export function screenDimensions(height, width) {
             height,
             width
         }
-    }
-}
-
-export function changeState(reduxModule, key, value) {
-    return {
-        key,
-        reduxModule,
-        type: CHANGE_STATE,
-        value
     }
 }

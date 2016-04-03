@@ -2,14 +2,15 @@ import React from 'react'
 import { render } from 'react-dom'
 import { renderToString } from 'react-dom/server'
 import { createHistory, createMemoryHistory } from 'history'
-import { Router, RouterContext, match } from 'react-router'
+import { Router, match } from 'react-router'
 import routes from './routes'
 import { Html } from './components'
 import createStore from './redux/create'
 import { Provider } from 'react-redux'
 
+const store = createStore()
+
 if (typeof document !== 'undefined') {
-    const store = createStore()
     render(
         <Provider store={store}>
             <Router
@@ -29,7 +30,12 @@ export default ({ assets, path }, callback) => {
         const html = renderToString(
             <Html
                 assets={assets}
-                component={<RouterContext {...props}/>}
+                component={
+                    <Provider store={store}>
+                        <Router {...props}/>
+                    </Provider>
+                }
+                store={store}
             />
         )
         callback(null, html)

@@ -21,7 +21,7 @@ export default function createStore(client, browserHistory) {
     }
 
     let finalCreateStore
-    if (process.env.DEVELOPMENT && process.env.DEVTOOLS) {
+    if (typeof window !== 'undefined' && process.env.DEVELOPMENT && process.env.DEVTOOLS) {
         finalCreateStore = compose(
             applyMiddleware(...middleware),
             window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument(),

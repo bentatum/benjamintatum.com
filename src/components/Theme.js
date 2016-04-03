@@ -47,6 +47,10 @@ export default class Theme extends Component {
                     backgroundColor: baseColors.black,
                     color: baseColors.white
                 },
+                Label: {
+                    display: 'block',
+                    marginBottom: 10
+                },
                 NavItem: {
                     fontWeight: 100
                 },
