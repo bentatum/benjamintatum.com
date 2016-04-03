@@ -5,13 +5,19 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const routes = [
     '/',
-    '/about',
     '/contact'
 ]
 
 module.exports = {
 
     devtool: 'source-map',
+
+    // devServer: {
+    //     headers: {
+    //         "Access-Control-Allow-Origin": "*",
+    //         "Access-Control-Allow-Credentials": "true"
+    //     }
+    // },
 
     entry: {
         main: __dirname + '/src/index.js'
@@ -61,6 +67,7 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'process.env': {
+                "API_ENDPOINT": JSON.stringify(process.env.API_ENDPOINT),
                 "DEVELOPMENT": true,
                 "DEVTOOLS": true
             }

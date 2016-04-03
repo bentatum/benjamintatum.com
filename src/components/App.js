@@ -3,10 +3,10 @@ import React, { Component, PropTypes } from 'react'
 import { Theme, TopBar } from '.'
 import Helmet from 'react-helmet'
 import { Container } from 'rebass'
-import { screenDimensions } from '../redux/modules/app'
+import { setScreenSize } from '../redux/modules/app'
 import { connect } from 'react-redux'
 
-@connect(() => ({}), { screenSize: screenDimensions })
+@connect(() => ({}), { screenSize: setScreenSize })
 
 export default class App extends Component {
 

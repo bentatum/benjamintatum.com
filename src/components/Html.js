@@ -1,9 +1,8 @@
 import React, { PropTypes } from 'react'
 import { renderToString } from 'react-dom/server'
 import Helmet from 'react-helmet'
-import serialize from 'serialize-javascript'
 
-const Html = ({ assets, component, store }) => {
+const Html = ({ assets, component }) => {
     const content = component ? renderToString(component) : ''
     const head = Helmet.rewind()
     return (
@@ -22,11 +21,7 @@ const Html = ({ assets, component, store }) => {
                 />
                 <script
                     charSet="UTF-8"
-                    dangerouslySetInnerHTML={{ __html: `window.__data=${serialize(store.getState())}` }} // eslint-disable-line max-len
-                />
-                <script
-                    charSet="UTF-8"
-                    src={assets.main}
+                    src={`/${assets.main}`}
                 />
             </body>
         </html>
@@ -35,8 +30,7 @@ const Html = ({ assets, component, store }) => {
 
 Html.propTypes = {
     assets: PropTypes.object.isRequired,
-    component: PropTypes.node.isRequired,
-    store: PropTypes.object.isRequired
+    component: PropTypes.node.isRequired
 }
 
 export default Html

@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { renderToString } from 'react-dom/server'
 import { createHistory, createMemoryHistory } from 'history'
-import { Router, match } from 'react-router'
+import { Router, RouterContext, match } from 'react-router'
 import routes from './routes'
 import { Html } from './components'
 import createStore from './redux/create'
@@ -32,10 +32,9 @@ export default ({ assets, path }, callback) => {
                 assets={assets}
                 component={
                     <Provider store={store}>
-                        <Router {...props}/>
+                        <RouterContext {...props}/>
                     </Provider>
                 }
-                store={store}
             />
         )
         callback(null, html)

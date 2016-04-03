@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "api-bro": "^1.3.9",
+    "autobind-decorator": "^1.3.3",
     "babel-core": "^6.7.4",
     "babel-eslint": "^6.0.2",
     "babel-loader": "^6.2.4",
@@ -47,6 +48,7 @@
     "scroll-behavior": "^0.3.4",
     "serialize-javascript": "^1.2.0",
     "static-site-generator-webpack-plugin": "^2.0.1",
+    "superagent": "^1.8.3",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },
@@ -60,7 +62,7 @@
     "start-dev": {
       "command": "webpack-dev-server --progress --hot --colors --history-api-fallback --display-error-details",
       "env": {
-        "API_HOST": "https://api-test.costimize.com/",
+        "API_ENDPOINT": "https://0eyk6qucwj.execute-api.us-east-1.amazonaws.com/dev/resource/graphql",
         "BABEL_ENV": "development",
         "DEVELOPMENT": true,
         "DEVTOOLS": true
@@ -69,7 +71,7 @@
     "build-dev": {
       "command": "webpack",
       "env": {
-        "API_HOST": "https://api-test.costimize.com/",
+        "API_ENDPOINT": "https://0eyk6qucwj.execute-api.us-east-1.amazonaws.com/dev/resource/graphql",
         "BABEL_ENV": "production",
         "NODE_ENV": "production"
       }
