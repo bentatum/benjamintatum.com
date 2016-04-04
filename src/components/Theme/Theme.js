@@ -25,7 +25,7 @@ const colors = {
 }
 
 const scale = [0, 10, 25, 48, 64]
-const fontSizes = [64, 40, 33, 19, 18, 14, 12]
+const fontSizes = [64, 37, 30, 19, 18, 14, 12]
 
 export default class Theme extends Component {
 
@@ -59,6 +59,7 @@ export default class Theme extends Component {
                     fontWeight: 200
                 },
                 Text: {
+                    marginBottom: scale[1],
                     marginTop: scale[1]
                 },
                 Toolbar: {

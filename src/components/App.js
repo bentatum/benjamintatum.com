@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Theme, TopBar } from '.'
+import { Theme } from '.'
 import Helmet from 'react-helmet'
 import { Container } from 'rebass'
 import { setScreenSize } from '../redux/modules/app'
@@ -46,12 +46,9 @@ export default class App extends Component {
                     title="Ann Arbor Pictures"
                 />
                 <Theme>
-                    <div>
-                        <TopBar/>
-                        <Container>
-                            {children}
-                        </Container>
-                    </div>
+                    <Container>
+                        {children}
+                    </Container>
                 </Theme>
             </div>
         )

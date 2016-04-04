@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Button } from 'rebass'
+import { Base, Button } from 'rebass'
 import { connect } from 'redux-await'
 import { createLead, constants } from '../../redux/modules/app'
 import autobind from 'autobind-decorator'
@@ -36,38 +36,40 @@ export default class ContactForm extends Component {
     }
 
     render() {
-        const { statuses } = this.props
+        const { statuses, ...props } = this.props
         const pending = statuses[SUBMIT_LEAD] === 'pending'
         return (
-            <JoifulForm
-                {...joiFulFormSettings}
-                onChange={this.handleChange}
-                onSubmit={this.handleSubmit}
-                schema={{
-                    name: Joi.string().required().label('Name'),
-                    email: Joi.string().email().required().label('Email'),
-                    phone: Joi.string().min(10).max(12).label('Phone')
-                }}
-                values={this.state}
-            >
-                <JoifulInput fieldName="name"/>
-                <JoifulInput fieldName="email"/>
-                <JoifulInput fieldName="phone"/>
-                <Button
-                    color="default"
-                    disabled={pending}
-                    onClick={this.handleSubmit}
-                    style={{ width: '100%' }}
+            <Base {...props}>
+                <JoifulForm
+                    {...joiFulFormSettings}
+                    onChange={this.handleChange}
+                    onSubmit={this.handleSubmit}
+                    schema={{
+                        name: Joi.string().required().label('Name'),
+                        email: Joi.string().email().required().label('Email'),
+                        phone: Joi.string().min(10).max(12).label('Phone')
+                    }}
+                    values={this.state}
                 >
-                    <If condition={pending}>
-                        <Flex justify="center">
-                            Processing... <Spinner spinnerName="pulse"/>
-                        </Flex>
-                    <Else/>
-                        Submit
-                    </If>
-                </Button>
-            </JoifulForm>
+                    <JoifulInput fieldName="name"/>
+                    <JoifulInput fieldName="email"/>
+                    <JoifulInput fieldName="phone"/>
+                    <Button
+                        color="default"
+                        disabled={pending}
+                        onClick={this.handleSubmit}
+                        style={{ width: '100%' }}
+                    >
+                        <If condition={pending}>
+                            <Flex justify="center">
+                                Processing... <Spinner spinnerName="pulse"/>
+                            </Flex>
+                        <Else/>
+                            Submit
+                        </If>
+                    </Button>
+                </JoifulForm>
+            </Base>
         )
     }
 

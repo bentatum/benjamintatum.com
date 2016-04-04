@@ -3,10 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const routes = [
-    '/',
-    '/contact'
-]
+const routes = ['/']
 
 module.exports = {
 

@@ -1,7 +1,8 @@
 import React from 'react'
-import { Heading } from 'rebass'
+import { Heading, Text } from 'rebass'
 import { Flex } from 'reflexbox'
 import { PhotoGallery } from '.'
+import { Form } from './Contact'
 
 const Home = () =>
     <Flex
@@ -18,6 +19,18 @@ const Home = () =>
         >
             Ann Arbor Pictures
         </Heading>
+        <Text
+            mb={2}
+            style={{
+                textAlign: 'center'
+            }}
+        >
+            Leave your name and contact information and we will connect you with real photographers in Ann Arbor, Michigan.
+        </Text>
+        <Form
+            mb={2}
+            mt={1}
+        />
         <PhotoGallery/>
     </Flex>
 
