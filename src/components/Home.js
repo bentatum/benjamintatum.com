@@ -3,6 +3,8 @@ import { Heading, Text } from 'rebass'
 import { Flex } from 'reflexbox'
 import { PhotoGallery } from '.'
 import { Form } from './Contact'
+import { constants } from '../redux/modules/app'
+const { small } = constants.BREAKPOINTS
 
 const Home = () =>
     <Flex
@@ -28,10 +30,11 @@ const Home = () =>
             Leave your name and contact information and we will connect you with real photographers in Ann Arbor, Michigan.
         </Text>
         <Form
-            mb={2}
+            mb={3}
             mt={1}
+            p={2}
         />
-        <PhotoGallery/>
+        <PhotoGallery mb={4}/>
     </Flex>
 
 export default Home

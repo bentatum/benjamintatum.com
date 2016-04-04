@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavItem, Toolbar } from 'rebass'
-import { IndexLink, Link } from 'react-router'
+import { IndexLink } from 'react-router'
 import { Flex } from 'reflexbox'
 
 const TopBar = () =>

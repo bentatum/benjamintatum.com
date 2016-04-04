@@ -4,6 +4,8 @@ import Helmet from 'react-helmet'
 import { Container } from 'rebass'
 import { setScreenSize } from '../redux/modules/app'
 import { connect } from 'react-redux'
+import { constants } from '../redux/modules/app'
+const { small } = constants.BREAKPOINTS
 
 @connect(() => ({}), { screenSize: setScreenSize })
 
@@ -46,7 +48,14 @@ export default class App extends Component {
                     title="Ann Arbor Pictures"
                 />
                 <Theme>
-                    <Container>
+                    <Container
+                        style={{
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            maxWidth: small,
+                            width: '100%'
+                        }}
+                    >
                         {children}
                     </Container>
                 </Theme>

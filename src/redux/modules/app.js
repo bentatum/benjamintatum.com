@@ -4,14 +4,14 @@ const SCREEN_DIMENSIONS = 'a2pix/SCREEN_DIMENSIONS_CHANGE'
 const SUBMIT_LEAD = 'a2pix/SUBMIT_LEAD'
 const client = new ApiClient()
 
-const breakpoints = {
+const BREAKPOINTS = {
     small: 425,
     medium: 768,
     large: 1024
 }
 
 export const constants = {
-    breakpoints,
+    BREAKPOINTS,
     SUBMIT_LEAD
 }
 
