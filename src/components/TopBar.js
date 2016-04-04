@@ -6,7 +6,7 @@ const TopBar = () =>
     <Toolbar>
         <NavItem is="div">
             <IndexLink to="/">
-                annarbor.pictures
+                AnnArbor Pictures
             </IndexLink>
         </NavItem>
         <NavItem is="div">

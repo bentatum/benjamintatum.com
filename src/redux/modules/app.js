@@ -11,7 +11,8 @@ const breakpoints = {
 }
 
 export const constants = {
-    breakpoints
+    breakpoints,
+    SUBMIT_LEAD
 }
 
 const intitialState = {
@@ -34,15 +35,14 @@ export function createLead({ name, email, phone }) {
         type: SUBMIT_LEAD,
         AWAIT_MARKER,
         payload: {
-            results: client.post({
+            [SUBMIT_LEAD]: client.post({
                 data: `
                     mutation {
                         createLead(
-                            id: \"109\",
                             name: \"${name}\",
                             email: \"${email}\",
                             phone: \"${phone}\"
-                        ) { id, name }
+                        ) { id, name, email, phone }
                     }
                 `
             })

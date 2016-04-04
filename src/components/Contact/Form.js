@@ -1,19 +1,23 @@
 import React, { Component, PropTypes } from 'react'
 import { Button } from 'rebass'
 import { connect } from 'redux-await'
-import { createLead } from '../../redux/modules/app'
+import { createLead, constants } from '../../redux/modules/app'
 import autobind from 'autobind-decorator'
 import { JoifulForm, JoifulInput } from 'joiful-react-forms'
 import Joi from 'joi'
 import joiFulFormSettings from '../JoifulReactForms'
+const { SUBMIT_LEAD } = constants
+import Spinner from 'react-spinkit'
+import { Flex } from 'reflexbox'
 
 @connect(() => ({}), { submit: createLead })
 
 export default class ContactForm extends Component {
 
     static propTypes = {
+        statuses: PropTypes.object.isRequired,
         submit: PropTypes.func.isRequired
-    }
+    };
 
     state = {}
 
@@ -32,6 +36,8 @@ export default class ContactForm extends Component {
     }
 
     render() {
+        const { statuses } = this.props
+        const pending = statuses[SUBMIT_LEAD] === 'pending'
         return (
             <JoifulForm
                 {...joiFulFormSettings}
@@ -48,12 +54,18 @@ export default class ContactForm extends Component {
                 <JoifulInput fieldName="email"/>
                 <JoifulInput fieldName="phone"/>
                 <Button
+                    color="default"
+                    disabled={pending}
                     onClick={this.handleSubmit}
-                    style={{
-                        width: '100%'
-                    }}
+                    style={{ width: '100%' }}
                 >
-                    Submit
+                    <If condition={pending}>
+                        <Flex justify="center">
+                            Processing... <Spinner spinnerName="pulse"/>
+                        </Flex>
+                    <Else/>
+                        Submit
+                    </If>
                 </Button>
             </JoifulForm>
         )

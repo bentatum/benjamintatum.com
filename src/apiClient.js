@@ -3,8 +3,6 @@ import _ from 'lodash'
 
 const methods = ['get', 'post', 'put', 'patch', 'del']
 
-console.log(process.env.API_ENDPOINT)
-
 export default class ApiClient {
     constructor() {
         methods.forEach((method) => {

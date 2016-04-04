@@ -1,4 +1,3 @@
-import '../style.scss'
 import React, { Component, PropTypes } from 'react'
 import { Theme, TopBar } from '.'
 import Helmet from 'react-helmet'

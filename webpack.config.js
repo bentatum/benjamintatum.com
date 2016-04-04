@@ -38,6 +38,9 @@ module.exports = {
             }, {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
+            }, {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
             }
         ]
     },
