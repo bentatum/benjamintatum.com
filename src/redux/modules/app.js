@@ -29,7 +29,7 @@ export function setScreenSize(height, width) {
     }
 }
 
-export function submitLead({ name, email, phone }) {
+export function createLead({ name, email, phone }) {
     return {
         type: SUBMIT_LEAD,
         AWAIT_MARKER,

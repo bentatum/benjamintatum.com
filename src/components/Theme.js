@@ -14,7 +14,7 @@ const baseColors = {
 
 const colors = {
     ...baseColors,
-    primary: baseColors.blue,
+    primary: baseColors.black,
     secondary: baseColors.lightBlue,
     default: baseColors.black,
     info: baseColors.blue,
@@ -43,9 +43,11 @@ export default class Theme extends Component {
                 colors,
                 fontSizes,
                 scale,
-                Toolbar: {
-                    backgroundColor: baseColors.black,
-                    color: baseColors.white
+                Badge: {
+                    fontWeight: 'lighter'
+                },
+                Button: {
+                    backgroundColor: colors.primary
                 },
                 Label: {
                     display: 'block',
@@ -54,11 +56,12 @@ export default class Theme extends Component {
                 NavItem: {
                     fontWeight: 100
                 },
-                Badge: {
-                    fontWeight: 'lighter'
+                Text: {
+                    marginTop: scale[1]
                 },
-                Button: {
-                    backgroundColor: 'tomato'
+                Toolbar: {
+                    backgroundColor: baseColors.black,
+                    color: baseColors.white
                 }
             },
             reflexbox: {

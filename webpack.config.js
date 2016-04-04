@@ -12,13 +12,6 @@ module.exports = {
 
     devtool: 'source-map',
 
-    // devServer: {
-    //     headers: {
-    //         "Access-Control-Allow-Origin": "*",
-    //         "Access-Control-Allow-Credentials": "true"
-    //     }
-    // },
-
     entry: {
         main: __dirname + '/src/index.js'
     },
@@ -55,6 +48,13 @@ module.exports = {
             __dirname + '/node_modules'
         ],
         extensions: ['', '.js', '.jsx', '.json']
+    },
+
+    node: {
+        net : 'empty',
+        tls : 'empty',
+        crypto: 'empty',
+        dns : 'empty'
     },
 
     plugins: [

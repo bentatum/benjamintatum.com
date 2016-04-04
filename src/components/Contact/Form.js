@@ -1,11 +1,13 @@
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component, PropTypes } from 'react'
-import { Button, Input } from 'rebass'
+import { Button } from 'rebass'
 import { connect } from 'redux-await'
-import { submitLead } from '../../redux/modules/app'
+import { createLead } from '../../redux/modules/app'
 import autobind from 'autobind-decorator'
+import { JoifulForm, JoifulInput } from 'joiful-react-forms'
+import Joi from 'joi'
+import joiFulFormSettings from '../JoifulReactForms'
 
-@connect(() => ({}), { submit: submitLead })
+@connect(() => ({}), { submit: createLead })
 
 export default class ContactForm extends Component {
 
@@ -16,45 +18,44 @@ export default class ContactForm extends Component {
     state = {}
 
     @autobind
-    handleSubmit() {
-        this.props.submit(this.state)
+    handleSubmit(error) {
+        if (error) {
+            return false
+        }
+
+        return this.props.submit(this.state)
     }
 
     @autobind
-    handleChange({ target: { name, value } }) {
-        this.setState({ [name]: value })
+    handleChange(event, formValues) {
+        this.setState(formValues)
     }
 
     render() {
-        const inputProps = {
-            onChange: this.handleChange,
-            type: 'text'
-        }
-
         return (
-            <div>
-                <Input
-                    {...inputProps}
-                    label="Name"
-                    name="name"
-                    placeholder="First Last"
-                />
-                <Input
-                    {...inputProps}
-                    label="Email"
-                    name="email"
-                    placeholder="Email"
-                />
-                <Input
-                    {...inputProps}
-                    label="Phone"
-                    name="phone"
-                    placeholder="Phone number"
-                />
-                <Button onClick={this.handleSubmit}>
+            <JoifulForm
+                {...joiFulFormSettings}
+                onChange={this.handleChange}
+                onSubmit={this.handleSubmit}
+                schema={{
+                    name: Joi.string().required().label('Name'),
+                    email: Joi.string().email().required().label('Email'),
+                    phone: Joi.string().min(10).max(12).label('Phone')
+                }}
+                values={this.state}
+            >
+                <JoifulInput fieldName="name"/>
+                <JoifulInput fieldName="email"/>
+                <JoifulInput fieldName="phone"/>
+                <Button
+                    onClick={this.handleSubmit}
+                    style={{
+                        width: '100%'
+                    }}
+                >
                     Submit
                 </Button>
-            </div>
+            </JoifulForm>
         )
     }
 
