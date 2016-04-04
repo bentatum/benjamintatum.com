@@ -28,6 +28,12 @@ module.exports = {
             }
         ],
         loaders: [
+            {
+                //this tests for these specific node modules which are not transpiled already
+                //and transpiles them for us
+                test: /\/node_modules\/(joi\/lib\/|isemail\/lib\/|hoek\/lib\/|topo\/lib\/)/,
+                loader: 'babel'
+            },
             { 
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -60,6 +66,7 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('style.css'),
         new StaticSiteGeneratorPlugin('main', routes),
+        new webpack.NormalModuleReplacementPlugin(/^(net|dns|crypto)$/, function(){ return {} }),
         new CleanWebpackPlugin(['dist'], {
             root: __dirname,
             verbose: true,
