@@ -28,19 +28,13 @@ export default class PhotoGallery extends Component {
     };
 
     render() {
-        // const { width } = this.props
-        // const imgSize = width > small ? 280 : 100
         return (
             <Base {...this.props}>
                 <Flex
                     justify="center"
                     wrap
                 >
-                    <For
-                        each="photo"
-                        index="key"
-                        of={photos}
-                    >
+                    {photos.map((photo, key) =>
                         <Base
                             key={key}
                             style={{
@@ -50,7 +44,7 @@ export default class PhotoGallery extends Component {
                                 width: 87,
                             }}
                         />
-                    </For>
+                    )}
                 </Flex>
             </Base>
         )

@@ -5,7 +5,7 @@ import { Flex } from 'reflexbox'
 
 const TopBar = () =>
     <Toolbar>
-        <Flex 
+        <Flex
             justify="center"
             style={{
                 width: '100%'
