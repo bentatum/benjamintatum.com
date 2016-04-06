@@ -22,7 +22,7 @@ export default class ContactContainer extends Component {
                     my={2}
                     style={{ textAlign: 'center' }}
                 >
-                    Get quotes from photographers from Ann Arbor
+                    Get quotes from photographers in Ann Arbor
                 </Heading>
                 <Flex column>
                     <Flex

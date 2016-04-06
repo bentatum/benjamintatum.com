@@ -3,21 +3,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const routes = [
-    '/',
-    '/contact'
-]
+const routes = ['/']
 
 module.exports = {
 
     devtool: 'source-map',
-
-    // devServer: {
-    //     headers: {
-    //         "Access-Control-Allow-Origin": "*",
-    //         "Access-Control-Allow-Credentials": "true"
-    //     }
-    // },
 
     entry: {
         main: __dirname + '/src/index.js'
@@ -38,12 +28,21 @@ module.exports = {
             }
         ],
         loaders: [
+            {
+                //this tests for these specific node modules which are not transpiled already
+                //and transpiles them for us
+                test: /\/node_modules\/(joi\/lib\/|isemail\/lib\/|hoek\/lib\/|topo\/lib\/)/,
+                loader: 'babel'
+            },
             { 
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loaders: ['babel']
             }, {
                 test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
+            }, {
+                test: /\.css$/,
                 loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
             }
         ]
@@ -57,9 +56,17 @@ module.exports = {
         extensions: ['', '.js', '.jsx', '.json']
     },
 
+    node: {
+        net : 'empty',
+        tls : 'empty',
+        crypto: 'empty',
+        dns : 'empty'
+    },
+
     plugins: [
         new ExtractTextPlugin('style.css'),
         new StaticSiteGeneratorPlugin('main', routes),
+        new webpack.NormalModuleReplacementPlugin(/^(net|dns|crypto)$/, function(){ return {} }),
         new CleanWebpackPlugin(['dist'], {
             root: __dirname,
             verbose: true,

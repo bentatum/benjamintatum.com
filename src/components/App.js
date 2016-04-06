@@ -1,10 +1,11 @@
-import '../style.scss'
 import React, { Component, PropTypes } from 'react'
-import { Theme, TopBar } from '.'
+import { Theme } from '.'
 import Helmet from 'react-helmet'
 import { Container } from 'rebass'
 import { setScreenSize } from '../redux/modules/app'
 import { connect } from 'react-redux'
+import { constants } from '../redux/modules/app'
+const { small } = constants.BREAKPOINTS
 
 @connect(() => ({}), { screenSize: setScreenSize })
 
@@ -47,12 +48,16 @@ export default class App extends Component {
                     title="Ann Arbor Pictures"
                 />
                 <Theme>
-                    <div>
-                        <TopBar/>
-                        <Container>
-                            {children}
-                        </Container>
-                    </div>
+                    <Container
+                        style={{
+                            marginLeft: 'auto',
+                            marginRight: 'auto',
+                            maxWidth: small,
+                            width: '100%'
+                        }}
+                    >
+                        {children}
+                    </Container>
                 </Theme>
             </div>
         )

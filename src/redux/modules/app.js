@@ -4,14 +4,15 @@ const SCREEN_DIMENSIONS = 'a2pix/SCREEN_DIMENSIONS_CHANGE'
 const SUBMIT_LEAD = 'a2pix/SUBMIT_LEAD'
 const client = new ApiClient()
 
-const breakpoints = {
+const BREAKPOINTS = {
     small: 425,
     medium: 768,
     large: 1024
 }
 
 export const constants = {
-    breakpoints
+    BREAKPOINTS,
+    SUBMIT_LEAD
 }
 
 const intitialState = {
@@ -29,20 +30,19 @@ export function setScreenSize(height, width) {
     }
 }
 
-export function submitLead({ name, email, phone }) {
+export function createLead({ name, email, phone }) {
     return {
         type: SUBMIT_LEAD,
         AWAIT_MARKER,
         payload: {
-            results: client.post({
+            [SUBMIT_LEAD]: client.post({
                 data: `
                     mutation {
                         createLead(
-                            id: \"109\",
                             name: \"${name}\",
                             email: \"${email}\",
                             phone: \"${phone}\"
-                        ) { id, name }
+                        ) { id, name, email, phone }
                     }
                 `
             })

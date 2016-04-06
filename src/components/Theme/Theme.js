@@ -1,3 +1,4 @@
+import './style.scss'
 import { Component, PropTypes } from 'react'
 
 const baseColors = {
@@ -14,7 +15,7 @@ const baseColors = {
 
 const colors = {
     ...baseColors,
-    primary: baseColors.blue,
+    primary: baseColors.white,
     secondary: baseColors.lightBlue,
     default: baseColors.black,
     info: baseColors.blue,
@@ -24,7 +25,7 @@ const colors = {
 }
 
 const scale = [0, 10, 25, 48, 64]
-const fontSizes = [64, 40, 33, 19, 18, 14, 12]
+const fontSizes = [64, 37, 30, 19, 18, 14, 12]
 
 export default class Theme extends Component {
 
@@ -43,22 +44,27 @@ export default class Theme extends Component {
                 colors,
                 fontSizes,
                 scale,
-                Toolbar: {
-                    backgroundColor: baseColors.black,
-                    color: baseColors.white
+                Badge: {
+                    fontWeight: 'lighter'
+                },
+                Button: {
+                    border: `1px solid ${colors.black}`,
+                    color: colors.black
                 },
                 Label: {
                     display: 'block',
                     marginBottom: 10
                 },
                 NavItem: {
-                    fontWeight: 100
+                    fontWeight: 200
                 },
-                Badge: {
-                    fontWeight: 'lighter'
+                Text: {
+                    marginBottom: scale[1],
+                    marginTop: scale[1]
                 },
-                Button: {
-                    backgroundColor: 'tomato'
+                Toolbar: {
+                    backgroundColor: colors.white,
+                    color: colors.black
                 }
             },
             reflexbox: {
