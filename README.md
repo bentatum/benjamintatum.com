@@ -1,1 +1,1 @@
-# annarbor.pictures
+# webpack-static-boilerplate

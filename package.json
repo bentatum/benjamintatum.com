@@ -1,6 +1,6 @@
 {
-  "name": "annarbor.pictures",
-  "version": "1.0.0",
+  "name": "@leadgrabr/webpack-static-boilerplate",
+  "version": "0.0.1",
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {},
@@ -83,12 +83,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bentatum/annarbor.pictures.git"
+    "url": "git+https://github.com/LeadGrabr/webpack-static-boilerplate.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bentatum/annarbor.pictures/issues"
+    "url": "https://github.com/LeadGrabr/webpack-static-boilerplate/issues"
   },
-  "homepage": "https://github.com/bentatum/annarbor.pictures#readme"
+  "homepage": "https://github.com/LeadGrabr/webpack-static-boilerplate#readme"
 }
