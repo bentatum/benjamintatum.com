@@ -35,7 +35,7 @@ export default class App extends Component {
                         { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css' },
                         { rel: 'stylesheet', href: '/style.css' },
                         { rel: 'shortcut icon', href: '/favicon.png' },
-                        { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Dancing+Script:400,700' }
+                        { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Oswald:400,700,300' }
                     ]}
                     meta={[
                         { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi' }
