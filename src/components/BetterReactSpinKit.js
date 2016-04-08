@@ -13,6 +13,13 @@ import {
     Wave,
     Wordpress
   } from 'better-react-spinkit'
+import { Flex } from 'reflexbox'
+
+const flexProps = {
+    align: 'center',
+    column: true,
+    justify: 'center'
+}
 
 const BetterReactSpinKit = () =>
     <Page>
@@ -20,64 +27,84 @@ const BetterReactSpinKit = () =>
             Better React SpinKit
         </Page.Title>
         <Section>
-            <ChasingDots/>
-            <Pre>
-                {"<ChasingDots/>"}
-            </Pre>
+            <Flex {...flexProps}>
+                <ChasingDots size={100}/>
+                <Pre>
+                    {"<ChasingDots/>"}
+                </Pre>
+            </Flex>
         </Section>
         <Section>
-            <Circle/>
-            <Pre>
-                {"<Circle/>"}
-            </Pre>
+            <Flex {...flexProps}>
+                <Circle size={100}/>
+                <Pre>
+                    {"<Circle/>"}
+                </Pre>
+            </Flex>
         </Section>
         <Section>
-            <CubeGrid/>
-            <Pre>
-                {"<CubeGrid/>"}
-            </Pre>
+            <Flex {...flexProps}>
+                <CubeGrid size={100}/>
+                <Pre>
+                    {"<CubeGrid/>"}
+                </Pre>
+            </Flex>
         </Section>
         <Section>
-            <DoubleBounce/>
-            <Pre>
-                {"<DoubleBounce/>"}
-            </Pre>
+            <Flex {...flexProps}>
+                <DoubleBounce size={100}/>
+                <Pre>
+                    {"<DoubleBounce/>"}
+                </Pre>
+            </Flex>
         </Section>
         <Section>
-            <Pulse/>
-            <Pre>
-                {"<Pulse/>"}
-            </Pre>
+            <Flex {...flexProps}>
+                <Pulse size={100}/>
+                <Pre>
+                    {"<Pulse/>"}
+                </Pre>
+            </Flex>
         </Section>
         <Section>
-            <RotatingPlane/>
-            <Pre>
-                {"<RotatingPlane/>"}
-            </Pre>
+            <Flex {...flexProps}>
+                <RotatingPlane size={100}/>
+                <Pre>
+                    {"<RotatingPlane/>"}
+                </Pre>
+            </Flex>
         </Section>
         <Section>
-            <ThreeBounce/>
-            <Pre>
-                {"<ThreeBounce/>"}
-            </Pre>
+            <Flex {...flexProps}>
+                <ThreeBounce size={60}/>
+                <Pre>
+                    {"<ThreeBounce/>"}
+                </Pre>
+            </Flex>
         </Section>
         <Section>
-            <WanderingCubes/>
-            <Pre>
-                {"<WanderingCubes/>"}
-            </Pre>
+            <Flex {...flexProps}>
+                <WanderingCubes size={100}/>
+                <Pre>
+                    {"<WanderingCubes/>"}
+                </Pre>
+            </Flex>
         </Section>
         <Section>
-            <Wave/>
-            <Pre>
-                {"<Wave/>"}
-            </Pre>
+            <Flex {...flexProps}>
+                <Wave size={100}/>
+                <Pre>
+                    {"<Wave/>"}
+                </Pre>
+            </Flex>
         </Section>
         <Section>
-            <Wordpress/>
-            <Pre>
-                {"<Wordpress/>"}
-            </Pre>
+            <Flex {...flexProps}>
+                <Wordpress size={100}/>
+                <Pre>
+                    {"<Wordpress/>"}
+                </Pre>
+            </Flex>
         </Section>
     </Page>
 
