@@ -10,7 +10,7 @@ const Page = ({ children }) =>
     <Flex
         column
         justify="center"
-        mt={4}
+        pt={1}
     >
         {children}
     </Flex>
@@ -22,7 +22,8 @@ Page.propTypes = {
 const Title = ({ children }) =>
     <Heading
         level={1}
-        mb={2}
+        mb={1}
+        mt={3}
         style={{ textAlign: 'center' }}
     >
         {children}
@@ -36,7 +37,7 @@ Page.Title = Title
 
 const Subtitle = ({ children }) =>
     <Text
-        mb={2}
+        mb={3}
         style={{ textAlign: 'center' }}
     >
         {children}

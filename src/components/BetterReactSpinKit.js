@@ -1,5 +1,5 @@
 import React from 'react'
-import { Section, Pre } from 'rebass'
+import { NavItem, Pre, Section, Space, Toolbar } from 'rebass'
 import { Page } from '.'
 import {
     ChasingDots,
@@ -14,6 +14,7 @@ import {
     Wordpress
   } from 'better-react-spinkit'
 import { Flex } from 'reflexbox'
+import { IndexLink } from 'react-router'
 
 const flexProps = {
     align: 'center',
@@ -23,6 +24,21 @@ const flexProps = {
 
 const BetterReactSpinKit = () =>
     <Page>
+        <Toolbar>
+            <NavItem is="div">
+                <IndexLink to="/">
+                    Benjamin Tatum
+                </IndexLink>
+            </NavItem>
+            <Space auto/>
+            <NavItem
+                href="http://github.com/bentatum/better-react-spinkit"
+                is="a"
+                target="_blank"
+            >
+                Github
+            </NavItem>
+        </Toolbar>
         <Page.Title>
             Better React SpinKit
         </Page.Title>
