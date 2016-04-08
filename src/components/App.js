@@ -33,6 +33,7 @@ export default class App extends Component {
                     link={[
                         /* eslint-disable max-len */
                         { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css' },
+                        { rel: 'stylesheet', href: '//npmcdn.com/better-react-spinkit@0.0.17/src/style.css' },
                         { rel: 'stylesheet', href: '/style.css' },
                         { rel: 'shortcut icon', href: '/favicon.png' },
                         { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Oswald:400,700,300' }

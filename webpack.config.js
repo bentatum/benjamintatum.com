@@ -3,7 +3,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const routes = ['/']
+const routes = [
+    '/',
+    '/better-react-spinkit/'
+]
 
 module.exports = {
 
@@ -23,7 +26,9 @@ module.exports = {
         preLoaders: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                include: [
+                    __dirname + '/src'
+                ],
                 loader: "eslint-loader"
             }
         ],
@@ -34,15 +39,15 @@ module.exports = {
                 test: /\/node_modules\/(joi\/lib\/|isemail\/lib\/|hoek\/lib\/|topo\/lib\/)/,
                 loader: 'babel'
             },
-            { 
+            {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                include: [
+                    __dirname + '/src'
+                ],
                 loaders: ['babel']
-            }, {
+            },
+            {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
-            }, {
-                test: /\.css$/,
                 loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
             }
         ]

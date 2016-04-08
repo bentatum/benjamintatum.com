@@ -7,7 +7,6 @@ import { JoifulForm, JoifulInput } from 'joiful-react-forms'
 import Joi from 'joi'
 import joiFulFormSettings from '../JoifulReactForms'
 const { SUBMIT_LEAD } = constants
-import Spinner from 'react-spinkit'
 import { Flex } from 'reflexbox'
 
 @connect(() => ({}), { submit: createLead })
@@ -62,7 +61,7 @@ export default class ContactForm extends Component {
                     >
                         <If condition={pending}>
                             <Flex justify="center">
-                                Processing... <Spinner spinnerName="pulse"/>
+                                Processing...
                             </Flex>
                         <Else/>
                             Submit

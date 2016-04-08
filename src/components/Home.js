@@ -1,33 +1,15 @@
 import React from 'react'
-import { Heading, Text } from 'rebass'
-import { Flex } from 'reflexbox'
-import { Portfolio } from '.'
+import { Page, Portfolio } from '.'
 
 const Home = () =>
-    <Flex
-        column
-        justify="center"
-        mt={4}
-    >
-        <Heading
-            level={1}
-            mb={2}
-            style={{
-                textAlign: 'center'
-            }}
-        >
+    <Page>
+        <Page.Title>
             Benjamin Tatum
-        </Heading>
-        <Text
-            mb={2}
-            style={{
-                textAlign: 'center'
-            }}
-        >
-            Software Developer<br/>
-            Ann Arbor, Michigan
-        </Text>
+        </Page.Title>
+        <Page.Subtitle>
+            <span>Software Developer<br/>Ann Arbor, Michigan</span>
+        </Page.Subtitle>
         <Portfolio/>
-    </Flex>
+    </Page>
 
 export default Home
