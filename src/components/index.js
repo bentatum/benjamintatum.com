@@ -1,5 +1,5 @@
 export App from './App'
-export BetterReactSpinKit from './BetterReactSpinKit'
+export BetterReactSpinKit from './BetterReactSpinKit/Container'
 export Contact from './Contact/Container'
 export DevTools from './DevTools'
 export Home from './Home'
