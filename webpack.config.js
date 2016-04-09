@@ -80,8 +80,9 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': {
                 "API_ENDPOINT": JSON.stringify(process.env.API_ENDPOINT),
-                "DEVELOPMENT": true,
-                "DEVTOOLS": true
+                "DEVELOPMENT": JSON.stringify(process.env.DEVELOPMENT),
+                "DEVTOOLS": JSON.stringify(process.env.DEVTOOLS),
+                "NODE_ENV": JSON.stringify(process.env.NODE_ENV)
             }
         }),
     ],
