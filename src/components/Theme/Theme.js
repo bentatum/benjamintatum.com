@@ -4,6 +4,7 @@ import { Component, PropTypes } from 'react'
 const baseColors = {
     black: '#111',
     white: '#fff',
+    lightGray: '#f2f2f2',
     gray: '#ddd',
     midgray: '#888',
     blue: '#44749d',
@@ -25,7 +26,7 @@ const colors = {
 }
 
 const scale = [0, 10, 25, 48, 64]
-const fontSizes = [64, 37, 30, 19, 18, 14, 12]
+const fontSizes = [64, 32, 25, 19, 18, 14, 12]
 
 export default class Theme extends Component {
 
@@ -44,6 +45,16 @@ export default class Theme extends Component {
                 colors,
                 fontSizes,
                 scale,
+                Pre: {
+                    borderLeftWidth: 0
+                },
+                SectionHeader: {
+                    borderBottomColor: colors.lightGray,
+                    borderBottomStyle: 'dashed'
+                },
+                HeadingLink: {
+                    textAlign: 'center'
+                },
                 Badge: {
                     fontWeight: 'lighter'
                 },

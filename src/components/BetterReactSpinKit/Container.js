@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavItem, Section, Space, Toolbar } from 'rebass'
+import { NavItem, Section, SectionHeader, Space, Toolbar } from 'rebass'
 import { Page } from '..'
 import {
     ChasingDots,
@@ -37,9 +37,13 @@ const BetterReactSpinKitContainer = () =>
             Better React SpinKit
         </Page.Title>
         <Section>
+            <SectionHeader
+                heading="ChasingDots"
+            />
             <Demo
                 code={`
 <ChasingDots
+    color="#333"
     scaleEnd={0.6}
     scaleStart={0.2}
     size={50}
@@ -47,6 +51,7 @@ const BetterReactSpinKitContainer = () =>
                 `}
                 component={
                     <ChasingDots
+                        color="#333"
                         scaleEnd={0.6}
                         scaleStart={0.2}
                         size={50}
@@ -55,27 +60,36 @@ const BetterReactSpinKitContainer = () =>
             />
         </Section>
         <Section>
+            <SectionHeader
+                heading="Circle"
+            />
             <Demo
                 code={`
 <Circle
+    color="#333"
     scaleEnd={0.5}
     scaleStart={0.1}
-    size={50}
+    size={30}
 />
                 `}
                 component={
                     <Circle
+                        color="#333"
                         scaleEnd={0.5}
                         scaleStart={0.1}
-                        size={50}
+                        size={30}
                     />
                 }
             />
         </Section>
         <Section>
+            <SectionHeader
+                heading="CubeGrid"
+            />
             <Demo
                 code={`
 <CubeGrid
+    color="#333"
     cols={4}
     rows={4}
     size={50}
@@ -83,6 +97,7 @@ const BetterReactSpinKitContainer = () =>
                 `}
                 component={
                     <CubeGrid
+                        color="#333"
                         cols={4}
                         rows={4}
                         size={50}
@@ -91,9 +106,13 @@ const BetterReactSpinKitContainer = () =>
             />
         </Section>
         <Section>
+            <SectionHeader
+                heading="DoubleBounce"
+            />
             <Demo
                 code={`
 <DoubleBounce
+    color="#333"
     scaleEnd={1}
     scaleStart={0.2}
     size={50}
@@ -101,6 +120,7 @@ const BetterReactSpinKitContainer = () =>
                 `}
                 component={
                     <DoubleBounce
+                        color="#333"
                         scaleEnd={1}
                         scaleStart={0.2}
                         size={50}
@@ -109,9 +129,13 @@ const BetterReactSpinKitContainer = () =>
             />
         </Section>
         <Section>
+            <SectionHeader
+                heading="Pulse"
+            />
             <Demo
                 code={`
 <Pulse
+    color="#333"
     scaleEnd={1}
     scaleStart={0}
     size={50}
@@ -119,6 +143,7 @@ const BetterReactSpinKitContainer = () =>
                 `}
                 component={
                     <Pulse
+                        color="#333"
                         scaleEnd={1}
                         scaleStart={0}
                         size={50}
@@ -127,15 +152,32 @@ const BetterReactSpinKitContainer = () =>
             />
         </Section>
         <Section>
+            <SectionHeader
+                heading="RotatingPlane"
+            />
             <Demo
-                code={'<RotatingPlane size={20}/>'}
-                component={<RotatingPlane size={20}/>}
+                code={`
+<RotatingPlane
+    color="#333"
+    size={20}
+/>
+                `}
+                component={
+                    <RotatingPlane
+                        color="#333"
+                        size={20}
+                    />
+                }
             />
         </Section>
         <Section>
+            <SectionHeader
+                heading="ThreeBounce"
+            />
             <Demo
                 code={`
 <ThreeBounce
+    color="#333"
     scaleEnd={0.75}
     scaleStart={0.2}
     size={20}
@@ -143,6 +185,7 @@ const BetterReactSpinKitContainer = () =>
                 `}
                 component={
                     <ThreeBounce
+                        color="#333"
                         scaleEnd={0.75}
                         scaleStart={0.2}
                         size={20}
@@ -151,15 +194,32 @@ const BetterReactSpinKitContainer = () =>
             />
         </Section>
         <Section>
+            <SectionHeader
+                heading="WanderingCubes"
+            />
             <Demo
-                code={'<WanderingCubes size={50}/>'}
-                component={<WanderingCubes size={50}/>}
+                code={`
+<WanderingCubes
+    color="#333"
+    size={50}
+/>
+                `}
+                component={
+                    <WanderingCubes
+                        color="#333"
+                        size={50}
+                    />
+                }
             />
         </Section>
         <Section>
+            <SectionHeader
+                heading="Wave"
+            />
             <Demo
                 code={`
 <Wave
+    color="#333"
     count={10}
     scaleYEnd={0.2}
     size={50}
@@ -167,6 +227,7 @@ const BetterReactSpinKitContainer = () =>
                 `}
                 component={
                     <Wave
+                        color="#333"
                         count={10}
                         scaleYEnd={0.2}
                         size={50}
@@ -175,9 +236,24 @@ const BetterReactSpinKitContainer = () =>
             />
         </Section>
         <Section>
+            <SectionHeader
+                heading="Wordpress"
+            />
             <Demo
-                code={'<Wordpress size={30}/>'}
-                component={<Wordpress size={30}/>}
+                code={`
+<Wordpress
+    color="#333"
+    innerColor="tomato"
+    size={30}
+/>
+                `}
+                component={
+                    <Wordpress
+                        color="#333"
+                        innerColor="tomato"
+                        size={30}
+                    />
+                }
             />
         </Section>
     </Page>
