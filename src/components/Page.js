@@ -22,7 +22,7 @@ Page.propTypes = {
 const Title = ({ children }) =>
     <Heading
         level={1}
-        mb={1}
+        mb={2}
         mt={3}
         style={{ textAlign: 'center' }}
     >
@@ -50,7 +50,10 @@ Subtitle.propTypes = {
 Page.Subtitle = Subtitle
 
 const Content = ({ children }) =>
-    <Base px={2}>
+    <Base
+        my={2}
+        px={2}
+    >
         {children}
     </Base>
 

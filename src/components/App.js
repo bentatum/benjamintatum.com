@@ -53,7 +53,7 @@ export default class App extends Component {
                         { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Oswald:400,700,300' }
                     ]}
                     meta={[
-                        { name: 'description', content: 'Benjamin Tatum is a software developer available for hire. He is located in Ann Arbor, Michigan but is available for remote work. Services include website development, application development, team leadership, product shipment and more.' },
+                        { name: 'description', content: 'Software application and web developer located in Ann Arbor, Michigan and available for remote hire. Services include product design, development & deployment.' },
                         { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi' },
                     ]}
                     script={[

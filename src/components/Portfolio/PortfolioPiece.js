@@ -12,14 +12,14 @@ import { Flex, Box } from 'reflexbox'
 export default class PortfolioPiece extends Component {
 
     static propTypes = {
-        address: PropTypes.string.isRequired,
+        linkProps: PropTypes.object.isRequired,
         name: PropTypes.string.isRequired,
         screenShot: PropTypes.string.isRequired,
         width: PropTypes.number.isRequired
     };
 
     render() {
-        const { ...props, address, name, screenShot, width } = this.props
+        const { ...props, linkProps, name, screenShot, width } = this.props
         if (!width) { return null }
         return (
             <Base {...props}>
@@ -27,15 +27,12 @@ export default class PortfolioPiece extends Component {
                     align="center"
                     column
                 >
-                    <Box p={2}>
+                    <Box>
                         <Heading
                             level={3}
                             mb={2}
                         >
-                            <a
-                                href={address}
-                                target="_blank"
-                            >
+                            <a {...linkProps}>
                                 {name}
                             </a>
                         </Heading>
@@ -47,10 +44,7 @@ export default class PortfolioPiece extends Component {
                             width: width > small ? 300 : '100%'
                         }}
                     >
-                        <a
-                            href={address}
-                            target="_blank"
-                        >
+                        <a {...linkProps}>
                             <div
                                 style={{
                                     backgroundImage: `url('${screenShot}')`,

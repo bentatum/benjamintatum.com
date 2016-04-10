@@ -21,7 +21,7 @@ const ContactContainer = () =>
         </Page.Title>
         <Page.Subtitle>
             I build enterprise scale applications.<br/>
-            Contact me today for a quote on your project.
+            Contact me today for a quote.
         </Page.Subtitle>
         <Page.Content>
             <Form/>

@@ -15,9 +15,19 @@ import {
   } from 'better-react-spinkit'
 import { IndexLink } from 'react-router'
 import Demo from './Demo'
+import Helmet from 'react-helmet'
 
 const BetterReactSpinKitContainer = () =>
     <Page>
+        <Helmet
+            meta={[
+                {
+                    name: 'description',
+                    content: 'A better collection of loading indicators animated with CSS for React'
+                },
+            ]}
+            title="Better React SpinKit"
+        />
         <Toolbar>
             <NavItem is="div">
                 <IndexLink to="/">
@@ -43,12 +53,12 @@ const BetterReactSpinKitContainer = () =>
                 />
                 <Demo
                     code={`
-    <ChasingDots
-        color="#333"
-        scaleEnd={0.6}
-        scaleStart={0.2}
-        size={50}
-    />
+<ChasingDots
+    color="#333"
+    scaleEnd={0.6}
+    scaleStart={0.2}
+    size={50}
+/>
                     `}
                     component={
                         <ChasingDots
@@ -66,12 +76,12 @@ const BetterReactSpinKitContainer = () =>
                 />
                 <Demo
                     code={`
-    <Circle
-        color="#333"
-        scaleEnd={0.5}
-        scaleStart={0.1}
-        size={30}
-    />
+<Circle
+    color="#333"
+    scaleEnd={0.5}
+    scaleStart={0.1}
+    size={30}
+/>
                     `}
                     component={
                         <Circle
@@ -89,12 +99,12 @@ const BetterReactSpinKitContainer = () =>
                 />
                 <Demo
                     code={`
-    <CubeGrid
-        color="#333"
-        cols={4}
-        rows={4}
-        size={50}
-    />
+<CubeGrid
+    color="#333"
+    cols={4}
+    rows={4}
+    size={50}
+/>
                     `}
                     component={
                         <CubeGrid
@@ -112,12 +122,12 @@ const BetterReactSpinKitContainer = () =>
                 />
                 <Demo
                     code={`
-    <DoubleBounce
-        color="#333"
-        scaleEnd={1}
-        scaleStart={0.2}
-        size={50}
-    />
+<DoubleBounce
+    color="#333"
+    scaleEnd={1}
+    scaleStart={0.2}
+    size={50}
+/>
                     `}
                     component={
                         <DoubleBounce
@@ -135,12 +145,12 @@ const BetterReactSpinKitContainer = () =>
                 />
                 <Demo
                     code={`
-    <Pulse
-        color="#333"
-        scaleEnd={1}
-        scaleStart={0}
-        size={50}
-    />
+<Pulse
+    color="#333"
+    scaleEnd={1}
+    scaleStart={0}
+    size={50}
+/>
                     `}
                     component={
                         <Pulse
@@ -158,10 +168,10 @@ const BetterReactSpinKitContainer = () =>
                 />
                 <Demo
                     code={`
-    <RotatingPlane
-        color="#333"
-        size={20}
-    />
+<RotatingPlane
+    color="#333"
+    size={20}
+/>
                     `}
                     component={
                         <RotatingPlane
@@ -177,12 +187,12 @@ const BetterReactSpinKitContainer = () =>
                 />
                 <Demo
                     code={`
-    <ThreeBounce
-        color="#333"
-        scaleEnd={0.75}
-        scaleStart={0.2}
-        size={20}
-    />
+<ThreeBounce
+    color="#333"
+    scaleEnd={0.75}
+    scaleStart={0.2}
+    size={20}
+/>
                     `}
                     component={
                         <ThreeBounce
@@ -200,10 +210,10 @@ const BetterReactSpinKitContainer = () =>
                 />
                 <Demo
                     code={`
-    <WanderingCubes
-        color="#333"
-        size={50}
-    />
+<WanderingCubes
+    color="#333"
+    size={50}
+/>
                     `}
                     component={
                         <WanderingCubes
@@ -219,12 +229,12 @@ const BetterReactSpinKitContainer = () =>
                 />
                 <Demo
                     code={`
-    <Wave
-        color="#333"
-        count={10}
-        scaleYEnd={0.2}
-        size={50}
-    />
+<Wave
+    color="#333"
+    count={10}
+    scaleYEnd={0.2}
+    size={50}
+/>
                     `}
                     component={
                         <Wave
@@ -242,11 +252,11 @@ const BetterReactSpinKitContainer = () =>
                 />
                 <Demo
                     code={`
-    <Wordpress
-        color="#333"
-        innerColor="tomato"
-        size={30}
-    />
+<Wordpress
+    color="#333"
+    innerColor="tomato"
+    size={30}
+/>
                     `}
                     component={
                         <Wordpress
