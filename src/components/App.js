@@ -6,6 +6,7 @@ import { setScreenSize } from '../redux/modules/app'
 import { connect } from 'react-redux'
 import { constants } from '../redux/modules/app'
 const { small } = constants.BREAKPOINTS
+import joifulReactForms from './JoifulReactFormsOverrides'
 
 @connect(() => ({}), { screenSize: setScreenSize })
 
@@ -14,6 +15,20 @@ export default class App extends Component {
     static propTypes = {
         children: PropTypes.node,
         screenSize: PropTypes.func.isRequired
+    };
+
+    static childContextTypes = {
+        joifulReactForms: PropTypes.object
+    };
+
+    getChildContext() {
+        return {
+            joifulReactForms: {
+                JoifulInput: {
+                    types: joifulReactForms.types
+                }
+            }
+        }
     }
 
     componentDidMount() {

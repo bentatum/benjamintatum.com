@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { Heading, Text } from 'rebass'
+import { Base, Heading, Text } from 'rebass'
 import { Flex } from 'reflexbox'
 
 const sharedPropTypes = {
@@ -48,5 +48,16 @@ Subtitle.propTypes = {
 }
 
 Page.Subtitle = Subtitle
+
+const Content = ({ children }) =>
+    <Base px={1}>
+        {children}
+    </Base>
+
+Content.propTypes = {
+    ...sharedPropTypes
+}
+
+Page.Content = Content
 
 export default Page

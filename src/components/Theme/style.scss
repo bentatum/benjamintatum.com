@@ -4,11 +4,8 @@
 
 body {
     font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: $font-weight-base;
     line-height: 1.5;
-}
-
-h1 {
-    font-family: "Oswald", "Brush Script MT", cursive;
 }
 
 a {
@@ -18,4 +15,24 @@ a {
 
 button[disabled] {
     cursor: not-allowed !important;
+}
+
+::-webkit-input-placeholder {
+   color: $gray;
+   font-weight: $font-weight-base;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $gray;
+   font-weight: $font-weight-base;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $gray;
+   font-weight: $font-weight-base;
+}
+
+:-ms-input-placeholder {  
+   color: $gray;
+   font-weight: $font-weight-base;
 }

@@ -16,6 +16,7 @@ export const constants = {
 }
 
 const intitialState = {
+    errors: null,
     height: 0,
     width: 0
 }
@@ -30,7 +31,7 @@ export function setScreenSize(height, width) {
     }
 }
 
-export function createLead({ name, email, phone }) {
+export function createLead({ name, email, phone, issue }) {
     return {
         type: SUBMIT_LEAD,
         AWAIT_MARKER,
@@ -41,8 +42,9 @@ export function createLead({ name, email, phone }) {
                         createLead(
                             name: \"${name}\",
                             email: \"${email}\",
-                            phone: \"${phone}\"
-                        ) { id, name, email, phone }
+                            phone: \"${phone}\",
+                            issue: \"${issue}"\
+                        ) { id, name }
                     }
                 `
             })
@@ -52,6 +54,11 @@ export function createLead({ name, email, phone }) {
 
 export function reducer(state = intitialState, action) {
     switch (action.type) {
+    case SUBMIT_LEAD:
+        return {
+            ...state,
+            errors: action.payload[SUBMIT_LEAD].errors
+        }
     case SCREEN_DIMENSIONS:
         return { ...state, ...action.payload }
     default:

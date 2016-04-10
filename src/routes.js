@@ -12,5 +12,17 @@ export default (
             component={views.BetterReactSpinKit}
             path="better-react-spinkit"
         />
+        <Route
+            component={views.Contact}
+            path="contact"
+        />
+        <Route
+            component={views.ContactFailure}
+            path="contact/failure"
+        />
+        <Route
+            component={views.ContactSuccess}
+            path="contact/success"
+        />
     </Route>
 )

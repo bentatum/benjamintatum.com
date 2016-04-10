@@ -1,5 +1,4 @@
 import { createStore as _createStore, applyMiddleware, compose } from 'redux'
-import clientMiddleware from './middleware/clientMiddleware'
 import storageMiddleware from 'redux-simplestorage'
 import { middleware as awaitMiddleware } from 'redux-await'
 import { routerMiddleware } from 'react-router-redux'
@@ -8,9 +7,8 @@ import { DevTools } from '../components'
 import { persistState } from 'redux-devtools'
 import createLogger from 'redux-logger'
 
-export default function createStore(client, browserHistory) {
+export default function createStore(browserHistory) {
     const middleware = [
-        clientMiddleware(client),
         awaitMiddleware,
         storageMiddleware,
         routerMiddleware(browserHistory)

@@ -1,22 +1,27 @@
 import React from 'react'
-import { NavItem, Toolbar } from 'rebass'
-import { IndexLink } from 'react-router'
-import { Flex } from 'reflexbox'
+import { NavItem, Space, Toolbar } from 'rebass'
+import { IndexLink, Link } from 'react-router'
 
 const TopBar = () =>
     <Toolbar>
-        <Flex
-            justify="center"
-            style={{
-                width: '100%'
-            }}
+        <NavItem is="div">
+            <IndexLink to="/">
+                Benjamin Tatum
+            </IndexLink>
+        </NavItem>
+        <Space auto/>
+        <NavItem is="div">
+            <Link to="/contact">
+                Contact
+            </Link>
+        </NavItem>
+        <NavItem
+            href="http://github.com/bentatum"
+            is="a"
+            target="_blank"
         >
-            <NavItem is="div">
-                <IndexLink to="/">
-                    AnnArbor Pictures
-                </IndexLink>
-            </NavItem>
-        </Flex>
+            Github
+        </NavItem>
     </Toolbar>
 
 export default TopBar

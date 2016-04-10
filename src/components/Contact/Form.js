@@ -5,20 +5,40 @@ import { createLead, constants } from '../../redux/modules/app'
 import autobind from 'autobind-decorator'
 import { JoifulForm, JoifulInput } from 'joiful-react-forms'
 import Joi from 'joi'
-import joiFulFormSettings from '../JoifulReactForms'
 const { SUBMIT_LEAD } = constants
 import { Flex } from 'reflexbox'
+import { push } from 'react-router-redux'
 
-@connect(() => ({}), { submit: createLead })
+@connect(
+    (state) => ({
+        formErrors: state.app.errors
+    }),
+    {
+        pushState: push,
+        submit: createLead
+    }
+)
 
 export default class ContactForm extends Component {
 
     static propTypes = {
+        formErrors: PropTypes.object,
+        pushState: PropTypes.func.isRequired,
         statuses: PropTypes.object.isRequired,
         submit: PropTypes.func.isRequired
     };
 
     state = {}
+
+    componentWillReceiveProps({ formErrors, pushState, statuses }) {
+        if (formErrors) {
+            return pushState('/contact/failure')
+        }
+        if (statuses[SUBMIT_LEAD] === 'success') {
+            return pushState('/contact/success')
+        }
+        return false
+    }
 
     @autobind
     handleSubmit(error) {
@@ -40,19 +60,25 @@ export default class ContactForm extends Component {
         return (
             <Base {...props}>
                 <JoifulForm
-                    {...joiFulFormSettings}
                     onChange={this.handleChange}
                     onSubmit={this.handleSubmit}
                     schema={{
-                        name: Joi.string().required().label('Name'),
-                        email: Joi.string().email().required().label('Email'),
-                        phone: Joi.string().min(10).max(12).label('Phone')
+                        name: Joi.string().required(),
+                        email: Joi.string().email().required(),
+                        phone: Joi.string().min(10).max(12),
+                        issue: Joi.string().min(3).required()
                     }}
                     values={this.state}
                 >
                     <JoifulInput name="name"/>
                     <JoifulInput name="email"/>
                     <JoifulInput name="phone"/>
+                    <JoifulInput
+                        is="textarea"
+                        label="How can I help?"
+                        name="issue"
+                        placeholder="Tell me about your project."
+                    />
                     <Button
                         color="default"
                         disabled={pending}

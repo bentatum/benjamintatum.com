@@ -1,47 +1,21 @@
 /* eslint-disable react/prefer-stateless-function */
-import React, { Component, PropTypes } from 'react'
-import { Heading } from 'rebass'
-import { Flex, Box } from 'reflexbox'
-import { connect } from 'react-redux'
+import React from 'react'
 import { Form } from '.'
+import { Page, TopBar } from '..'
 
-@connect((state) => ({ width: state.app.width }))
+const ContactContainer = () =>
+    <Page>
+        <TopBar/>
+        <Page.Title>
+            How can I help?
+        </Page.Title>
+        <Page.Subtitle>
+            I build enterprise scale applications.<br/>
+            Contact me today for a quote on your project.
+        </Page.Subtitle>
+        <Page.Content>
+            <Form/>
+        </Page.Content>
+    </Page>
 
-export default class ContactContainer extends Component {
-
-    static propTypes = {
-        width: PropTypes.number.isRequired
-    }
-
-    render() {
-        const imgSize = 280
-        return (
-            <div>
-                <Heading
-                    level={1}
-                    my={2}
-                    style={{ textAlign: 'center' }}
-                >
-                    Get quotes from photographers in Ann Arbor
-                </Heading>
-                <Flex column>
-                    <Flex
-                        justify="center"
-                        mb={2}
-                    >
-                        <div
-                            style={{
-                                backgroundImage: `url('//source.unsplash.com/random/${imgSize}x${imgSize}')`, // eslint-disable-line max-len
-                                height: imgSize,
-                                width: imgSize
-                            }}
-                        />
-                    </Flex>
-                    <Box>
-                        <Form/>
-                    </Box>
-                </Flex>
-            </div>
-        )
-    }
-}
+export default ContactContainer

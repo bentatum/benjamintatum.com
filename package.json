@@ -28,7 +28,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "joi": "^8.0.5",
     "joi-phone": "0.0.1",
-    "joiful-react-forms": "0.1.1",
+    "joiful-react-forms": "0.1.2",
     "jsx-control-statements": "^3.1.0",
     "node-sass": "^3.4.2",
     "react": "^15.0.1",
@@ -66,7 +66,7 @@
     "start-dev": {
       "command": "webpack-dev-server --progress --hot --colors --history-api-fallback --display-error-details",
       "env": {
-        "API_ENDPOINT": "https://0eyk6qucwj.execute-api.us-east-1.amazonaws.com/dev/resource/graphql",
+        "API_ENDPOINT": "https://6fum8khtuh.execute-api.us-east-1.amazonaws.com/dev/resource/graphql",
         "BABEL_ENV": "development",
         "DEVELOPMENT": true,
         "DEVTOOLS": true
@@ -75,7 +75,7 @@
     "build-dev": {
       "command": "webpack -p",
       "env": {
-        "API_ENDPOINT": "https://0eyk6qucwj.execute-api.us-east-1.amazonaws.com/dev/resource/graphql",
+        "API_ENDPOINT": "https://6fum8khtuh.execute-api.us-east-1.amazonaws.com/dev/resource/graphql",
         "BABEL_ENV": "production",
         "NODE_ENV": "production"
       }

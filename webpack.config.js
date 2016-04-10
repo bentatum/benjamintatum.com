@@ -5,7 +5,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const routes = [
     '/',
-    '/better-react-spinkit/'
+    '/better-react-spinkit/',
+    '/contact/'
 ]
 
 module.exports = {

@@ -76,7 +76,9 @@ export default class Theme extends Component {
                 },
                 Toolbar: {
                     backgroundColor: colors.white,
-                    color: colors.black
+                    color: colors.black,
+                    paddingLeft: 0,
+                    paddingRight: 0
                 }
             },
             reflexbox: {

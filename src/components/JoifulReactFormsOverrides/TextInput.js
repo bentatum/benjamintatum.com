@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Input } from 'rebass'
 
-const JoifulTextElementOverride = ({ error, ...props }, { rebass: { colors } }) =>
+const JoifulInputTextInput = ({ error, ...props }, { rebass: { colors } }) =>
     <Input
         {...props}
         message={error}
@@ -11,12 +11,12 @@ const JoifulTextElementOverride = ({ error, ...props }, { rebass: { colors } }) 
         type="text"
     />
 
-JoifulTextElementOverride.propTypes = {
+JoifulInputTextInput.propTypes = {
     error: PropTypes.string
 }
 
-JoifulTextElementOverride.contextTypes = {
+JoifulInputTextInput.contextTypes = {
     rebass: PropTypes.object.isRequired
 }
 
-export default JoifulTextElementOverride
+export default JoifulInputTextInput
