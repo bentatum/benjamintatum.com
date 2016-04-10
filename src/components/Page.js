@@ -50,7 +50,7 @@ Subtitle.propTypes = {
 Page.Subtitle = Subtitle
 
 const Content = ({ children }) =>
-    <Base px={1}>
+    <Base px={2}>
         {children}
     </Base>
 
