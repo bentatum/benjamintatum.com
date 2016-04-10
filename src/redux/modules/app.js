@@ -1,7 +1,7 @@
 import ApiClient from '../../apiClient'
 import { AWAIT_MARKER } from 'redux-await'
-const SCREEN_DIMENSIONS = 'a2pix/SCREEN_DIMENSIONS_CHANGE'
-const SUBMIT_LEAD = 'a2pix/SUBMIT_LEAD'
+const SCREEN_DIMENSIONS = 'benjamintatum.com/SCREEN_DIMENSIONS_CHANGE'
+const SUBMIT_LEAD = 'benjamintatum.com/SUBMIT_LEAD'
 const client = new ApiClient()
 import { EventTypes } from 'redux-segment'
 
