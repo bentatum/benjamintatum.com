@@ -24,5 +24,9 @@ export default (
             component={views.ContactSuccess}
             path="contact/success"
         />
+        <Route
+            component={views.PortfolioContainer}
+            path="portfolio"
+        />
     </Route>
 )

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Page, Portfolio } from '.'
-import { TopBar } from '.'
+import { Page } from '.'
+import { TopBar, Portfolio } from '.'
 
 const Home = () =>
     <Page>

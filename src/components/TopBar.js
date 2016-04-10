@@ -11,6 +11,11 @@ const TopBar = () =>
         </NavItem>
         <Space auto/>
         <NavItem is="div">
+            <Link to="/portfolio">
+                Portfolio
+            </Link>
+        </NavItem>
+        <NavItem is="div">
             <Link to="/contact">
                 Contact
             </Link>
