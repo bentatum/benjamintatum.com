@@ -3,6 +3,7 @@ import { AWAIT_MARKER } from 'redux-await'
 const SCREEN_DIMENSIONS = 'a2pix/SCREEN_DIMENSIONS_CHANGE'
 const SUBMIT_LEAD = 'a2pix/SUBMIT_LEAD'
 const client = new ApiClient()
+import { EventTypes } from 'redux-segment'
 
 const BREAKPOINTS = {
     small: 425,
@@ -48,6 +49,17 @@ export function createLead({ name, email, phone, issue }) {
                     }
                 `
             })
+        },
+        meta: {
+            analytics: {
+                eventType: EventTypes.track,
+                eventPayload: {
+                    datetime: new Date(),
+                    isMobile:
+                        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+                            .test(navigator.userAgent)
+                },
+            }
         }
     }
 }

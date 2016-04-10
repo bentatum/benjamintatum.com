@@ -46,6 +46,7 @@
     "redux-devtools-log-monitor": "^1.0.5",
     "redux-logger": "^2.6.1",
     "redux-router": "^1.0.0-beta8",
+    "redux-segment": "^0.7.2",
     "redux-simplestorage": "0.0.4",
     "reflexbox": "^1.1.0",
     "sass-loader": "^3.2.0",
@@ -69,7 +70,8 @@
         "API_ENDPOINT": "https://6fum8khtuh.execute-api.us-east-1.amazonaws.com/dev/resource/graphql",
         "BABEL_ENV": "development",
         "DEVELOPMENT": true,
-        "DEVTOOLS": true
+        "DEVTOOLS": true,
+        "SEGMENT_KEY": "QpnsDjppKR6s5Yws7ykveZH7FeP8ixAm"
       }
     },
     "build-dev": {
@@ -77,7 +79,8 @@
       "env": {
         "API_ENDPOINT": "https://6fum8khtuh.execute-api.us-east-1.amazonaws.com/dev/resource/graphql",
         "BABEL_ENV": "production",
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "SEGMENT_KEY": "QpnsDjppKR6s5Yws7ykveZH7FeP8ixAm"
       }
     }
   },

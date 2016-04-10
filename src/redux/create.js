@@ -6,12 +6,15 @@ import reducer from './modules/reducer'
 import { DevTools } from '../components'
 import { persistState } from 'redux-devtools'
 import createLogger from 'redux-logger'
+import { createTracker } from 'redux-segment'
 
 export default function createStore(browserHistory) {
+    const tracker = createTracker()
     const middleware = [
         awaitMiddleware,
         storageMiddleware,
-        routerMiddleware(browserHistory)
+        routerMiddleware(browserHistory),
+        tracker
     ]
 
     if (process.env.LOGGER) {

@@ -85,7 +85,8 @@ module.exports = {
                 "API_ENDPOINT": JSON.stringify(process.env.API_ENDPOINT),
                 "DEVELOPMENT": JSON.stringify(process.env.DEVELOPMENT),
                 "DEVTOOLS": JSON.stringify(process.env.DEVTOOLS),
-                "NODE_ENV": JSON.stringify(process.env.NODE_ENV)
+                "NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+                "SEGMENT_KEY": JSON.stringify(process.env.SEGMENT_KEY)
             }
         }),
     ],
