@@ -8,7 +8,8 @@ const routes = [
     '/better-react-spinkit/',
     '/contact/',
     '/contact/failure/',
-    '/contact/success/'
+    '/contact/success/',
+    '/portfolio/'
 ]
 
 module.exports = {

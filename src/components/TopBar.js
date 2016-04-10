@@ -6,7 +6,7 @@ const TopBar = () =>
     <Toolbar>
         <NavItem is="div">
             <IndexLink to="/">
-                Benjamin Tatum
+                <strong>Benjamin Tatum</strong>
             </IndexLink>
         </NavItem>
         <Space auto/>

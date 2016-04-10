@@ -1,8 +1,18 @@
 import React from 'react'
 import { TopBar, Page, Portfolio } from '..'
+import Helmet from 'react-helmet'
 
 const PortfolioContainer = () =>
     <Page>
+        <Helmet
+            meta={[
+                {
+                    name: 'description',
+                    content: 'Benjamin Tatum professional sotware development website portfolio'
+                },
+            ]}
+            title="Portfolio"
+        />
         <TopBar/>
         <Page.Title>
             Work, Work, Work,<br/>

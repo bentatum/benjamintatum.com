@@ -53,14 +53,16 @@ export default class App extends Component {
                         { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Oswald:400,700,300' }
                     ]}
                     meta={[
-                        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi' }
+                        { name: 'description', content: 'Benjamin Tatum is a software developer available for hire. He is located in Ann Arbor, Michigan but is available for remote work. Services include website development, application development, team leadership, product shipment and more.' },
+                        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi' },
                     ]}
                     script={[
                         { src: '//code.jquery.com/jquery-2.1.4.min.js' },
                         { src: '//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.7.0/lodash.min.js' }
                         /* eslint-enable max-len */
                     ]}
-                    title="Benjamin Tatum"
+                    title="Software Development"
+                    titleTemplate="Benjamin Tatum - %s"
                 />
                 <Theme>
                     <Container
