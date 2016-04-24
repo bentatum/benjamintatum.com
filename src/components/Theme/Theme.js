@@ -68,6 +68,9 @@ export default class Theme extends Component {
                     display: 'block',
                     marginBottom: 10
                 },
+                Menu: {
+                    borderColor: colors.white
+                },
                 NavItem: {
                     fontWeight: 200
                 },

@@ -1,6 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import { default as React, Component, PropTypes } from 'react'
-import { Input, NavItem, Pre, Text } from 'rebass'
+import { Input, Menu, NavItem, Pre, Text } from 'rebass'
 import { STORE_TEXT, storeText } from 'redux/modules/simpleStorage'
 import { connect } from 'react-redux'
 import { default as canUseDOM } from 'can-use-dom'
@@ -17,6 +17,7 @@ export default class ReduxSimpleStorage extends Component {
     };
 
     render() {
+        const storedText = canUseDOM && localStorage.getItem(STORE_TEXT)
         return (
             <Page>
                 <Helmet
@@ -30,19 +31,7 @@ export default class ReduxSimpleStorage extends Component {
                     ]}
                     title="Redux Simple Storage"
                 />
-                <TopBar
-                    nav={
-                        <div>
-                            <NavItem
-                                href="http://github.com/bentatum/redux-simplestorage"
-                                is="a"
-                                target="_blank"
-                            >
-                                Github
-                            </NavItem>
-                        </div>
-                    }
-                />
+                <TopBar/>
                 <Page.Title>
                     Redux Simple Storage
                 </Page.Title>
@@ -68,10 +57,30 @@ export default class ReduxSimpleStorage extends Component {
                         placeholder="Your input will be stored."
                         style={{ textAlign: 'center' }}
                     />
-                    <If condition={canUseDOM}>
-                        <Text style={{ textAlign: 'center' }}>
-                            {this.props.text || localStorage.getItem(STORE_TEXT)}
-                        </Text>
+                    <Text
+                        mb={4}
+                        style={{ textAlign: 'center' }}
+                    >
+                        {this.props.text || storedText}
+                    </Text>
+                    <If condition={storedText}>
+                        <Menu
+                            style={{
+                                alignItems: 'center'
+                            }}
+                        >
+                            <NavItem
+                                href="https://github.com/bentatum/benjamintatum.com/blob/master/src/components/ReduxSimpleStorage.js"
+                                is="a"
+                                small
+                                style={{
+                                    alignSelf: 'auto'
+                                }}
+                                target="_blank"
+                            >
+                                Source
+                            </NavItem>
+                        </Menu>
                     </If>
                 </Page.Content>
             </Page>
