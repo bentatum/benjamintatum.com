@@ -51,6 +51,14 @@ const Portfolio = () =>
             name="Better React SpinKit"
             screenShot="http://homepage-static-assets.s3-website-us-east-1.amazonaws.com/better-react-spinkit-demo-screenshot.png"
         />
+        <PortfolioPiece
+            {...pieceProps}
+            linkProps={{
+                href: '/redux-simplestorage'
+            }}
+            name="Redux Simple Storage"
+            screenShot="http://homepage-static-assets.s3-website-us-east-1.amazonaws.com/redux-simplestorage-screenshot.png"
+        />
     </div>
 
 export default Portfolio
