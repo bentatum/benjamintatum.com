@@ -1,23 +1,25 @@
-const webpack = require('webpack')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
 const routes = [
     '/',
     '/better-react-spinkit/',
     '/contact/',
     '/contact/failure/',
     '/contact/success/',
-    '/portfolio/'
+    '/portfolio/',
+    '/redux-simplestorage'
 ]
+
+const path = require('path')
+const webpack = require('webpack')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
 
     devtool: 'source-map',
 
     entry: {
-        main: __dirname + '/src/index.js'
+        main: path.resolve('./src/index.js')
     },
 
     output: {
@@ -30,9 +32,7 @@ module.exports = {
         preLoaders: [
             {
                 test: /\.js$/,
-                include: [
-                    __dirname + '/src'
-                ],
+                exclude: /node_modules/,
                 loader: "eslint-loader"
             }
         ],
@@ -43,24 +43,32 @@ module.exports = {
                 test: /\/node_modules\/(joi\/lib\/|isemail\/lib\/|hoek\/lib\/|topo\/lib\/)/,
                 loader: 'babel'
             },
-            {
+            { 
                 test: /\.js$/,
-                include: [
-                    __dirname + '/src'
-                ],
+                exclude: /node_modules/,
                 loaders: ['babel']
-            },
-            {
+            }, {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader?limit=8192'
+            }, {
                 test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
+            }, {
+                test: /\.css$/,
                 loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
             }
         ]
     },
 
     resolve: {
-        moduleDirectories: [
-            __dirname + '/src',
-            __dirname + '/node_modules'
+        root: [
+            path.resolve('./src'),
+            path.resolve('./node_modules')
+        ],
+        modulesDirectories: [
+            'src',
+            'src/components',
+            'node_modules'
         ],
         extensions: ['', '.js', '.jsx', '.json']
     },

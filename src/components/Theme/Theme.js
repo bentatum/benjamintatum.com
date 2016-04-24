@@ -46,8 +46,9 @@ export default class Theme extends Component {
                 fontSizes,
                 scale,
                 Pre: {
-                    borderLeftWidth: 0,
-                    overflowX: 'auto'
+                    borderLeft: 0,
+                    overflowX: 'auto',
+                    paddingLeft: 0
                 },
                 SectionHeader: {
                     borderBottomColor: colors.lightGray,

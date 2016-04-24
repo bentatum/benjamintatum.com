@@ -1,12 +1,11 @@
 import React, { Component, PropTypes } from 'react'
-import { Theme } from '.'
-import Helmet from 'react-helmet'
+import { Theme } from 'components'
+import { default as Helmet } from 'react-helmet'
 import { Container } from 'rebass'
-import { setScreenSize } from '../redux/modules/app'
 import { connect } from 'react-redux'
-import { constants } from '../redux/modules/app'
+import { constants, setScreenSize } from 'redux/modules/app'
 const { small } = constants.BREAKPOINTS
-import joifulReactForms from './JoifulReactFormsOverrides'
+import joifulReactForms from 'JoifulReactFormsOverrides'
 
 @connect(() => ({}), { screenSize: setScreenSize })
 
@@ -54,7 +53,7 @@ export default class App extends Component {
                     ]}
                     meta={[
                         { name: 'description', content: 'Software application and web developer located in Ann Arbor, Michigan and available for remote hire. Services include product design, development & deployment.' },
-                        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi' },
+                        { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0' },
                     ]}
                     script={[
                         { src: '//code.jquery.com/jquery-2.1.4.min.js' },

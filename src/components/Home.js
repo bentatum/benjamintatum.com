@@ -1,6 +1,5 @@
 import React from 'react'
-import { Page } from '.'
-import { TopBar, Portfolio } from '.'
+import { Page, TopBar, Portfolio } from 'components'
 
 const Home = () =>
     <Page>

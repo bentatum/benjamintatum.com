@@ -28,5 +28,13 @@ export default (
             component={views.PortfolioContainer}
             path="portfolio"
         />
+        <Route
+            component={views.ReduxSimpleStorage}
+            path="redux-simplestorage"
+        />
+        <Route
+            component={views.Error404}
+            path="*"
+        />
     </Route>
 )
