@@ -1,9 +1,10 @@
 import { default as React } from 'react'
 import { NavItem } from 'rebass'
 import { Link } from 'react-router'
+import { Flex } from 'reflexbox'
 
 const PrimaryNav = () =>
-    <div>
+    <Flex>
         <NavItem is="div">
             <Link to="/portfolio">
                 Portfolio
@@ -14,13 +15,6 @@ const PrimaryNav = () =>
                 Contact
             </Link>
         </NavItem>
-        <NavItem
-            href="http://github.com/bentatum"
-            is="a"
-            target="_blank"
-        >
-            Github
-        </NavItem>
-    </div>
+    </Flex>
 
 export default PrimaryNav
