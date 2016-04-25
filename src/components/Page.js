@@ -3,62 +3,62 @@ import { Base, Heading, Text } from 'rebass'
 import { Flex } from 'reflexbox'
 
 const sharedPropTypes = {
-    children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired
 }
 
 const Page = ({ children }) =>
-    <Flex
-        column
-        justify="center"
-        pt={1}
-    >
-        {children}
-    </Flex>
+  <Flex
+    column
+    justify='center'
+    pt={1}
+  >
+    {children}
+  </Flex>
 
 Page.propTypes = {
-    ...sharedPropTypes
+  ...sharedPropTypes
 }
 
 const Title = ({ children }) =>
-    <Heading
-        level={1}
-        mb={2}
-        mt={3}
-        style={{ textAlign: 'center' }}
-    >
-        {children}
-    </Heading>
+  <Heading
+    level={1}
+    mb={2}
+    mt={3}
+    style={{ textAlign: 'center' }}
+  >
+    {children}
+  </Heading>
 
 Title.propTypes = {
-    ...sharedPropTypes
+  ...sharedPropTypes
 }
 
 Page.Title = Title
 
 const Subtitle = ({ children }) =>
-    <Text
-        mb={3}
-        style={{ textAlign: 'center' }}
-    >
-        {children}
-    </Text>
+  <Text
+    mb={3}
+    style={{ textAlign: 'center' }}
+  >
+    {children}
+  </Text>
 
 Subtitle.propTypes = {
-    ...sharedPropTypes
+  ...sharedPropTypes
 }
 
 Page.Subtitle = Subtitle
 
 const Content = ({ children }) =>
-    <Base
-        my={2}
-        px={2}
-    >
-        {children}
-    </Base>
+  <Base
+    my={2}
+    px={2}
+  >
+    {children}
+  </Base>
 
 Content.propTypes = {
-    ...sharedPropTypes
+  ...sharedPropTypes
 }
 
 Page.Content = Content

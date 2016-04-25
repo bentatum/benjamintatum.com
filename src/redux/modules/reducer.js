@@ -6,9 +6,9 @@ import { reducer as app } from './app'
 import { reducer as simpleStorage } from './simpleStorage'
 
 export default combineReducers({
-    await: awaitReducer,
-    reduxAsyncConnect,
-    routing: routerReducer,
-    app,
-    simpleStorage
+  await: awaitReducer,
+  reduxAsyncConnect,
+  routing: routerReducer,
+  app,
+  simpleStorage
 })
