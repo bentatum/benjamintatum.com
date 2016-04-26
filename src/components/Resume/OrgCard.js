@@ -1,58 +1,31 @@
-import React, { Component, PropTypes } from 'react'
+import { default as React, PropTypes } from 'react'
 import { Badge, Base, Heading } from 'rebass'
 import { Flex } from 'reflexbox'
-import BadgeList from './BadgeList'
-import { connect } from 'react-redux'
+import { default as BadgeList } from './BadgeList'
 
-@connect(({ app: { width } }) => ({ width }))
+const OrgCard = ({ ...base, duration, organization, technologies, title }) =>
+  <Base {...base}>
+    <Base mb={1}>
+      <Flex column>
+        <Heading
+          level={4}
+          mb={2}
+        >
+          {title} @ {organization}
+        </Heading>
+        <Badge mb={2}>
+          {duration}
+        </Badge>
+      </Flex>
+    </Base>
+    <BadgeList list={technologies}/>
+  </Base>
 
-export default class OrgCard extends Component {
-
-  static contextTypes = {
-    breakpoints: PropTypes.object
-  };
-
-  static propTypes = {
-    duration: PropTypes.string.isRequired,
-    organization: PropTypes.string.isRequired,
-    technologies: PropTypes.array.isRequired,
-    title: PropTypes.string.isRequired,
-    width: PropTypes.number.isRequired
-  };
-
-  render () {
-    const {
-      ...base,
-      duration,
-      organization,
-      technologies,
-      title,
-      width
-    } = this.props
-
-    const { small } = this.context.breakpoints
-
-    return (
-      <Base {...base}>
-        <Base mb={1}>
-          <Flex
-            align={width <= small ? 'flex-start' : 'center'}
-            column={width <= small}
-            justify={width > small ? 'space-between' : null}
-          >
-            <Heading
-              level={4}
-              mb={width <= small ? 2 : 0}
-            >
-              {title} @ {organization}
-            </Heading>
-            <Badge mb={2}>
-              {duration}
-            </Badge>
-          </Flex>
-        </Base>
-        <BadgeList list={technologies}/>
-      </Base>
-    )
-  }
+OrgCard.propTypes = {
+  duration: PropTypes.string.isRequired,
+  organization: PropTypes.string.isRequired,
+  technologies: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired
 }
+
+export default OrgCard
