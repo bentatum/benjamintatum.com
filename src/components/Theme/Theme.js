@@ -1,8 +1,9 @@
 import './style.scss'
 import { Component, PropTypes } from 'react'
+// import { default as color } from 'color'
 
 const baseColors = {
-  black: '#111',
+  black: '#404040',
   white: '#fff',
   lightGray: '#f2f2f2',
   gray: '#ddd',
@@ -14,7 +15,7 @@ const baseColors = {
   green: '#1c7'
 }
 
-const colors = {
+export const colors = {
   ...baseColors,
   primary: baseColors.white,
   secondary: baseColors.lightBlue,
@@ -53,7 +54,9 @@ export default class Theme extends Component {
         fontSizes,
         scale,
         Pre: {
+          backgroundColor: colors.black,
           borderLeft: 0,
+          color: colors.white,
           overflowX: 'auto',
           paddingLeft: 0
         },

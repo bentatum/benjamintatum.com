@@ -1,6 +1,9 @@
 const routes = [
     '/',
     '/better-react-spinkit/',
+    '/better-react-spinkit/chasing-dots',
+    '/better-react-spinkit/cube-grid',
+    '/better-react-spinkit/wave',
     '/contact/',
     '/contact/failure/',
     '/contact/success/',

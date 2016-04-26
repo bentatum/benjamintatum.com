@@ -4,7 +4,7 @@ import { Input, Menu, NavItem, Pre, Text } from 'rebass'
 import { STORE_TEXT, storeText } from 'redux/modules/simpleStorage'
 import { connect } from 'react-redux'
 import { default as canUseDOM } from 'can-use-dom'
-import { Page, TopBar } from 'components'
+import { Page, Navbar } from 'components'
 import Helmet from 'react-helmet'
 
 @connect(({ simpleStorage: { text } }) => ({ text }), { storeText })
@@ -31,7 +31,7 @@ export default class ReduxSimpleStorage extends Component {
           ]}
           title='Redux Simple Storage'
         />
-        <TopBar/>
+        <Navbar/>
         <Page.Title>
             Redux Simple Storage
         </Page.Title>
@@ -43,7 +43,10 @@ export default class ReduxSimpleStorage extends Component {
             href='https://www.npmjs.com/package/redux-simplestorage'
             target='_blank'
           >
-            <Pre style={{ textAlign: 'center' }}>
+            <Pre
+              rounded
+              style={{ textAlign: 'center' }}
+            >
               npm i redux-simplestorage
             </Pre>
           </a>

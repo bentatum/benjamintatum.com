@@ -10,6 +10,18 @@ export default (
       path='better-react-spinkit'
     />
     <Route
+      component={views.BRSKChasingDots}
+      path='better-react-spinkit/chasing-dots'
+    />
+    <Route
+      component={views.BRSKCubeGrid}
+      path='better-react-spinkit/cube-grid'
+    />
+    <Route
+      component={views.BRSKWave}
+      path='better-react-spinkit/wave'
+    />
+    <Route
       component={views.Contact}
       path='contact'
     />

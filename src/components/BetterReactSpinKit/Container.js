@@ -1,5 +1,5 @@
-import React from 'react'
-import { NavItem, Section, SectionHeader, Space, Toolbar } from 'rebass'
+import { default as React, PropTypes } from 'react'
+import { NavItem, Section, Space, Toolbar } from 'rebass'
 import { Page } from 'components'
 import {
   ChasingDots,
@@ -17,7 +17,7 @@ import { IndexLink } from 'react-router'
 import Demo from './Demo'
 import Helmet from 'react-helmet'
 
-const BetterReactSpinKitContainer = () =>
+const BetterReactSpinKitContainer = (props, { rebass: { colors } }) =>
   <Page>
     <Helmet
       meta={[
@@ -26,7 +26,7 @@ const BetterReactSpinKitContainer = () =>
           content: 'A better collection of loading indicators animated with CSS for React'
         }
       ]}
-      title='Better React SpinKit'
+      title='Better React Spinkit'
     />
     <Toolbar>
       <NavItem is='div'>
@@ -44,210 +44,157 @@ const BetterReactSpinKitContainer = () =>
       </NavItem>
     </Toolbar>
     <Page.Title>
-      Better React SpinKit
+      Better React Spinkit
     </Page.Title>
     <Page.Content>
       <Section>
-        <SectionHeader heading='ChasingDots'/>
         <Demo
           code={`
 <ChasingDots
-  color='#333'
   scaleEnd={0.6}
   scaleStart={0.2}
-  size={50}
 />
           `}
           component={
             <ChasingDots
-              color='#333'
               scaleEnd={0.6}
               scaleStart={0.2}
-              size={50}
             />
           }
+          name='Chasing Dots'
         />
       </Section>
       <Section>
-        <SectionHeader heading='Circle'/>
         <Demo
           code={`
 <Circle
-  color='#333'
   scaleEnd={0.5}
   scaleStart={0.1}
-  size={30}
 />
           `}
           component={
             <Circle
-              color='#333'
               scaleEnd={0.5}
               scaleStart={0.1}
-              size={30}
             />
           }
+          name='Circle'
         />
       </Section>
       <Section>
-        <SectionHeader heading='CubeGrid'/>
         <Demo
           code={`
 <CubeGrid
-  color='#333'
   cols={4}
   rows={4}
-  size={50}
 />
           `}
-          component={
-            <CubeGrid
-              color='#333'
-              cols={4}
-              rows={4}
-              size={50}
-            />
-          }
+          component={<CubeGrid cols={4} rows={4}/>}
+          name='Cube Grid'
         />
       </Section>
       <Section>
-        <SectionHeader heading='DoubleBounce'/>
         <Demo
           code={`
 <DoubleBounce
-  color='#333'
   scaleEnd={1}
   scaleStart={0.2}
-  size={50}
 />
           `}
           component={
             <DoubleBounce
-              color='#333'
               scaleEnd={1}
               scaleStart={0.2}
-              size={50}
             />
           }
+          name='Double Bounce'
         />
       </Section>
       <Section>
-        <SectionHeader heading='Pulse'/>
         <Demo
           code={`
 <Pulse
-  color='#333'
   scaleEnd={1}
   scaleStart={0}
-  size={50}
 />
           `}
           component={
             <Pulse
-              color='#333'
               scaleEnd={1}
               scaleStart={0}
-              size={50}
             />
           }
+          name='Pulse'
         />
       </Section>
       <Section>
-        <SectionHeader heading='RotatingPlane'/>
         <Demo
-          code={`
-<RotatingPlane
-  color='#333'
-  size={20}
-/>
-          `}
-          component={
-            <RotatingPlane
-              color='#333'
-              size={20}
-            />
-          }
+          code='<RotatingPlane/>'
+          component={<RotatingPlane/>}
+          name='Rotating Plane'
         />
       </Section>
       <Section>
-        <SectionHeader heading='ThreeBounce'/>
         <Demo
           code={`
 <ThreeBounce
-  color='#333'
   scaleEnd={0.75}
   scaleStart={0.2}
-  size={20}
 />
           `}
           component={
             <ThreeBounce
-              color='#333'
               scaleEnd={0.75}
               scaleStart={0.2}
-              size={20}
             />
           }
+          name='ThreeBounce'
         />
       </Section>
       <Section>
-        <SectionHeader heading='WanderingCubes'/>
         <Demo
           code={`
-<WanderingCubes
-  color='#333'
-  size={50}
-/>
+<WanderingCubes/>
           `}
           component={
-            <WanderingCubes
-              color='#333'
-              size={50}
-            />
+            <WanderingCubes/>
           }
+          name='WanderingCubes'
         />
       </Section>
       <Section>
-        <SectionHeader heading='Wave'/>
         <Demo
           code={`
 <Wave
-  color='#333'
   count={10}
   scaleYEnd={0.2}
-  size={50}
 />
           `}
           component={
             <Wave
-              color='#333'
               count={10}
               scaleYEnd={0.2}
-              size={50}
             />
           }
+          name='Wave'
         />
       </Section>
       <Section>
-        <SectionHeader heading='Wordpress'/>
         <Demo
           code={`
 <Wordpress
-  color='#333'
   innerColor='tomato'
-  size={30}
 />
           `}
-          component={
-            <Wordpress
-              color='#333'
-              innerColor='tomato'
-              size={30}
-            />
-          }
+          component={<Wordpress innerColor='tomato'/>}
+          name='Wordpress'
         />
       </Section>
     </Page.Content>
   </Page>
+
+BetterReactSpinKitContainer.contextTypes = {
+  rebass: PropTypes.object.isRequired
+}
 
 export default BetterReactSpinKitContainer

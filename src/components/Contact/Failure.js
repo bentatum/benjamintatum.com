@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'redux-await'
 import { push } from 'react-router-redux'
 import { Button } from 'rebass'
-import { Page, TopBar } from '..'
+import { Page, Navbar } from 'components'
 
 @connect(
   (state) => ({
@@ -29,7 +29,7 @@ export default class ContactFailure extends Component {
   render () {
     return (
       <Page>
-        <TopBar/>
+        <Navbar/>
         <Page.Title>
           Shoot.
         </Page.Title>

@@ -34,7 +34,7 @@ export default ({ assets, path }, callback) => {
     if (error) {
       throw new Error(error)
     }
-    
+
     const html = renderToString(
       <Html
         assets={assets}

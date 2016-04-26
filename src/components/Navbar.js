@@ -2,7 +2,7 @@ import { default as React, PropTypes } from 'react'
 import { NavItem, Space, Toolbar } from 'rebass'
 import { IndexLink } from 'react-router'
 
-const TopBar = ({ nav }) =>
+const Navbar = ({ nav }) =>
   <Toolbar>
     <NavItem is='div'>
       <IndexLink to='/'>
@@ -15,8 +15,8 @@ const TopBar = ({ nav }) =>
     </If>
   </Toolbar>
 
-TopBar.propTypes = {
+Navbar.propTypes = {
   nav: PropTypes.node
 }
 
-export default TopBar
+export default Navbar

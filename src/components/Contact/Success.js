@@ -3,7 +3,7 @@ import { connect } from 'redux-await'
 import { SUBMIT_LEAD } from '../../redux/modules/app'
 import { push } from 'react-router-redux'
 import { Button } from 'rebass'
-import { Page, TopBar } from '..'
+import { Page, Navbar } from 'components'
 
 @connect(() => ({}), { pushState: push })
 
@@ -25,7 +25,7 @@ export default class ContactSuccess extends Component {
   render () {
     return (
       <Page>
-        <TopBar/>
+        <Navbar/>
         <Page.Title>
           Thank you!
         </Page.Title>
