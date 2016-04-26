@@ -5,15 +5,14 @@ import { Flex } from 'reflexbox'
 
 const PrimaryNav = () =>
   <Flex>
-    <NavItem is='div'>
-      <Link to='/portfolio'>
-        Portfolio
-      </Link>
+    <NavItem is={Link} to='/portfolio'>
+      Portfolio
     </NavItem>
-    <NavItem is='div'>
-      <Link to='/contact'>
-        Contact
-      </Link>
+    <NavItem is={Link} to='/resume'>
+      Resume
+    </NavItem>
+    <NavItem is={Link} to='/contact'>
+      Contact
     </NavItem>
   </Flex>
 

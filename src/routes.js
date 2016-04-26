@@ -42,6 +42,10 @@ export default (
       path='redux-simplestorage'
     />
     <Route
+      component={views.Resume}
+      path='resume'
+    />
+    <Route
       component={views.Error404}
       path='*'
     />

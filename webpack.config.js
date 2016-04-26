@@ -8,7 +8,8 @@ const routes = [
     '/contact/failure/',
     '/contact/success/',
     '/portfolio/',
-    '/redux-simplestorage'
+    '/redux-simplestorage',
+    '/resume'
 ]
 
 const path = require('path')
