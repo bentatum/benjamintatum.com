@@ -14,6 +14,18 @@ const Resume = () =>
         Experience
       </Heading>
       <OrgCard
+        duration='2/15 - now'
+        organization='Skipstone'
+        technologies={[
+          'Isomorphic Javascript',
+          'ReactJS',
+          'Redux',
+          'Amazon Web Services'
+        ]}
+        title='Senior Manager of Development Operations'
+      />
+      <Divider/>
+      <OrgCard
         duration='6/14 - now'
         organization='Costimize'
         technologies={[

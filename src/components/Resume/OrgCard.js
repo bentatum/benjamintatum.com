@@ -4,20 +4,18 @@ import { Flex } from 'reflexbox'
 import { default as BadgeList } from './BadgeList'
 
 const OrgCard = ({ ...base, duration, organization, technologies, title }) =>
-  <Base {...base}>
-    <Base mb={1}>
-      <Flex column>
-        <Heading
-          level={4}
-          mb={2}
-        >
-          {title} @ {organization}
-        </Heading>
-        <Badge mb={2}>
-          {duration}
-        </Badge>
-      </Flex>
-    </Base>
+  <Base mb={3} {...base}>
+    <Flex column>
+      <Heading
+        level={4}
+        mb={2}
+      >
+        {title} @ {organization}
+      </Heading>
+      <Badge mb={2}>
+        {duration}
+      </Badge>
+    </Flex>
     <BadgeList list={technologies}/>
   </Base>
 
