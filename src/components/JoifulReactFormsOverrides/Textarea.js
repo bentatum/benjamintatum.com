@@ -4,10 +4,8 @@ import { Textarea } from 'rebass'
 const JoifulInputTextarea = ({ error, ...props }, { rebass: { colors } }) =>
   <Textarea
     {...props}
+    invalid={error}
     message={error}
-    style={{
-      borderColor: error ? colors.warning : colors.black
-    }}
   />
 
 JoifulInputTextarea.propTypes = {
