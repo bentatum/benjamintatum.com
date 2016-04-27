@@ -1,5 +1,5 @@
 import { default as React, PropTypes } from 'react'
-import { NavItem, Section, Space, Toolbar } from 'rebass'
+import { Section } from 'rebass'
 import { Page } from 'components'
 import {
   ChasingDots,
@@ -13,7 +13,6 @@ import {
   Wave,
   Wordpress
 } from 'better-react-spinkit'
-import { IndexLink } from 'react-router'
 import Demo from './Demo'
 import Helmet from 'react-helmet'
 
@@ -28,21 +27,6 @@ const BetterReactSpinKitContainer = (props, { rebass: { colors } }) =>
       ]}
       title='Better React Spinkit'
     />
-    <Toolbar>
-      <NavItem is='div'>
-        <IndexLink to='/'>
-          Benjamin Tatum
-        </IndexLink>
-      </NavItem>
-      <Space auto/>
-      <NavItem
-        href='http://github.com/bentatum/better-react-spinkit'
-        is='a'
-        target='_blank'
-      >
-          Github
-      </NavItem>
-    </Toolbar>
     <Page.Title>
       Better React Spinkit
     </Page.Title>
