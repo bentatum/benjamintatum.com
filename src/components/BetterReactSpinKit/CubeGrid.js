@@ -1,13 +1,12 @@
 import { default as React } from 'react'
 import { CubeGrid } from 'better-react-spinkit'
-import { Page, Navbar } from 'components'
+import { Page } from 'components'
 import { Flex } from 'reflexbox'
 import { Link } from 'react-router'
 import { default as Demo } from './Demo'
 
 const BRSKCubeGrid = () =>
   <Page>
-    <Navbar/>
     <Page.Title>
       <Link to='/better-react-spinkit'>
         Better React Spinkit

@@ -8,7 +8,7 @@ const baseColors = {
   lightGray: '#f2f2f2',
   gray: '#ddd',
   midgray: '#888',
-  blue: '#44749d',
+  blue: '#3c86c8',
   lightBlue: '#c6d4e1',
   red: '#f52',
   orange: '#f70',
@@ -89,8 +89,7 @@ export default class Theme extends Component {
           marginTop: scale[1]
         },
         Toolbar: {
-          backgroundColor: colors.white,
-          color: colors.black,
+          backgroundColor: 'transparent',
           paddingLeft: 0,
           paddingRight: 0
         }

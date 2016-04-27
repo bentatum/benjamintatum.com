@@ -1,18 +1,14 @@
 import React from 'react'
-import { Page, PrimaryNav, Navbar } from 'components'
+import { Page } from 'components'
 import { default as OrgCard } from './OrgCard'
-import { Divider, Section, Heading } from 'rebass'
+import { Divider } from 'rebass'
 
 const Resume = () =>
   <Page>
-    <Navbar nav={<PrimaryNav/>}/>
     <Page.Title>
       Experience
     </Page.Title>
     <Page.Content>
-      <Heading>
-        Experience
-      </Heading>
       <OrgCard
         duration='2/15 - now'
         organization='Skipstone'

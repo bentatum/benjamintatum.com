@@ -1,9 +1,8 @@
 import React from 'react'
-import { Page, PrimaryNav, Navbar, Portfolio } from 'components'
+import { Page, Portfolio } from 'components'
 
 const Home = () =>
   <Page>
-    <Navbar nav={<PrimaryNav/>}/>
     <Page.Title>
       Benjamin Tatum
     </Page.Title>

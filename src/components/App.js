@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Theme } from 'components'
 import { default as Helmet } from 'react-helmet'
-import { Container } from 'rebass'
 import { connect } from 'react-redux'
 import { setScreenSize } from 'redux/modules/app'
 import joifulReactForms from 'JoifulReactFormsOverrides'
@@ -76,16 +75,7 @@ export default class App extends Component {
           titleTemplate='Benjamin Tatum - %s'
         />
         <Theme>
-          <Container
-            style={{
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              maxWidth: 425,
-              width: '100%'
-            }}
-          >
-            {children}
-          </Container>
+          {children}
         </Theme>
       </div>
     )

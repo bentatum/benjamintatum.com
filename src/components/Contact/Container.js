@@ -1,7 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import { default as React, Component, PropTypes } from 'react'
 import { default as Helmet } from 'react-helmet'
-import { Page, PrimaryNav, Navbar } from 'components'
+import { Page } from 'components'
 import { default as LeadForm } from '@leadgrabr/lead-form'
 import { connect } from 'redux-await'
 import { SUBMIT_LEAD, createLead } from 'redux/modules/app'
@@ -28,7 +28,6 @@ export default class Contact extends Component {
           ]}
           title='Contact'
         />
-        <Navbar nav={<PrimaryNav/>}/>
         <Page.Title>
           How can I help?
         </Page.Title>

@@ -1,10 +1,12 @@
 import { default as React } from 'react'
-import { NavItem } from 'rebass'
-import { Link } from 'react-router'
-import { Flex } from 'reflexbox'
+import { Menu, NavItem } from 'rebass'
+import { IndexLink, Link } from 'react-router'
 
-const PrimaryNav = () =>
-  <Flex>
+const PrimaryNav = ({ navItemProps, ...props }) =>
+  <Menu {...props}>
+    <NavItem is={IndexLink} to='/'>
+      Home
+    </NavItem>
     <NavItem is={Link} to='/portfolio'>
       Portfolio
     </NavItem>
@@ -14,6 +16,6 @@ const PrimaryNav = () =>
     <NavItem is={Link} to='/contact'>
       Contact
     </NavItem>
-  </Flex>
+  </Menu>
 
 export default PrimaryNav

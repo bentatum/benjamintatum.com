@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Page, Portfolio, PrimaryNav } from 'components'
+import { Page, Portfolio } from 'components'
 import Helmet from 'react-helmet'
 
 const PortfolioContainer = () =>
@@ -13,7 +13,6 @@ const PortfolioContainer = () =>
       ]}
       title='Portfolio'
     />
-    <Navbar nav={<PrimaryNav/>}/>
     <Page.Title>
       Work, Work, Work,<br/>
       Work, Work

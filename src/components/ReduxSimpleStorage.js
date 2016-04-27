@@ -4,8 +4,8 @@ import { Input, Menu, NavItem, Pre, Text } from 'rebass'
 import { STORE_TEXT, storeText } from 'redux/modules/simpleStorage'
 import { connect } from 'react-redux'
 import { default as canUseDOM } from 'can-use-dom'
-import { Page, Navbar } from 'components'
-import Helmet from 'react-helmet'
+import { Page } from 'components'
+import { default as Helmet } from 'react-helmet'
 
 @connect(({ simpleStorage: { text } }) => ({ text }), { storeText })
 
@@ -25,13 +25,12 @@ export default class ReduxSimpleStorage extends Component {
             {
               name: 'description',
               content: `
-                  Use redux simple storage to seamlessly store data in localStorage
+                Use redux simple storage to seamlessly store data in localStorage
               `
             }
           ]}
           title='Redux Simple Storage'
         />
-        <Navbar/>
         <Page.Title>
             Redux Simple Storage
         </Page.Title>

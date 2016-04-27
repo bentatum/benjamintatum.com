@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import { Base, Heading, Text } from 'rebass'
 import { Flex } from 'reflexbox'
+import { Navbar } from 'components'
 
 const sharedPropTypes = {
   children: PropTypes.node.isRequired
@@ -10,9 +11,19 @@ const Page = ({ children }) =>
   <Flex
     column
     justify='center'
-    pt={1}
   >
-    {children}
+    <Navbar/>
+    <Base
+      mt={3}
+      style={{
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        maxWidth: 425,
+        width: '100%'
+      }}
+    >
+      {children}
+    </Base>
   </Flex>
 
 Page.propTypes = {
