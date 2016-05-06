@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { Base, Heading } from 'rebass'
 import { connect } from 'react-redux'
 import { Flex, Box } from 'reflexbox'
+import { default as style } from './style.scss'
 
 @connect((state) => ({
   width: state.app.width
@@ -10,7 +11,8 @@ import { Flex, Box } from 'reflexbox'
 export default class PortfolioPiece extends Component {
 
   static contextTypes = {
-    breakpoints: PropTypes.object.isRequired
+    breakpoints: PropTypes.object.isRequired,
+    rebass: PropTypes.object.isRequired
   };
 
   static propTypes = {
@@ -22,10 +24,14 @@ export default class PortfolioPiece extends Component {
 
   render () {
     const { ...props, linkProps, name, screenShot, width } = this.props
+    const { colors: { lightBlue } } = this.context.rebass
     const { small } = this.context.breakpoints
     if (!width) { return null }
     return (
-      <Base {...props}>
+      <Base
+        className={style.outer}
+        {...props}
+      >
         <Flex
           align='center'
           column
@@ -41,9 +47,10 @@ export default class PortfolioPiece extends Component {
             </Heading>
           </Box>
           <Base
-            p={2}
             style={{
-              borderRadius: 5,
+              borderColor: lightBlue,
+              borderStyle: 'solid',
+              borderWidth: 5,
               width: width > small ? 300 : '100%'
             }}
           >

@@ -9,7 +9,7 @@ const baseColors = {
   gray: '#ddd',
   midgray: '#888',
   blue: '#3c86c8',
-  lightBlue: '#c6d4e1',
+  lightBlue: 'aliceblue',
   red: '#f52',
   orange: '#f70',
   green: '#1c7'

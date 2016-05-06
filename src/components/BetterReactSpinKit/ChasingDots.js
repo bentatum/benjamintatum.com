@@ -7,15 +7,15 @@ import { Link } from 'react-router'
 const BRSKChasingDots = () =>
   <Page>
     <Page.Title>
-      <Link to="/better-react-spinkit">
+      <Link to='/better-react-spinkit'>
         Better React Spinkit
       </Link>
     </Page.Title>
     <Page.Subtitle>
-      Wave
+      ChasingDots
     </Page.Subtitle>
     <Flex align='center' justify='center'>
-      <Wave count={4}/>
+      <ChasingDots/>
     </Flex>
   </Page>
 
