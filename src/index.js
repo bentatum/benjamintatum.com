@@ -7,11 +7,11 @@ import routes from './routes'
 import { Html } from './components'
 import createStore from './redux/create'
 import { Provider } from 'react-redux'
-import useScroll from 'scroll-behavior/lib/useStandardScroll'
+import { default as withScroll } from 'scroll-behavior'
 import { syncHistoryWithStore } from 'react-router-redux'
 
 if (typeof document !== 'undefined') {
-  let history = useScroll(() => browserHistory)()
+  let history = withScroll(browserHistory)
   const store = createStore(history)
   history = syncHistoryWithStore(history, store)
   render(
