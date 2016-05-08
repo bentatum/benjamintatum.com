@@ -61,8 +61,8 @@
     "start": "npm run start-dev",
     "lint": "standard",
     "dev": "better-npm-run start-dev",
-    "build-dev": "better-npm-run build-dev",
-    "deploy-dev": "aws s3 sync ./dist s3://benjamintatum.com --exclude '.DS_Store' --profile home"
+    "build-prod": "better-npm-run build-prod",
+    "deploy-prod": "npm run build-prod; aws s3 sync ./dist s3://benjamintatum.com --exclude '.DS_Store' --profile home"
   },
   "betterScripts": {
     "start-dev": {
@@ -75,7 +75,7 @@
         "SEGMENT_KEY": "QpnsDjppKR6s5Yws7ykveZH7FeP8ixAm"
       }
     },
-    "build-dev": {
+    "build-prod": {
       "command": "webpack -p",
       "env": {
         "API_ENDPOINT": "https://6fum8khtuh.execute-api.us-east-1.amazonaws.com/dev/resource/graphql",
