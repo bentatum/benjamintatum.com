@@ -1,30 +1,18 @@
 import { default as React, Component, PropTypes } from 'react'
-import { Base, Drawer, Fixed, Toolbar } from 'rebass'
+import { Arrow, Drawer, Dropdown, DropdownMenu, Fixed, Toolbar } from 'rebass'
 import { Flex } from 'reflexbox'
 import { default as Close } from 'react-icons/lib/md/close'
 import { default as Hamburger } from 'react-icons/lib/md/menu'
-import { PrimaryNav } from 'components'
+import { CircleButton, PrimaryNav } from 'components'
 import { connect } from 'react-redux'
 
-const CircleIcon = ({ children }, { rebass: { colors } }) =>
-  <Base
-    backgroundColor={colors.blue}
-    circle
-    m={1}
-    p={1}
-    style={{
-      color: colors.white
-    }}
-  >
-    {children}
-  </Base>
-
-CircleIcon.contextTypes = {
-  rebass: PropTypes.object.isRequired
-}
-
 @connect(({ app: { width } }) => ({ width }))
+
 export default class Navbar extends Component {
+
+  static contextTypes = {
+    breakpoints: PropTypes.object.isRequired
+  };
 
   static propType = {
     width: PropTypes.number.isRequired
@@ -33,40 +21,72 @@ export default class Navbar extends Component {
   state = {}
 
   render () {
-    const { drawer } = this.state
+    const { drawer, menu } = this.state
     const { width } = this.props
+    const { breakpoints: { small } } = this.context
+    const isSmall = width <= small
     return (
-      <Fixed style={{ width: '100%' }}>
-        <Toolbar pt={1}>
-          <Flex
-            align='center'
-            justify='center'
-            style={{ width }}
-          >
-            <CircleIcon>
-              <Hamburger onClick={() => this.setState({ drawer: true })}/>
-            </CircleIcon>
-          </Flex>
-          <Drawer
-            backgroundColor='primary'
-            color='default'
-            open={drawer}
-            pt={1}
-            size={width}
-          >
+      <If condition={width}>
+        <Fixed style={{ width: '100%' }}>
+          <Toolbar pt={1} style={{ margin: 'auto', maxWidth: small }}>
             <Flex
               align='center'
               justify='center'
-              mb={2}
+              style={{ width }}
             >
-              <CircleIcon>
-                <Close onClick={() => this.setState({ drawer: false })}/>
-              </CircleIcon>
+              <If condition={isSmall}>
+                <CircleButton>
+                  <Hamburger onClick={() => this.setState({ drawer: true })}/>
+                </CircleButton>
+                <Else/>
+                <CircleButton>
+                  <Hamburger onClick={() => this.setState({ menu: true })}/>
+                </CircleButton>
+                <Dropdown>
+                  <DropdownMenu
+                    onDismiss={() => this.setState({ menu: false })}
+                    open={menu}
+                    style={{
+                      left: -95,
+                      top: 27
+                    }}
+                  >
+                    <Arrow
+                      color='primary'
+                      direction='up'
+                      style={{
+                        position: 'absolute',
+                        top: -7,
+                        left: '50%',
+                        marginLeft: -7 / 2
+                      }}
+                    />
+                    <PrimaryNav/>
+                  </DropdownMenu>
+                </Dropdown>
+              </If>
             </Flex>
-            <PrimaryNav/>
-          </Drawer>
-        </Toolbar>
-      </Fixed>
+            <Drawer
+              backgroundColor='primary'
+              color='default'
+              open={drawer}
+              pt={1}
+              size={width}
+            >
+              <Flex
+                align='center'
+                justify='center'
+                mb={2}
+              >
+                <CircleButton>
+                  <Close onClick={() => this.setState({ drawer: false })}/>
+                </CircleButton>
+              </Flex>
+              <PrimaryNav/>
+            </Drawer>
+          </Toolbar>
+        </Fixed>
+      </If>
     )
   }
 }

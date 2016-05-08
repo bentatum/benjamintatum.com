@@ -2,11 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import { Base, Heading } from 'rebass'
 import { connect } from 'react-redux'
 import { Flex, Box } from 'reflexbox'
-import { default as style } from './style.scss'
+import './style.scss'
 
-@connect((state) => ({
-  width: state.app.width
-}))
+@connect(({ app: { width } }) => ({ width }))
 
 export default class PortfolioPiece extends Component {
 
@@ -24,14 +22,11 @@ export default class PortfolioPiece extends Component {
 
   render () {
     const { ...props, linkProps, name, screenShot, width } = this.props
-    const { colors: { lightBlue } } = this.context.rebass
     const { small } = this.context.breakpoints
+    const { shadows } = this.context.rebass
     if (!width) { return null }
     return (
-      <Base
-        className={style.outer}
-        {...props}
-      >
+      <Base {...props}>
         <Flex
           align='center'
           column
@@ -47,10 +42,11 @@ export default class PortfolioPiece extends Component {
             </Heading>
           </Box>
           <Base
+            className='portfolio-piece-base'
             style={{
-              borderColor: lightBlue,
+              borderColor: 'transparent',
               borderStyle: 'solid',
-              borderWidth: 5,
+              borderWidth: 2,
               width: width > small ? 300 : '100%'
             }}
           >
@@ -60,7 +56,7 @@ export default class PortfolioPiece extends Component {
                   backgroundImage: `url('${screenShot}')`,
                   backgroundPosition: 'top center',
                   backgroundSize: 'cover',
-                  boxShadow: '0 0 18px 4px rgba(0, 0, 0, 0.1)',
+                  boxShadow: shadows.black,
                   height: 275,
                   width: '100%'
                 }}

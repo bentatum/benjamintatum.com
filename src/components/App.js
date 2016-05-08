@@ -51,7 +51,6 @@ export default class App extends Component {
   }
 
   render () {
-    const { children } = this.props
     return (
       <div>
         <Helmet
@@ -75,7 +74,7 @@ export default class App extends Component {
           titleTemplate='Benjamin Tatum - %s'
         />
         <Theme>
-          {children}
+          {this.props.children}
         </Theme>
       </div>
     )

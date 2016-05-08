@@ -1,6 +1,6 @@
 import './style.scss'
 import { Component, PropTypes } from 'react'
-// import { default as color } from 'color'
+import { default as color } from 'color'
 
 const baseColors = {
   black: '#404040',
@@ -29,6 +29,11 @@ export const colors = {
 const scale = [0, 10, 25, 48, 64]
 const fontSizes = [64, 32, 25, 19, 18, 14, 12]
 
+const shadows = {
+  black: `0 0 18px 4px ${color(colors.black).alpha(0.1).rgbString()}`,
+  lightBlue: `0px 0px 14px 3px ${color(colors.lightBlue).alpha(0.9).rgbString()}`
+}
+
 export default class Theme extends Component {
 
   static propTypes = {
@@ -53,6 +58,10 @@ export default class Theme extends Component {
         colors,
         fontSizes,
         scale,
+        shadows,
+        DropdownMenu: {
+          boxShadow: shadows.lightBlue
+        },
         Pre: {
           backgroundColor: colors.black,
           borderLeft: 0,
@@ -79,7 +88,8 @@ export default class Theme extends Component {
           marginBottom: 10
         },
         Menu: {
-          borderColor: colors.white
+          borderColor: colors.white,
+          marginBottom: 'inherit'
         },
         NavItem: {
           fontWeight: 200

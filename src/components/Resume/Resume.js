@@ -1,7 +1,6 @@
 import React from 'react'
 import { Page } from 'components'
 import { default as OrgCard } from './OrgCard'
-import { Divider } from 'rebass'
 
 const Resume = () =>
   <Page>
@@ -20,7 +19,6 @@ const Resume = () =>
         ]}
         title='Senior Manager of Development Operations'
       />
-      <Divider/>
       <OrgCard
         duration='6/14 - now'
         organization='Costimize'
@@ -34,7 +32,6 @@ const Resume = () =>
         ]}
         title='Technical Lead & Managing Partner'
       />
-      <Divider/>
       <OrgCard
         duration='2/14 - 2/15'
         organization='Ithaka (Jstor.org)'
@@ -45,7 +42,6 @@ const Resume = () =>
         ]}
         title='Senior Front-end Developer'
       />
-      <Divider/>
       <OrgCard
         duration='2/12 - 2/14'
         mb={4}

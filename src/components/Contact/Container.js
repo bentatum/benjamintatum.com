@@ -10,6 +10,10 @@ import { SUBMIT_LEAD, createLead } from 'redux/modules/app'
 
 export default class Contact extends Component {
 
+  static contextTypes = {
+    breakpoints: PropTypes.object.isRequired
+  };
+
   static propTypes = {
     statuses: PropTypes.object.isRequired,
     submit: PropTypes.func.isRequired
@@ -17,6 +21,7 @@ export default class Contact extends Component {
 
   render () {
     const { statuses, submit } = this.props
+    const { small } = this.context.breakpoints
     return (
       <Page>
         <Helmet
@@ -39,6 +44,10 @@ export default class Contact extends Component {
           <LeadForm
             status={statuses[SUBMIT_LEAD]}
             submit={submit}
+            style={{
+              margin: 'auto',
+              maxWidth: small
+            }}
           />
         </Page.Content>
       </Page>

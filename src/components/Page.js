@@ -18,7 +18,6 @@ const Page = ({ children }) =>
       style={{
         marginLeft: 'auto',
         marginRight: 'auto',
-        maxWidth: 425,
         width: '100%'
       }}
     >
