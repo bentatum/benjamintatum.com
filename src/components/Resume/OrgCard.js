@@ -4,7 +4,7 @@ import { Flex } from 'reflexbox'
 import { default as BadgeList } from './BadgeList'
 
 const OrgCard = ({ ...base, duration, organization, technologies, title }) =>
-  <Base m={4} {...base}>
+  <Base {...base}>
     <Flex
       align='center'
       column

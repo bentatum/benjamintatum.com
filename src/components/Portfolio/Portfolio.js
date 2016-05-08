@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 @connect(({ app: { width } }) => ({ width }))
 
-class Portfolio extends Component {
+export default class Portfolio extends Component {
 
   static contextTypes = {
     breakpoints: PropTypes.object.isRequired
@@ -87,5 +87,3 @@ class Portfolio extends Component {
     )
   }
 }
-
-export default Portfolio
