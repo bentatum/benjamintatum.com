@@ -48,6 +48,7 @@
     "sass-loader": "^3.2.0",
     "scroll-behavior": "^0.7.0",
     "serialize-javascript": "^1.2.0",
+    "sitemap-webpack-plugin": "^0.1.0",
     "standard": "^7.0.1",
     "standard-loader": "^3.0.0",
     "static-site-generator-webpack-plugin": "^2.0.1",
