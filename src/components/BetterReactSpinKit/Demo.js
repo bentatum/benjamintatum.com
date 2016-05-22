@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react'
 import { Flex } from 'reflexbox'
-import { Base, Heading, Pre } from 'rebass'
+import { Base, Heading } from 'rebass'
 import { Link } from 'react-router'
 import { kebabCase } from 'lodash'
 
-const BetterReactSpinKitDemo = ({ code, component, hideHeading, name, ...props }) => {
+const BetterReactSpinKitDemo = ({ component, hideHeading, name, ...props }) => {
   const path = `/better-react-spinkit/${kebabCase(name)}`
   return (
     <Base {...props}>
@@ -25,19 +25,12 @@ const BetterReactSpinKitDemo = ({ code, component, hideHeading, name, ...props }
             {component}
           </Link>
         </Base>
-        <Pre
-          p={2}
-          rounded
-        >
-          {code.trim()}
-        </Pre>
       </Flex>
     </Base>
   )
 }
 
 BetterReactSpinKitDemo.propTypes = {
-  code: PropTypes.string.isRequired,
   component: PropTypes.node.isRequired,
   hideHeading: PropTypes.bool,
   name: PropTypes.string.isRequired

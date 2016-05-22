@@ -4,7 +4,6 @@ import { default as Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { setScreenSize } from 'redux/modules/app'
 import joifulReactForms from 'JoifulReactFormsOverrides'
-import { colors } from 'components/Theme/Theme'
 
 @connect(() => ({}), { screenSize: setScreenSize })
 
@@ -16,16 +15,11 @@ export default class App extends Component {
   };
 
   static childContextTypes = {
-    betterReactSpinkit: PropTypes.object,
     joifulReactForms: PropTypes.object
   };
 
   getChildContext () {
     return {
-      betterReactSpinkit: {
-        color: colors.black,
-        size: 50
-      },
       joifulReactForms: {
         JoifulInput: {
           types: joifulReactForms.types

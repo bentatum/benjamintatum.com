@@ -1,15 +1,22 @@
 const routes = [
   '/',
   '/better-react-spinkit/',
-  '/better-react-spinkit/chasing-dots',
-  '/better-react-spinkit/cube-grid',
-  '/better-react-spinkit/wave',
+  '/better-react-spinkit/chasing-dots/',
+  '/better-react-spinkit/circle/',
+  '/better-react-spinkit/cube-grid/',
+  '/better-react-spinkit/double-bounce/',
+  '/better-react-spinkit/pulse/',
+  '/better-react-spinkit/rotating-plane/',
+  '/better-react-spinkit/three-bounce/',
+  '/better-react-spinkit/wandering-cubes/',
+  '/better-react-spinkit/wave/',
+  '/better-react-spinkit/wordpress/',
   '/contact/',
   '/contact/failure/',
   '/contact/success/',
   '/portfolio/',
-  '/redux-simplestorage',
-  '/resume'
+  '/redux-simplestorage/',
+  '/resume/'
 ]
 
 const path = require('path')

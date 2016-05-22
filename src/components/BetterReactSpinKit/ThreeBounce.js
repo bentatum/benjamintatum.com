@@ -1,10 +1,10 @@
 import { default as React } from 'react'
-import { Wave } from 'better-react-spinkit'
+import { ThreeBounce } from 'better-react-spinkit'
 import { Page } from 'components'
 import { Flex } from 'reflexbox'
 import { Link } from 'react-router'
 
-const BRSKWave = () =>
+const BRSKThreeBounce = () =>
   <Page>
     <Page.Title>
       <Link to='/better-react-spinkit'>
@@ -12,11 +12,11 @@ const BRSKWave = () =>
       </Link>
     </Page.Title>
     <Page.Subtitle>
-      Wave
+      ThreeBounce
     </Page.Subtitle>
     <Flex align='center' justify='center'>
-      <Wave/>
+      <ThreeBounce/>
     </Flex>
   </Page>
 
-export default BRSKWave
+export default BRSKThreeBounce

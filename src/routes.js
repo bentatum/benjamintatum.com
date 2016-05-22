@@ -10,12 +10,40 @@ export default (
       path='better-react-spinkit'
     />
     <Route
+      component={views.BRSKCircle}
+      path='better-react-spinkit/circle'
+    />
+    <Route
       component={views.BRSKChasingDots}
       path='better-react-spinkit/chasing-dots'
     />
     <Route
       component={views.BRSKCubeGrid}
       path='better-react-spinkit/cube-grid'
+    />
+    <Route
+      component={views.BRSKDoubleBounce}
+      path='better-react-spinkit/double-bounce'
+    />
+    <Route
+      component={views.BRSKPulse}
+      path='better-react-spinkit/pulse'
+    />
+    <Route
+      component={views.BRSKRotatingPlane}
+      path='better-react-spinkit/rotating-plane'
+    />
+    <Route
+      component={views.BRSKThreeBounce}
+      path='better-react-spinkit/three-bounce'
+    />
+    <Route
+      component={views.BRSKWanderingCubes}
+      path='better-react-spinkit/wandering-cubes'
+    />
+    <Route
+      component={views.BRSKWordpress}
+      path='better-react-spinkit/wordpress'
     />
     <Route
       component={views.BRSKWave}

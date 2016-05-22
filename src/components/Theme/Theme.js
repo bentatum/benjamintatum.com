@@ -17,7 +17,7 @@ const baseColors = {
 
 export const colors = {
   ...baseColors,
-  primary: baseColors.white,
+  primary: baseColors.blue,
   secondary: baseColors.lightBlue,
   default: baseColors.black,
   info: baseColors.blue,
@@ -41,6 +41,7 @@ export default class Theme extends Component {
   };
 
   static childContextTypes = {
+    betterReactSpinkit: PropTypes.object,
     breakpoints: PropTypes.object,
     colors: PropTypes.object,
     rebass: PropTypes.object,
@@ -50,6 +51,10 @@ export default class Theme extends Component {
 
   getChildContext () {
     return {
+      betterReactSpinkit: {
+        color: colors.primary,
+        size: 50
+      },
       breakpoints: {
         small: 425,
         medium: 768,

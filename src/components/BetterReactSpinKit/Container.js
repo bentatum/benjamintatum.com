@@ -1,5 +1,4 @@
 import { default as React, PropTypes } from 'react'
-import { Section } from 'rebass'
 import { Page } from 'components'
 import {
   ChasingDots,
@@ -45,28 +44,11 @@ const BetterReactSpinKitContainer = (props, { colors, shadows }) => {
         <Flex justify='center' wrap>
           <Demo
             {...sharedDemoProps}
-            code={`
-<ChasingDots
-  scaleEnd={0.6}
-  scaleStart={0.2}
-/>
-            `}
-            component={
-              <ChasingDots
-                scaleEnd={0.6}
-                scaleStart={0.2}
-              />
-            }
+            component={<ChasingDots/>}
             name='Chasing Dots'
           />
           <Demo
             {...sharedDemoProps}
-            code={`
-<Circle
-  scaleEnd={0.5}
-  scaleStart={0.1}
-/>
-            `}
             component={
               <Circle
                 scaleEnd={0.5}
@@ -77,39 +59,16 @@ const BetterReactSpinKitContainer = (props, { colors, shadows }) => {
           />
           <Demo
             {...sharedDemoProps}
-            code={`
-<CubeGrid
-  cols={4}
-  rows={4}
-/>
-            `}
-            component={<CubeGrid cols={4} rows={4}/>}
+            component={<CubeGrid/>}
             name='Cube Grid'
           />
           <Demo
             {...sharedDemoProps}
-            code={`
-<DoubleBounce
-  scaleEnd={1}
-  scaleStart={0.2}
-/>
-            `}
-            component={
-              <DoubleBounce
-                scaleEnd={1}
-                scaleStart={0.2}
-              />
-            }
+            component={<DoubleBounce/>}
             name='Double Bounce'
           />
           <Demo
             {...sharedDemoProps}
-            code={`
-<Pulse
-  scaleEnd={1}
-  scaleStart={0}
-/>
-            `}
             component={
               <Pulse
                 scaleEnd={1}
@@ -120,60 +79,27 @@ const BetterReactSpinKitContainer = (props, { colors, shadows }) => {
           />
           <Demo
             {...sharedDemoProps}
-            code='<RotatingPlane/>'
             component={<RotatingPlane/>}
             name='Rotating Plane'
           />
           <Demo
             {...sharedDemoProps}
-            code={`
-<ThreeBounce
-  scaleEnd={0.75}
-  scaleStart={0.2}
-/>
-            `}
-            component={
-              <ThreeBounce
-                scaleEnd={0.75}
-                scaleStart={0.2}
-              />
-            }
+            component={<ThreeBounce/>}
             name='ThreeBounce'
           />
           <Demo
             {...sharedDemoProps}
-            code={`
-<WanderingCubes/>
-            `}
-            component={
-              <WanderingCubes/>
-            }
+            component={<WanderingCubes/>}
             name='WanderingCubes'
           />
           <Demo
             {...sharedDemoProps}
-            code={`
-<Wave
-  count={10}
-  scaleYEnd={0.2}
-/>
-            `}
-            component={
-              <Wave
-                count={10}
-                scaleYEnd={0.2}
-              />
-            }
+            component={<Wave/>}
             name='Wave'
           />
           <Demo
             {...sharedDemoProps}
-            code={`
-<Wordpress
-  innerColor='tomato'
-/>
-            `}
-            component={<Wordpress innerColor='tomato'/>}
+            component={<Wordpress/>}
             name='Wordpress'
           />
         </Flex>
