@@ -1,9 +1,9 @@
 import { default as React, Component, PropTypes } from 'react'
-import { Arrow, Drawer, Dropdown, DropdownMenu, Fixed, Toolbar } from 'rebass'
+import { Arrow, Drawer, Dropdown, DropdownMenu, Fixed, Toolbar, ButtonCircle } from 'rebass'
 import { Flex } from 'reflexbox'
 import { default as Close } from 'react-icons/lib/md/close'
 import { default as Hamburger } from 'react-icons/lib/md/menu'
-import { CircleButton, PrimaryNav } from 'components'
+import { PrimaryNav } from 'components'
 import { connect } from 'react-redux'
 
 @connect(({ app: { width } }) => ({ width }))
@@ -11,7 +11,8 @@ import { connect } from 'react-redux'
 export default class Navbar extends Component {
 
   static contextTypes = {
-    breakpoints: PropTypes.object.isRequired
+    breakpoints: PropTypes.object.isRequired,
+    colors: PropTypes.object.isRequired
   };
 
   static propType = {
@@ -23,8 +24,9 @@ export default class Navbar extends Component {
   render () {
     const { drawer, menu } = this.state
     const { width } = this.props
-    const { breakpoints: { small } } = this.context
+    const { breakpoints: { small }, colors: { blue } } = this.context
     const isSmall = width <= small
+    const buttonCircleProps = { backgroundColor: blue }
     return (
       <If condition={width}>
         <Fixed style={{ width: '100%' }}>
@@ -35,20 +37,26 @@ export default class Navbar extends Component {
               style={{ width }}
             >
               <If condition={isSmall}>
-                <CircleButton>
-                  <Hamburger onClick={() => this.setState({ drawer: true })}/>
-                </CircleButton>
+                <ButtonCircle
+                  {...buttonCircleProps}
+                  onClick={() => this.setState({ drawer: true })}
+                >
+                  <Hamburger />
+                </ButtonCircle>
                 <Else/>
-                <CircleButton>
-                  <Hamburger onClick={() => this.setState({ menu: true })}/>
-                </CircleButton>
+                <ButtonCircle
+                  {...buttonCircleProps}
+                  onClick={() => this.setState({ menu: true })}
+                >
+                  <Hamburger />
+                </ButtonCircle>
                 <Dropdown>
                   <DropdownMenu
                     onDismiss={() => this.setState({ menu: false })}
                     open={menu}
                     style={{
-                      left: -95,
-                      top: 27
+                      left: -90,
+                      top: 16
                     }}
                   >
                     <Arrow
@@ -78,9 +86,12 @@ export default class Navbar extends Component {
                 justify='center'
                 mb={2}
               >
-                <CircleButton>
-                  <Close onClick={() => this.setState({ drawer: false })}/>
-                </CircleButton>
+                <ButtonCircle
+                  {...buttonCircleProps}
+                  onClick={() => this.setState({ drawer: false })}
+                >
+                  <Close />
+                </ButtonCircle>
               </Flex>
               <PrimaryNav/>
             </Drawer>

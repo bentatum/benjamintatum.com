@@ -42,8 +42,10 @@ export default class Theme extends Component {
 
   static childContextTypes = {
     breakpoints: PropTypes.object,
+    colors: PropTypes.object,
     rebass: PropTypes.object,
-    reflexbox: PropTypes.object
+    reflexbox: PropTypes.object,
+    shadows: PropTypes.object
   };
 
   getChildContext () {
@@ -53,6 +55,7 @@ export default class Theme extends Component {
         medium: 768,
         large: 1024
       },
+      colors,
       reflexbox: { scale },
       rebass: {
         colors,
@@ -66,6 +69,7 @@ export default class Theme extends Component {
           backgroundColor: colors.black,
           borderLeft: 0,
           color: colors.white,
+          margin: 0,
           overflowX: 'auto',
           paddingLeft: 0
         },
@@ -103,7 +107,8 @@ export default class Theme extends Component {
           paddingLeft: 0,
           paddingRight: 0
         }
-      }
+      },
+      shadows
     }
   }
 

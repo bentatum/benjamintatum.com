@@ -10,7 +10,7 @@ export default class PortfolioPiece extends Component {
 
   static contextTypes = {
     breakpoints: PropTypes.object.isRequired,
-    rebass: PropTypes.object.isRequired
+    shadows: PropTypes.object.isRequired
   };
 
   static propTypes = {
@@ -23,7 +23,7 @@ export default class PortfolioPiece extends Component {
   render () {
     const { ...props, linkProps, name, screenShot, width } = this.props
     const { small } = this.context.breakpoints
-    const { shadows } = this.context.rebass
+    const { shadows } = this.context
     if (!width) { return null }
     return (
       <Base {...props}>

@@ -4,33 +4,35 @@ import { Base, Heading, Pre } from 'rebass'
 import { Link } from 'react-router'
 import { kebabCase } from 'lodash'
 
-const BetterReactSpinKitDemo = ({ code, component, hideHeading, name }) => {
+const BetterReactSpinKitDemo = ({ code, component, hideHeading, name, ...props }) => {
   const path = `/better-react-spinkit/${kebabCase(name)}`
   return (
-    <Flex
-      align='center'
-      column
-      justify='center'
-    >
-      <If condition={!hideHeading}>
-        <Heading level={3} mb={2}>
-          <Link to={path}>
-            {name}
-          </Link>
-        </Heading>
-      </If>
-      <Base mb={2}>
-        <Link to={path}>
-          {component}
-        </Link>
-      </Base>
-      <Pre
-        p={2}
-        rounded
+    <Base {...props}>
+      <Flex
+        align='center'
+        column
+        justify='center'
       >
-        {code.trim()}
-      </Pre>
-    </Flex>
+        <If condition={!hideHeading}>
+          <Heading level={3} mb={2}>
+            <Link to={path}>
+              {name}
+            </Link>
+          </Heading>
+        </If>
+        <Base mb={2}>
+          <Link to={path}>
+            {component}
+          </Link>
+        </Base>
+        <Pre
+          p={2}
+          rounded
+        >
+          {code.trim()}
+        </Pre>
+      </Flex>
+    </Base>
   )
 }
 
