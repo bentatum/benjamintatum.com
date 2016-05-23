@@ -60,7 +60,7 @@ const BetterReactSpinKitContainer = (props, { colors, shadows }) => {
           <Demo
             {...sharedDemoProps}
             component={<CubeGrid/>}
-            name='Cube Grid'
+            name='CubeGrid'
           />
           <Demo
             {...sharedDemoProps}
@@ -80,7 +80,7 @@ const BetterReactSpinKitContainer = (props, { colors, shadows }) => {
           <Demo
             {...sharedDemoProps}
             component={<RotatingPlane/>}
-            name='Rotating Plane'
+            name='RotatingPlane'
           />
           <Demo
             {...sharedDemoProps}

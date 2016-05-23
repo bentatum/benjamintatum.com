@@ -9,6 +9,13 @@ import createStore from './redux/create'
 import { Provider } from 'react-redux'
 import { default as withScroll } from 'scroll-behavior'
 import { syncHistoryWithStore } from 'react-router-redux'
+import { whyDidYouUpdate } from 'why-did-you-update'
+
+if (process.env.DEVELOPMENT && process.env.DEVTOOLS) {
+  whyDidYouUpdate(React, {
+    exclude: /IconBase|MdClose/
+  })
+}
 
 if (typeof document !== 'undefined') {
   let history = withScroll(browserHistory)
