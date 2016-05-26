@@ -33,7 +33,7 @@ export default class ContactFailure extends Component {
           Shoot.
         </Page.Title>
         <Page.Subtitle>
-          Your form didn't go through.<br/>
+          Your form didn't go through.<br />
           Try again or contact me
           directly at <a href='mailto:bentatum@me.com'>bentatum@me.com</a>
         </Page.Subtitle>

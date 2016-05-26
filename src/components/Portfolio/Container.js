@@ -14,11 +14,10 @@ const PortfolioContainer = () =>
       title='Portfolio'
     />
     <Page.Title>
-      Work, Work, Work,<br/>
-      Work, Work
+      Portfolio
     </Page.Title>
     <Page.Content>
-      <Portfolio/>
+      <Portfolio />
     </Page.Content>
   </Page>
 

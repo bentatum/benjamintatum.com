@@ -29,7 +29,7 @@ export default class ContactSuccess extends Component {
           Thank you!
         </Page.Title>
         <Page.Subtitle>
-          Your message went to my personal email.<br/>
+          Your message went to my personal email.<br />
           I'll do my best to respond in a timely manner.
         </Page.Subtitle>
         <Page.Content>

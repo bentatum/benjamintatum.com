@@ -9,7 +9,7 @@ const BadgeList = ({ list }) =>
           {item}
         </Badge>
         {key !== list.length &&
-          <Space/>
+          <Space />
         }
       </span>
     )}

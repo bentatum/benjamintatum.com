@@ -36,43 +36,46 @@ export default class Navbar extends Component {
               justify='center'
               style={{ width }}
             >
-              <If condition={isSmall}>
-                <ButtonCircle
-                  {...buttonCircleProps}
-                  onClick={() => this.setState({ drawer: true })}
-                >
-                  <Hamburger />
-                </ButtonCircle>
-                <Else/>
-                <ButtonCircle
-                  {...buttonCircleProps}
-                  onClick={() => this.setState({ menu: true })}
-                >
-                  <Hamburger />
-                </ButtonCircle>
-                <Dropdown>
-                  <DropdownMenu
-                    onDismiss={() => this.setState({ menu: false })}
-                    open={menu}
-                    style={{
-                      left: -90,
-                      top: 16
-                    }}
+              <Choose>
+                <When condition={isSmall}>
+                  <ButtonCircle
+                    {...buttonCircleProps}
+                    onClick={() => this.setState({ drawer: true })}
                   >
-                    <Arrow
-                      color='primary'
-                      direction='up'
+                    <Hamburger />
+                  </ButtonCircle>
+                </When>
+                <Otherwise>
+                  <ButtonCircle
+                    {...buttonCircleProps}
+                    onClick={() => this.setState({ menu: true })}
+                  >
+                    <Hamburger />
+                  </ButtonCircle>
+                  <Dropdown>
+                    <DropdownMenu
+                      onDismiss={() => this.setState({ menu: false })}
+                      open={menu}
                       style={{
-                        position: 'absolute',
-                        top: -7,
-                        left: '50%',
-                        marginLeft: -7 / 2
+                        left: -90,
+                        top: 16
                       }}
-                    />
-                    <PrimaryNav/>
-                  </DropdownMenu>
-                </Dropdown>
-              </If>
+                    >
+                      <Arrow
+                        color='primary'
+                        direction='up'
+                        style={{
+                          position: 'absolute',
+                          top: -7,
+                          left: '50%',
+                          marginLeft: -7 / 2
+                        }}
+                      />
+                      <PrimaryNav />
+                    </DropdownMenu>
+                  </Dropdown>
+                </Otherwise>
+              </Choose>
             </Flex>
             <Drawer
               backgroundColor='primary'
@@ -93,7 +96,7 @@ export default class Navbar extends Component {
                   <Close />
                 </ButtonCircle>
               </Flex>
-              <PrimaryNav/>
+              <PrimaryNav />
             </Drawer>
           </Toolbar>
         </Fixed>

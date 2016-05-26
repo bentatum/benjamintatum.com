@@ -15,7 +15,7 @@ const BRSKWanderingCubes = () =>
       WanderingCubes
     </Page.Subtitle>
     <Flex align='center' justify='center'>
-      <WanderingCubes/>
+      <WanderingCubes />
     </Flex>
   </Page>
 

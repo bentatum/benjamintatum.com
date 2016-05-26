@@ -15,7 +15,7 @@ const BRSKWordpress = () =>
       Wordpress
     </Page.Subtitle>
     <Flex align='center' justify='center'>
-      <Wordpress/>
+      <Wordpress />
     </Flex>
   </Page>
 

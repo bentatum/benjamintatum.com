@@ -15,7 +15,7 @@ const BRSKCircle = () =>
       Circle
     </Page.Subtitle>
     <Flex align='center' justify='center'>
-      <Circle/>
+      <Circle />
     </Flex>
   </Page>
 

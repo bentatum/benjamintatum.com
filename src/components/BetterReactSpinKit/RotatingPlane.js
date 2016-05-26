@@ -15,7 +15,7 @@ const BRSKRotatingPlane = () =>
       RotatingPlane
     </Page.Subtitle>
     <Flex align='center' justify='center'>
-      <RotatingPlane/>
+      <RotatingPlane />
     </Flex>
   </Page>
 

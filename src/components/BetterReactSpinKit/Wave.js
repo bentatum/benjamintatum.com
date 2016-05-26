@@ -15,7 +15,7 @@ const BRSKWave = () =>
       Wave
     </Page.Subtitle>
     <Flex align='center' justify='center'>
-      <Wave/>
+      <Wave />
     </Flex>
   </Page>
 

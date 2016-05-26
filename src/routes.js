@@ -4,7 +4,7 @@ import { IndexRoute, Route } from 'react-router'
 
 export default (
   <Route component={views.App} path='/'>
-    <IndexRoute component={views.Home}/>
+    <IndexRoute component={views.Home} />
     <Route
       component={views.BetterReactSpinKit}
       path='better-react-spinkit'

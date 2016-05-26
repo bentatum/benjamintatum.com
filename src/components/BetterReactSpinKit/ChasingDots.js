@@ -15,7 +15,7 @@ const BRSKChasingDots = () =>
       ChasingDots
     </Page.Subtitle>
     <Flex align='center' justify='center'>
-      <ChasingDots/>
+      <ChasingDots />
     </Flex>
   </Page>
 

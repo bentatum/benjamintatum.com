@@ -12,7 +12,7 @@ const Page = ({ children }) =>
     column
     justify='center'
   >
-    <Navbar/>
+    <Navbar />
     <Base
       mt={3}
       style={{

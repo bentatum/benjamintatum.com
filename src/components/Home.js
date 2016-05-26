@@ -7,10 +7,10 @@ const Home = () =>
       Benjamin Tatum
     </Page.Title>
     <Page.Subtitle>
-      <span>Software Development<br/>Ann Arbor, Michigan</span>
+      <span>Software Development<br />Ann Arbor, Michigan</span>
     </Page.Subtitle>
     <Page.Content>
-      <Portfolio/>
+      <Portfolio />
     </Page.Content>
   </Page>
 

@@ -44,6 +44,7 @@ export default class Theme extends Component {
     betterReactSpinkit: PropTypes.object,
     breakpoints: PropTypes.object,
     colors: PropTypes.object,
+    reactIconBase: PropTypes.object,
     rebass: PropTypes.object,
     reflexbox: PropTypes.object,
     shadows: PropTypes.object
@@ -61,6 +62,9 @@ export default class Theme extends Component {
         large: 1024
       },
       colors,
+      reactIconBase: {
+        size: 24
+      },
       reflexbox: { scale },
       rebass: {
         colors,

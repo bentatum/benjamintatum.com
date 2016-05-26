@@ -44,7 +44,7 @@ const BetterReactSpinKitContainer = (props, { colors, shadows }) => {
         <Flex justify='center' wrap>
           <Demo
             {...sharedDemoProps}
-            component={<ChasingDots/>}
+            component={<ChasingDots />}
             name='Chasing Dots'
           />
           <Demo
@@ -59,12 +59,12 @@ const BetterReactSpinKitContainer = (props, { colors, shadows }) => {
           />
           <Demo
             {...sharedDemoProps}
-            component={<CubeGrid/>}
+            component={<CubeGrid />}
             name='CubeGrid'
           />
           <Demo
             {...sharedDemoProps}
-            component={<DoubleBounce/>}
+            component={<DoubleBounce />}
             name='Double Bounce'
           />
           <Demo
@@ -79,27 +79,27 @@ const BetterReactSpinKitContainer = (props, { colors, shadows }) => {
           />
           <Demo
             {...sharedDemoProps}
-            component={<RotatingPlane/>}
+            component={<RotatingPlane />}
             name='RotatingPlane'
           />
           <Demo
             {...sharedDemoProps}
-            component={<ThreeBounce/>}
+            component={<ThreeBounce />}
             name='ThreeBounce'
           />
           <Demo
             {...sharedDemoProps}
-            component={<WanderingCubes/>}
+            component={<WanderingCubes />}
             name='WanderingCubes'
           />
           <Demo
             {...sharedDemoProps}
-            component={<Wave/>}
+            component={<Wave />}
             name='Wave'
           />
           <Demo
             {...sharedDemoProps}
-            component={<Wordpress/>}
+            component={<Wordpress />}
             name='Wordpress'
           />
         </Flex>

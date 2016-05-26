@@ -15,11 +15,11 @@ const OrgCard = ({ ...base, duration, organization, technologies, title }) =>
       >
         {title} @ {organization}
       </Heading>
-      <Space/>
+      <Space />
       <Badge mb={2}>
         {duration}
       </Badge>
-      <BadgeList list={technologies}/>
+      <BadgeList list={technologies} />
     </Flex>
   </Base>
 

@@ -13,7 +13,7 @@ import { whyDidYouUpdate } from 'why-did-you-update'
 
 if (process.env.DEVELOPMENT && process.env.DEVTOOLS) {
   whyDidYouUpdate(React, {
-    exclude: /IconBase|MdClose/
+    exclude: /Connect|MdClose/
   })
 }
 
@@ -47,7 +47,7 @@ export default ({ assets, path }, callback) => {
         assets={assets}
         component={
           <Provider store={store}>
-            <RouterContext {...props}/>
+            <RouterContext {...props} />
           </Provider>
         }
       />

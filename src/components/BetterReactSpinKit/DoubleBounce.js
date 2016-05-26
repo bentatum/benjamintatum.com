@@ -15,7 +15,7 @@ const BRSKDoubleBounce = () =>
       DoubleBounce
     </Page.Subtitle>
     <Flex align='center' justify='center'>
-      <DoubleBounce/>
+      <DoubleBounce />
     </Flex>
   </Page>
 

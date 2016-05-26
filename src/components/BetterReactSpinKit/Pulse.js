@@ -15,7 +15,7 @@ const BRSKPulse = () =>
       Pulse
     </Page.Subtitle>
     <Flex align='center' justify='center'>
-      <Pulse/>
+      <Pulse />
     </Flex>
   </Page>
 
