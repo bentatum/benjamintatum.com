@@ -1,11 +1,11 @@
 import ApiClient from '../../apiClient'
 import { AWAIT_MARKER } from 'redux-await'
 import { EventTypes } from 'redux-segment'
-
+import { getScreenSize } from 'small-medium-large-xlarge'
 const SCREEN_DIMENSIONS = 'benjamintatum.com/SCREEN_DIMENSIONS_CHANGE'
 export const SUBMIT_LEAD = 'benjamintatum.com/SUBMIT_LEAD'
-
 const client = new ApiClient()
+import { breakpoints } from 'components/Theme'
 
 export function setScreenSize (height, width) {
   return {
@@ -63,7 +63,11 @@ export function reducer (state = intitialState, action) {
         errors: action.payload[SUBMIT_LEAD].errors
       }
     case SCREEN_DIMENSIONS:
-      return { ...state, ...action.payload }
+      return {
+        ...state,
+        ...action.payload,
+        screenSize: getScreenSize(action.payload.width, breakpoints)
+      }
     default:
       return state
   }

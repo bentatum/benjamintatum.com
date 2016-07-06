@@ -1,7 +1,19 @@
 import { default as React } from 'react'
-import { Heading } from 'rebass'
+import { PageHeader } from 'components'
+import { default as Helmet } from 'react-helmet'
 
 const Error404 = () =>
-  <Heading>404</Heading>
+  <div>
+    <Helmet
+      meta={[
+        {
+          name: '404',
+          content: 'This page does not exist.'
+        }
+      ]}
+      title='404'
+    />
+    <PageHeader heading='404' />
+  </div>
 
 export default Error404

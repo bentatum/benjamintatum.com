@@ -1,21 +1,9 @@
 const routes = [
   '/',
-  '/better-react-spinkit/',
-  '/better-react-spinkit/chasing-dots/',
-  '/better-react-spinkit/circle/',
-  '/better-react-spinkit/cube-grid/',
-  '/better-react-spinkit/double-bounce/',
-  '/better-react-spinkit/pulse/',
-  '/better-react-spinkit/rotating-plane/',
-  '/better-react-spinkit/three-bounce/',
-  '/better-react-spinkit/wandering-cubes/',
-  '/better-react-spinkit/wave/',
-  '/better-react-spinkit/wordpress/',
   '/contact/',
   '/contact/failure/',
   '/contact/success/',
   '/portfolio/',
-  '/redux-simplestorage/',
   '/resume/'
 ]
 
@@ -67,6 +55,11 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
+      },
+      {
+        test: /\.json$/,
+        include: path.resolve('./src'),
+        loader: 'json-loader'
       }
     ]
   },
@@ -107,7 +100,8 @@ module.exports = {
         'DEVELOPMENT': JSON.stringify(process.env.DEVELOPMENT),
         'DEVTOOLS': JSON.stringify(process.env.DEVTOOLS),
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        'SEGMENT_KEY': JSON.stringify(process.env.SEGMENT_KEY)
+        'SEGMENT_KEY': JSON.stringify(process.env.SEGMENT_KEY),
+        REDUX_PREFIX: JSON.stringify(process.env.REDUX_PREFIX)
       }
     })
   ]

@@ -1,6 +1,12 @@
 import './style.scss'
-import { Component, PropTypes } from 'react'
+import { default as React, Component, PropTypes } from 'react'
 import { default as color } from 'color'
+
+export const breakpoints = {
+  small: 425,
+  medium: 768,
+  large: 1024
+}
 
 const baseColors = {
   black: '#404040',
@@ -26,13 +32,15 @@ export const colors = {
   error: baseColors.red
 }
 
-const scale = [0, 10, 25, 48, 64]
+const scale = [0, 10, 20, 48, 64]
 const fontSizes = [64, 32, 25, 19, 18, 14, 12]
 
-const shadows = {
-  black: `0 0 18px 4px ${color(colors.black).alpha(0.1).rgbString()}`,
-  lightBlue: `0px 0px 14px 3px ${color(colors.lightBlue).alpha(0.9).rgbString()}`
-}
+const fontWeightBase = 200
+
+const shadows = [
+  `0 0 18px 4px ${color(colors.black).alpha(0.1).rgbString()}`,
+  `0px 0px 14px 3px ${color(colors.lightBlue).alpha(0.9).rgbString()}`
+]
 
 export default class Theme extends Component {
 
@@ -47,30 +55,41 @@ export default class Theme extends Component {
     reactIconBase: PropTypes.object,
     rebass: PropTypes.object,
     reflexbox: PropTypes.object,
-    shadows: PropTypes.object
+    shadows: PropTypes.array
   };
 
   getChildContext () {
     return {
       betterReactSpinkit: {
-        color: colors.primary,
-        size: 50
+        color: colors.primary
       },
-      breakpoints: {
-        small: 425,
-        medium: 768,
-        large: 1024
-      },
+      breakpoints,
       colors,
       reactIconBase: {
         size: 24
       },
       reflexbox: { scale },
       rebass: {
+        bold: 500,
         colors,
         fontSizes,
         scale,
-        shadows,
+        Block: {
+          marginBottom: scale[0],
+          marginTop: scale[0],
+          paddingBottom: scale[3],
+          paddingTop: scale[3]
+        },
+        Breadcrumbs: {
+          marginBottom: 0
+        },
+        Button: {
+          border: `1px solid ${colors.black}`,
+          color: colors.black
+        },
+        Container: {
+          width: '100%'
+        },
         DropdownMenu: {
           boxShadow: shadows.lightBlue
         },
@@ -86,15 +105,11 @@ export default class Theme extends Component {
           borderBottomColor: colors.lightGray,
           borderBottomStyle: 'dashed'
         },
-        HeadingLink: {
-          textAlign: 'center'
-        },
         Badge: {
           fontWeight: 'lighter'
         },
-        Button: {
-          border: `1px solid ${colors.black}`,
-          color: colors.black
+        Heading: {
+          fontWeight: fontWeightBase
         },
         Label: {
           display: 'block',
@@ -105,7 +120,7 @@ export default class Theme extends Component {
           marginBottom: 'inherit'
         },
         NavItem: {
-          fontWeight: 200
+          color: colors.black
         },
         Text: {
           marginBottom: scale[1],
@@ -122,6 +137,29 @@ export default class Theme extends Component {
   }
 
   render () {
-    return this.props.children
+    return (
+      <div>
+        <style>
+          {
+            `
+              * { box-sizing: border-box; }
+              html, body {
+                background-color: ${colors.blue};
+                color: ${colors.white};
+                font-weight: ${fontWeightBase};
+              }
+              ::-webkit-input-placeholder,
+              :-moz-placeholder,
+              ::-moz-placeholder,
+              :-ms-input-placeholder {
+                color: ${colors.darkGray};
+                font-weight: ${fontWeightBase};
+              }
+            `
+          }
+        </style>
+        {this.props.children}
+      </div>
+    )
   }
 }

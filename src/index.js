@@ -13,7 +13,7 @@ import { whyDidYouUpdate } from 'why-did-you-update'
 
 if (process.env.DEVELOPMENT && process.env.DEVTOOLS) {
   whyDidYouUpdate(React, {
-    exclude: /Connect|MdClose/
+    exclude: /Base|Connect|MdClose/
   })
 }
 
