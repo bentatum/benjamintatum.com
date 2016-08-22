@@ -1,11 +1,13 @@
-import { default as React, Component, PropTypes } from 'react'
+
+import { debounce } from 'lodash'
+import { connect } from 'react-redux'
+import { Input, Textarea } from 'Theme'
 import { Navbar, Theme } from 'components'
 import { default as Helmet } from 'react-helmet'
-import { connect } from 'react-redux'
 import { setScreenSize } from 'redux/modules/app'
+import { default as React, Component, PropTypes } from 'react'
 
 @connect(() => ({}), { setScreenSize })
-
 export default class App extends Component {
 
   static propTypes = {
@@ -13,12 +15,37 @@ export default class App extends Component {
     setScreenSize: PropTypes.func.isRequired
   };
 
+  static childContextTypes = {
+    joifulReactForms: PropTypes.object
+  };
+
+  constructor () {
+    super()
+    this.setScreenSize = debounce(this.setScreenSize.bind(this), 100)
+  }
+
   componentDidMount () {
-    const getHeight = () => window.innerHeight || $(window).height()
-    const getWidth = () => window.innerWidth || $(window).width()
-    const _setScreenSize = () => this.props.setScreenSize(getHeight(), getWidth())
-    window.addEventListener('resize', _setScreenSize)
-    _setScreenSize()
+    this.setScreenSize()
+    window.addEventListener('resize', this.setScreenSize)
+  }
+
+  setScreenSize () {
+    const height = () => window.innerHeight || $(window).height()
+    const width = () => window.innerWidth || $(window).width()
+    this.props.setScreenSize({ height: height(), width: width() })
+  }
+
+  getChildContext () {
+    return {
+      joifulReactForms: {
+        Input: {
+          types: {
+            text: Input,
+            textarea: Textarea
+          }
+        }
+      }
+    }
   }
 
   render () {
@@ -26,7 +53,6 @@ export default class App extends Component {
       <div>
         <Helmet
           link={[
-            /* eslint-disable max-len */
             { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css' },
             { rel: 'stylesheet', href: '/style.css' },
             { rel: 'shortcut icon', href: '/favicon.png' }
@@ -38,7 +64,6 @@ export default class App extends Component {
           script={[
             { src: '//code.jquery.com/jquery-2.1.4.min.js' },
             { src: '//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.7.0/lodash.min.js' }
-            /* eslint-enable max-len */
           ]}
           title='Software Development'
           titleTemplate='Benjamin Tatum - %s'

@@ -1,25 +1,16 @@
 import React from 'react'
-import * as v from './components'
-import { IndexRoute, Route } from 'react-router'
+import * as c from './components'
+import { IndexRedirect, Route } from 'react-router'
 
 export default (
-  <Route component={v.App} path='/'>
-    <IndexRoute component={v.Home} />
-    <Route
-      component={v.PortfolioPage}
-      path='portfolio'
-    />
-    <Route
-      component={v.PortfolioItemPage}
-      path='portfolio/:slug'
-    />
-    <Route
-      component={v.Resume}
-      path='resume'
-    />
-    <Route
-      component={v.Error404}
-      path='*'
-    />
+  <Route path='/' component={c.App}>
+    <Route path='work' component={c.Work}>
+      <Route path=':slug' component={c.Exhibit} />
+    </Route>
+    <IndexRedirect to='/work' />
+    <Route path='articles' component={c.Articles} />
+    <Route path='about' component={c.About} />
+    <Route path='contact' component={c.Contact} />
+    <Route path='*' component={c.Error404} />
   </Route>
 )

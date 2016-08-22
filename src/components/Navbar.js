@@ -1,22 +1,49 @@
-import { default as React, Component } from 'react'
-import { Container, NavItem, Toolbar, Space } from 'rebass'
-import { IndexLink, Link } from 'react-router'
-import { Flex } from 'reflexbox'
 
-const Navbar = () =>
-  <Toolbar backgroundColor='white'>
-    <Container style={{ width: '100%' }} is={Flex}>
-      <NavItem is={IndexLink} to='/' pl={0}>
-        Benjamin Tatum
-      </NavItem>
-      <Space auto />
-      <NavItem is={Link} to='/portfolio'>
-        Portfolio
-      </NavItem>
-      <NavItem is={Link} to='/resume' pr={0}>
-        Resume
-      </NavItem>
+import { Flex } from 'reflexbox'
+import { IndexLink, Link } from 'react-router'
+import { default as React, PropTypes } from 'react'
+import { Container, NavItem, Toolbar, Heading, Text } from 'rebass'
+import { activeNavItem } from 'Theme/style'
+
+const navItemProps = {
+  is: Link,
+  activeClassName: activeNavItem
+}
+
+const Navbar = (props, { fontSizes }) =>
+  <Toolbar backgroundColor='white' color='black'>
+    <Container
+      style={{ width: '100%' }}
+      is={Flex}
+      column
+      align='center'
+      py={2}
+    >
+      <Heading level={1} style={{ textAlign: 'center' }}>
+        <IndexLink to='/'>Ben Tatum</IndexLink>
+      </Heading>
+      <Text mb={2} style={{ textAlign: 'center' }}>
+        Product design & development.
+      </Text>
+      <Flex mb={2}>
+        <NavItem {...navItemProps} to='/work'>
+          work
+        </NavItem>
+        <NavItem {...navItemProps} to='/articles'>
+          articles
+        </NavItem>
+        <NavItem {...navItemProps} to='/about'>
+          about
+        </NavItem>
+        <NavItem {...navItemProps} to='/contact'>
+          contact
+        </NavItem>
+      </Flex>
     </Container>
   </Toolbar>
+
+Navbar.contextTypes = {
+  fontSizes: PropTypes.array.isRequired
+}
 
 export default Navbar

@@ -1,0 +1,26 @@
+
+[
+  {
+    "name": "Costimize",
+    "slug": "costimize",
+    "path": "/work/costimize",
+    "base": {
+      "backgroundColor": "#043555",
+      "color": "#fff"
+    },
+    "heading": {
+      "style": {
+        "fontFamily": "Avenir Next UltraLight, sans-serif"
+      }
+    }
+  },
+  {
+    "name": "Skipstone",
+    "slug": "skipstone",
+    "path": "/work/skipstone",
+    "base": {
+      "backgroundColor": "#005695",
+      "color": "#fff"
+    }
+  }
+]

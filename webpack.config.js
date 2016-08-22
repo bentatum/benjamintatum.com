@@ -1,18 +1,21 @@
-const routes = [
-  '/',
-  '/contact/',
-  '/contact/failure/',
-  '/contact/success/',
-  '/portfolio/',
-  '/resume/'
-]
 
 const path = require('path')
 const webpack = require('webpack')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const SitemapPlugin = require('sitemap-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
+const localStylesQuery = 'sourceMap&localIdentName=[path][name]---[local]---[hash:base64:5]'
+
+const routes = [
+  '/',
+  '/work',
+  '/work/costimize',
+  '/work/skipstone',
+  '/articles/',
+  '/about',
+  '/contact/'
+]
 
 module.exports = {
 
@@ -54,13 +57,18 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap')
+        loader: ExtractTextPlugin.extract(`css?module&${localStylesQuery}!sass?module&${localStylesQuery}`)
       },
       {
         test: /\.json$/,
         include: path.resolve('./src'),
         loader: 'json-loader'
-      }
+      },
+      { test: /\.svg$/, loader: 'url?limit=65000&mimetype=image/svg+xml&name=[name].[ext]' },
+      { test: /\.woff$/, loader: 'url?limit=65000&mimetype=application/font-woff&name=[name].[ext]' },
+      { test: /\.woff2$/, loader: 'url?limit=65000&mimetype=application/font-woff2&name=[name].[ext]' },
+      { test: /\.[ot]tf$/, loader: 'url?limit=65000&mimetype=application/octet-stream&name=[name].[ext]' },
+      { test: /\.eot$/, loader: 'url?limit=65000&mimetype=application/vnd.ms-fontobject&name=[name].[ext]' },
     ]
   },
 
@@ -74,7 +82,7 @@ module.exports = {
       'src/components',
       'node_modules'
     ],
-    extensions: ['', '.js', '.jsx', '.json']
+    extensions: ['', '.js', '.jsx', '.json', '.scss']
   },
 
   node: {

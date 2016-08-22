@@ -1,15 +1,36 @@
-import ApiClient from '../../apiClient'
-import { AWAIT_MARKER } from 'redux-await'
-import { EventTypes } from 'redux-segment'
-import { getScreenSize } from 'small-medium-large-xlarge'
-const SCREEN_DIMENSIONS = 'benjamintatum.com/SCREEN_DIMENSIONS_CHANGE'
-export const SUBMIT_LEAD = 'benjamintatum.com/SUBMIT_LEAD'
-const client = new ApiClient()
-import { breakpoints } from 'components/Theme'
 
-export function setScreenSize (height, width) {
+import { breakpoints } from 'Theme'
+const { REDUX_PREFIX } = process.env
+import { AWAIT_MARKER } from 'redux-await'
+import { default as ApiClient } from 'apiClient'
+export const SUBMIT_LEAD = `${REDUX_PREFIX}/createLead`
+import { getScreenSize } from 'small-medium-large-xlarge'
+export const SET_SCREEN_SIZE = `${REDUX_PREFIX}/setScreenSize`
+
+const client = new ApiClient()
+
+const intitialState = {
+  errors: null,
+  height: 0,
+  width: 0
+}
+
+export function reducer (state = intitialState, action) {
+  switch (action.type) {
+    case SET_SCREEN_SIZE:
+      return {
+        ...state,
+        ...action.payload,
+        screenSize: getScreenSize(action.payload.width, breakpoints)
+      }
+    default:
+      return state
+  }
+}
+
+export function setScreenSize ({ height, width }) {
   return {
-    type: SCREEN_DIMENSIONS,
+    type: SET_SCREEN_SIZE,
     payload: {
       height,
       width
@@ -17,7 +38,7 @@ export function setScreenSize (height, width) {
   }
 }
 
-export function createLead ({ name, email, phone, issue }) {
+export function submitLead ({ name, email, phone, message }) {
   return {
     type: SUBMIT_LEAD,
     AWAIT_MARKER,
@@ -28,47 +49,12 @@ export function createLead ({ name, email, phone, issue }) {
             createLead(
               name: \"${name}\",
               email: \"${email}\",
-              phone: \"${phone}\",
-              issue: \"${issue}"\
+              phone: \"noop\",
+              issue: \"${message}"\
             ) { id, name }
           }
         `
       })
-    },
-    meta: {
-      analytics: {
-        eventType: EventTypes.track,
-        eventPayload: {
-          datetime: new Date(),
-          isMobile:
-            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
-                .test(navigator.userAgent)
-        }
-      }
     }
-  }
-}
-
-const intitialState = {
-  errors: null,
-  height: 0,
-  width: 0
-}
-
-export function reducer (state = intitialState, action) {
-  switch (action.type) {
-    case SUBMIT_LEAD:
-      return {
-        ...state,
-        errors: action.payload[SUBMIT_LEAD].errors
-      }
-    case SCREEN_DIMENSIONS:
-      return {
-        ...state,
-        ...action.payload,
-        screenSize: getScreenSize(action.payload.width, breakpoints)
-      }
-    default:
-      return state
   }
 }

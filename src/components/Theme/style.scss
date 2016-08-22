@@ -1,21 +1,55 @@
+
 @import "constants";
-@import "rebass.overrides";
-@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,500,500italic,700,700italic);
 
-body {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+@font-face {
+  font-family: 'Avenir Next Bold';
+  src: url('./fonts/avenir-next-bold/AvenirNext-Bold.eot');
+  src: url('./fonts/avenir-next-bold/AvenirNext-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/avenir-next-bold/AvenirNext-Bold.woff2') format('woff2'),
+    url('./fonts/avenir-next-bold/AvenirNext-Bold.woff') format('woff'),
+    url('./fonts/avenir-next-bold/AvenirNext-Bold.ttf') format('truetype'),
+    url('./fonts/avenir-next-bold/AvenirNext-Bold.svg#AvenirNext-Bold') format('svg');
+  font-weight: 600;
+  font-style: normal;
 }
 
-a {
-  color: $black;
-  text-decoration: none;
+@font-face {
+  font-family: 'Avenir Next Regular';
+  src: url('./fonts/avenir-next-regular/AvenirNext-Regular.eot');
+  src: url('./fonts/avenir-next-regular/AvenirNext-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/avenir-next-regular/AvenirNext-Regular.woff2') format('woff2'),
+    url('./fonts/avenir-next-regular/AvenirNext-Regular.woff') format('woff'),
+    url('./fonts/avenir-next-regular/AvenirNext-Regular.ttf') format('truetype'),
+    url('./fonts/avenir-next-regular/AvenirNext-Regular.svg#AvenirNext-Regular') format('svg');
+  font-weight: 600;
+  font-style: normal;
 }
 
-button:focus {
-  outline: none;
+@font-face {
+  font-family: 'Avenir Next UltraLight';
+  src: url('./fonts/avenir-next-ultralight/AvenirNext-UltraLight.eot');
+  src: url('./fonts/avenir-next-ultralight/AvenirNext-UltraLight.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/avenir-next-ultralight/AvenirNext-UltraLight.woff2') format('woff2'),
+    url('./fonts/avenir-next-ultralight/AvenirNext-UltraLight.woff') format('woff'),
+    url('./fonts/avenir-next-ultralight/AvenirNext-UltraLight.ttf') format('truetype'),
+    url('./fonts/avenir-next-ultralight/AvenirNext-UltraLight.svg#AvenirNext-UltraLight') format('svg');
+  font-weight: 600;
+  font-style: normal;
 }
 
-button[disabled] {
-  cursor: not-allowed !important;
+.activeNavItem {
+  position: relative;
+  &:after {
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    content: ' ';
+    margin: auto;
+    display: block;
+    position: absolute;
+    border-radius: 2px;
+    pointer-events: none;
+    background-color: $colors-blue;
+  }
 }

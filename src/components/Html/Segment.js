@@ -1,5 +1,6 @@
-import { default as React } from 'react'
+
 const { SEGMENT_KEY } = process.env
+import { default as React } from 'react'
 
 const Segment = () =>
   <script

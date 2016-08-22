@@ -1,7 +1,7 @@
+
 import { default as React, PropTypes } from 'react'
 import { renderToString } from 'react-dom/server'
 import { default as Helmet } from 'react-helmet'
-import { default as GoogleTagManager } from './GoogleTagManager'
 import { default as Segment } from './Segment'
 
 const Html = ({ assets, component }) => {
@@ -17,16 +17,9 @@ const Html = ({ assets, component }) => {
         {head.script.toComponent()}
       </head>
       <body>
-        <GoogleTagManager />
         <Segment />
-        <div
-          dangerouslySetInnerHTML={{ __html: content }}
-          id='content'
-        />
-        <script
-          charSet='UTF-8'
-          src={`/${assets.main}`}
-        />
+        <div id='content' dangerouslySetInnerHTML={{ __html: content }} />
+        <script charSet='UTF-8' src={`/${assets.main}`} />
       </body>
     </html>
   )
