@@ -10,7 +10,7 @@ const navItemProps = {
   activeClassName: activeNavItem
 }
 
-const Navbar = (props, { fontSizes }) =>
+const Navbar = (props, { colors, fontSizes }) =>
   <Toolbar backgroundColor='white' color='black'>
     <Container
       style={{ width: '100%' }}
@@ -20,7 +20,9 @@ const Navbar = (props, { fontSizes }) =>
       py={2}
     >
       <Heading level={1} style={{ textAlign: 'center' }}>
-        <IndexLink to='/'>Ben Tatum</IndexLink>
+        <IndexLink to='/' style={{ color: colors.black }}>
+          Ben Tatum
+        </IndexLink>
       </Heading>
       <Text mb={2} style={{ textAlign: 'center' }}>
         Product design & development.
@@ -43,6 +45,7 @@ const Navbar = (props, { fontSizes }) =>
   </Toolbar>
 
 Navbar.contextTypes = {
+  colors: PropTypes.object.isRequired,
   fontSizes: PropTypes.array.isRequired
 }
 

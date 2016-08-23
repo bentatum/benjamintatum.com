@@ -81,7 +81,9 @@ export default class Theme extends Component {
         },
         Container: {
           width: '100%',
-          maxWidth: breakpoints.small
+          maxWidth: breakpoints.small,
+          paddingLeft: scale[4],
+          paddingRight: scale[4]
         },
         DropdownMenu: {
           boxShadow: shadows.lightBlue
@@ -141,8 +143,11 @@ export default class Theme extends Component {
               font-family: ${fontFamilyBold};
             }
             a {
-              color: ${colors.black};
+              color: ${colors.primary};
               text-decoration: none;
+            }
+            p {
+              font-size: ${fontSizes[5]}px;
             }
             button[disabled] {
               cursor: not-allowed !important;

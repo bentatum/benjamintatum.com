@@ -1,14 +1,15 @@
-import React from 'react'
+
 import { render } from 'react-dom'
-import { renderToString } from 'react-dom/server'
-import { createMemoryHistory } from 'history'
-import { Router, RouterContext, match, browserHistory } from 'react-router'
-import routes from './routes'
 import { Html } from './components'
-import createStore from './redux/create'
 import { Provider } from 'react-redux'
+import { default as React } from 'react'
+import { default as routes } from './routes'
+import { createMemoryHistory } from 'history'
+import { renderToString } from 'react-dom/server'
+import { default as createStore } from './redux/create'
 import { default as withScroll } from 'scroll-behavior'
 import { syncHistoryWithStore } from 'react-router-redux'
+import { Router, RouterContext, match, browserHistory } from 'react-router'
 // import { whyDidYouUpdate } from 'why-did-you-update'
 
 // if (process.env.DEVELOPMENT && process.env.DEVTOOLS) {
@@ -43,7 +44,7 @@ export default ({ assets, path }, callback) => {
     }
 
     if (redirectLocation) {
-      return callback(null, '')
+      return callback(null, renderToString(<Html assets={assets} />))
     }
 
     const html = renderToString(
