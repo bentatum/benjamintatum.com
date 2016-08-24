@@ -1,4 +1,5 @@
 
+import { breakpoints } from 'Theme'
 import { default as Joi } from 'joi'
 import { connect } from 'react-redux'
 import { Form, Input } from 'joiful-react-forms'
@@ -59,6 +60,10 @@ export default class Contact extends Component {
           }}
           values={this.state}
           onChange={::this.handleChange}
+          style={{
+            margin: 'auto',
+            maxWidth: breakpoints.small
+          }}
         >
           <Input name='name' />
           <Input name='email' />

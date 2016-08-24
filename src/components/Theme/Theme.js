@@ -80,10 +80,7 @@ export default class Theme extends Component {
           paddingTop: scale[3]
         },
         Container: {
-          width: '100%',
-          maxWidth: breakpoints.small,
-          paddingLeft: scale[4],
-          paddingRight: scale[4]
+          width: '100%'
         },
         DropdownMenu: {
           boxShadow: shadows.lightBlue

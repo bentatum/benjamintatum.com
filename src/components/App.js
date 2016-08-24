@@ -1,39 +1,19 @@
 
-import { debounce } from 'lodash'
-import { connect } from 'react-redux'
-import { Input, Textarea } from 'Theme'
 import { Navbar, Theme } from 'components'
 import { default as Helmet } from 'react-helmet'
-import { setScreenSize } from 'redux/modules/app'
+import { Input, Textarea, breakpoints } from 'Theme'
+import { default as MediaContext } from 'react-media-context'
 import { default as React, Component, PropTypes } from 'react'
 
-@connect(() => ({}), { setScreenSize })
 export default class App extends Component {
 
   static propTypes = {
-    children: PropTypes.node,
-    setScreenSize: PropTypes.func.isRequired
+    children: PropTypes.node
   };
 
   static childContextTypes = {
     joifulReactForms: PropTypes.object
   };
-
-  constructor () {
-    super()
-    this.setScreenSize = debounce(this.setScreenSize.bind(this), 100)
-  }
-
-  componentDidMount () {
-    this.setScreenSize()
-    window.addEventListener('resize', this.setScreenSize)
-  }
-
-  setScreenSize () {
-    const height = () => window.innerHeight || $(window).height()
-    const width = () => window.innerWidth || $(window).width()
-    this.props.setScreenSize({ height: height(), width: width() })
-  }
 
   getChildContext () {
     return {
@@ -68,12 +48,21 @@ export default class App extends Component {
           title='Software Development'
           titleTemplate='Benjamin Tatum - %s'
         />
-        <Theme>
-          <div>
-            <Navbar />
-            {this.props.children}
-          </div>
-        </Theme>
+        <MediaContext
+          queries={{
+            xsmall: `screen and (max-width: ${breakpoints.small}px)`,
+            small: `screen and (min-width: ${breakpoints.small}px)`,
+            medium: `screen and (min-width: ${breakpoints.medium}px)`,
+            large: `screen and (min-width: ${breakpoints.large}px)`
+          }}
+        >
+          <Theme>
+            <div>
+              <Navbar />
+              {this.props.children}
+            </div>
+          </Theme>
+        </MediaContext>
       </div>
     )
   }
