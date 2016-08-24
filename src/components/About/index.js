@@ -1,7 +1,8 @@
 
 import { PageHeader } from 'components'
-import { Container, Text } from 'rebass'
+import { Container, Base } from 'rebass'
 import { default as React } from 'react'
+import { default as content } from './content'
 
 const About = () =>
   <div>
@@ -19,9 +20,13 @@ const About = () =>
           display: 'block'
         }}
       />
-      <Text style={{ textAlign: 'center' }} mt={2}>
-        I'm Ben, a software designer living in Ann Arbor, Michigan.
-      </Text>
+      <Base
+        mt={2}
+        style={{
+          textAlign: 'center'
+        }}
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
     </Container>
   </div>
 

@@ -83,7 +83,7 @@ module.exports = {
       'src/components',
       'node_modules'
     ],
-    extensions: ['', '.js', '.jsx', '.json', '.scss']
+    extensions: ['', '.js', '.jsx', '.json', '.scss', '.md']
   },
 
   node: {
