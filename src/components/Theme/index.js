@@ -1,5 +1,5 @@
 
-import { default as Theme } from './Theme'
+import { default as Theme } from './theme'
 export default Theme
 
 export { default as Input } from './Input'

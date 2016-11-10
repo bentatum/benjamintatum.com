@@ -38,6 +38,23 @@
   font-style: normal;
 }
 
+blockquote {
+  background-color: $colors-lightGray;
+  margin: 0 0 nth($scale, 2) 0;
+  padding: nth($scale, 2) nth($scale, 4);
+  position: relative;
+  &:before {
+    content: '';
+    height: 80%;
+    width: 2px;
+    background-color: $colors-gray;
+    display: block;
+    position: absolute;
+    left: nth($scale, 3);
+    // top: 20%;
+  }
+}
+
 .activeNavItem {
   position: relative;
   &:after {

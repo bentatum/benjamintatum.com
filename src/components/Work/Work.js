@@ -2,9 +2,11 @@
 import { find } from 'lodash'
 import { default as React } from 'react'
 import { ExhibitCard, data } from 'Work'
+import { Page } from 'components/page'
+import { PrimaryNav } from 'components'
 
-const Work = ({ children, params: { slug } }) =>
-  <div>
+export default ({ children, params: { slug } }) =>
+  <Page navbar={{ nav: <PrimaryNav /> }}>
     <Choose>
       <When condition={!slug}>
         <ExhibitCard
@@ -20,6 +22,4 @@ const Work = ({ children, params: { slug } }) =>
         {children}
       </Otherwise>
     </Choose>
-  </div>
-
-export default Work
+  </Page>

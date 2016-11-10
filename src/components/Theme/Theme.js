@@ -3,7 +3,7 @@ import './style.scss'
 import { default as color } from 'color'
 import { default as css } from 'minify-css-string'
 import { default as React, Component, PropTypes } from 'react'
-import { breakpoints, fontFamily, fontFamilyBold } from 'Theme'
+import { breakpoints, fontFamily, fontFamilyBold } from 'theme'
 
 const baseColors = {
   black: '#4A4A4A',

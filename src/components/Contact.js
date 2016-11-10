@@ -1,10 +1,11 @@
 
-import { breakpoints } from 'Theme'
+import { breakpoints } from 'theme'
 import { default as Joi } from 'joi'
 import { connect } from 'react-redux'
 import { Form, Input } from 'joiful-react-forms'
 import { Button, Container, Text } from 'rebass'
-import { PageHeader, StatusIndicator } from 'components'
+import { Header } from 'components/page'
+import { StatusIndicator } from 'components'
 import { submitLead, SUBMIT_LEAD } from 'redux/modules/app'
 import { default as React, Component, PropTypes } from 'react'
 
@@ -47,7 +48,7 @@ export default class Contact extends Component {
     const { status } = this.props
     return (
       <Container>
-        <PageHeader heading={{ children: 'Contact' }} mb={2} />
+        <Header heading={{ children: 'Contact' }} mb={2} />
         <Text mb={3} style={{ textAlign: 'center' }}>
           Need help on your next project? Send me a message and I'll get back to you as soon as I can.
         </Text>

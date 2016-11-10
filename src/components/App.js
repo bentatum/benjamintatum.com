@@ -1,7 +1,7 @@
 
-import { Navbar, Theme } from 'components'
+import { Theme } from 'components'
 import { default as Helmet } from 'react-helmet'
-import { Input, Textarea, breakpoints } from 'Theme'
+import { Input, Textarea, breakpoints } from 'theme'
 import { default as MediaContext } from 'react-media-context'
 import { default as React, Component, PropTypes } from 'react'
 
@@ -57,10 +57,7 @@ export default class App extends Component {
           }}
         >
           <Theme>
-            <div>
-              <Navbar />
-              {this.props.children}
-            </div>
+            {this.props.children}
           </Theme>
         </MediaContext>
       </div>
