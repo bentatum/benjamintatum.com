@@ -1,0 +1,51 @@
+
+[
+  {
+    "name": "Costimize",
+    "slug": "costimize",
+    "path": "/work/costimize",
+    "base": {
+      "backgroundColor": "#043555",
+      "color": "#fff"
+    },
+    "heading": {
+      "style": {
+        "fontFamily": "Avenir Next UltraLight, sans-serif"
+      }
+    },
+    "logo": {
+      "style": {
+        "backgroundImage": "url(//media.benjamintatum.com/costimize-logo.svg)",
+        "backgroundSize": "cover",
+        "backgroundRepeat": "no-repeat",
+        "height": 100,
+        "width": 93
+      }
+    },
+    "content": "./costimize.md"
+  },
+  {
+    "name": "Skipstone",
+    "slug": "skipstone",
+    "path": "/work/skipstone",
+    "base": {
+      "backgroundColor": "#005695",
+      "color": "#fff"
+    },
+    "heading": {
+      "style": {
+        "fontFamily": "Open Sans, sans-serif"
+      }
+    },
+    "logo": {
+      "style": {
+        "backgroundImage": "url(//media.benjamintatum.com/skipstone-logo.svg)",
+        "backgroundSize": "cover",
+        "backgroundRepeat": "no-repeat",
+        "height": 100,
+        "width": 110
+      }
+    },
+    "content": "./skipstone.md"
+  }
+]

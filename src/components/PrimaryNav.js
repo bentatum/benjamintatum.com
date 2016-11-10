@@ -1,21 +1,20 @@
-import { default as React } from 'react'
-import { Menu, NavItem } from 'rebass'
-import { IndexLink, Link } from 'react-router'
 
-const PrimaryNav = ({ navItemProps, ...props }) =>
-  <Menu {...props}>
-    <NavItem is={IndexLink} to='/'>
-      Home
-    </NavItem>
-    <NavItem is={Link} to='/portfolio'>
-      Portfolio
-    </NavItem>
-    <NavItem is={Link} to='/resume'>
-      Resume
-    </NavItem>
-    <NavItem is={Link} to='/contact'>
-      Contact
-    </NavItem>
+import React from 'react'
+import { Menu } from 'rebass'
+import { NavItemLink } from 'components'
+
+export default () =>
+  <Menu>
+    <NavItemLink to='/work'>
+      work
+    </NavItemLink>
+    <NavItemLink to='/articles'>
+      articles
+    </NavItemLink>
+    <NavItemLink to='/about'>
+      about
+    </NavItemLink>
+    <NavItemLink to='/contact'>
+      contact
+    </NavItemLink>
   </Menu>
-
-export default PrimaryNav

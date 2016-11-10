@@ -1,44 +1,73 @@
-@import "constants";
-@import "rebass.overrides";
 
-* { box-sizing: border-box }
+@import 'constants';
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300);
 
-body {
-  color: $black;
-  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: $font-weight-base;
-  line-height: 1.5;
+@font-face {
+  font-family: 'Avenir Next Bold';
+  src: url('./fonts/avenir-next-bold/AvenirNext-Bold.eot');
+  src: url('./fonts/avenir-next-bold/AvenirNext-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/avenir-next-bold/AvenirNext-Bold.woff2') format('woff2'),
+    url('./fonts/avenir-next-bold/AvenirNext-Bold.woff') format('woff'),
+    url('./fonts/avenir-next-bold/AvenirNext-Bold.ttf') format('truetype'),
+    url('./fonts/avenir-next-bold/AvenirNext-Bold.svg#AvenirNext-Bold') format('svg');
+  font-weight: 600;
+  font-style: normal;
 }
 
-a {
-  color: $black;
-  text-decoration: none;
+@font-face {
+  font-family: 'Avenir Next Regular';
+  src: url('./fonts/avenir-next-regular/AvenirNext-Regular.eot');
+  src: url('./fonts/avenir-next-regular/AvenirNext-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/avenir-next-regular/AvenirNext-Regular.woff2') format('woff2'),
+    url('./fonts/avenir-next-regular/AvenirNext-Regular.woff') format('woff'),
+    url('./fonts/avenir-next-regular/AvenirNext-Regular.ttf') format('truetype'),
+    url('./fonts/avenir-next-regular/AvenirNext-Regular.svg#AvenirNext-Regular') format('svg');
+  font-weight: 600;
+  font-style: normal;
 }
 
-button:focus {
-  outline: none;
+@font-face {
+  font-family: 'Avenir Next UltraLight';
+  src: url('./fonts/avenir-next-ultralight/AvenirNext-UltraLight.eot');
+  src: url('./fonts/avenir-next-ultralight/AvenirNext-UltraLight.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/avenir-next-ultralight/AvenirNext-UltraLight.woff2') format('woff2'),
+    url('./fonts/avenir-next-ultralight/AvenirNext-UltraLight.woff') format('woff'),
+    url('./fonts/avenir-next-ultralight/AvenirNext-UltraLight.ttf') format('truetype'),
+    url('./fonts/avenir-next-ultralight/AvenirNext-UltraLight.svg#AvenirNext-UltraLight') format('svg');
+  font-weight: 600;
+  font-style: normal;
 }
 
-button[disabled] {
-  cursor: not-allowed !important;
+blockquote {
+  background-color: $colors-lightGray;
+  margin: 0 0 nth($scale, 2) 0;
+  padding: nth($scale, 2) nth($scale, 4);
+  position: relative;
+  &:before {
+    content: '';
+    height: 80%;
+    width: 2px;
+    background-color: $colors-gray;
+    display: block;
+    position: absolute;
+    left: nth($scale, 3);
+    // top: 20%;
+  }
 }
 
-::-webkit-input-placeholder {
-  color: $gray;
-  font-weight: $font-weight-base;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-  color: $gray;
-  font-weight: $font-weight-base;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-  color: $gray;
-  font-weight: $font-weight-base;
-}
-
-:-ms-input-placeholder {  
-  color: $gray;
-  font-weight: $font-weight-base;
+.activeNavItem {
+  position: relative;
+  &:after {
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    content: ' ';
+    margin: auto;
+    display: block;
+    position: absolute;
+    border-radius: 2px;
+    pointer-events: none;
+    background-color: $colors-blue;
+  }
 }

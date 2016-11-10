@@ -1,17 +1,14 @@
-import React, { Component, PropTypes } from 'react'
+
 import { Theme } from 'components'
 import { default as Helmet } from 'react-helmet'
-import { connect } from 'react-redux'
-import { setScreenSize } from 'redux/modules/app'
-import joifulReactForms from 'JoifulReactFormsOverrides'
-
-@connect(() => ({}), { screenSize: setScreenSize })
+import { Input, Textarea, breakpoints } from 'theme'
+import { default as MediaContext } from 'react-media-context'
+import { default as React, Component, PropTypes } from 'react'
 
 export default class App extends Component {
 
   static propTypes = {
-    children: PropTypes.node,
-    screenSize: PropTypes.func.isRequired
+    children: PropTypes.node
   };
 
   static childContextTypes = {
@@ -21,27 +18,14 @@ export default class App extends Component {
   getChildContext () {
     return {
       joifulReactForms: {
-        JoifulInput: {
-          types: joifulReactForms.types
+        Input: {
+          types: {
+            text: Input,
+            textarea: Textarea
+          }
         }
       }
     }
-  }
-
-  componentDidMount () {
-    // 🌎
-    const { screenSize } = this.props
-    window.addEventListener(
-      'resize',
-      () => screenSize(
-        window.innerHeight || $(window).height(),
-        window.innerWidth || $(window).width()
-      )
-    )
-    screenSize(
-      window.innerHeight || $(window).height(),
-      window.innerWidth || $(window).width()
-    )
   }
 
   render () {
@@ -49,11 +33,9 @@ export default class App extends Component {
       <div>
         <Helmet
           link={[
-            /* eslint-disable max-len */
             { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css' },
             { rel: 'stylesheet', href: '/style.css' },
-            { rel: 'shortcut icon', href: '/favicon.png' },
-            { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Oswald:400,700,300' }
+            { rel: 'shortcut icon', href: '/favicon.png' }
           ]}
           meta={[
             { name: 'description', content: 'Software application and web developer located in Ann Arbor, Michigan and available for remote hire. Services include product design, development & deployment.' },
@@ -62,14 +44,22 @@ export default class App extends Component {
           script={[
             { src: '//code.jquery.com/jquery-2.1.4.min.js' },
             { src: '//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.7.0/lodash.min.js' }
-            /* eslint-enable max-len */
           ]}
           title='Software Development'
           titleTemplate='Benjamin Tatum - %s'
         />
-        <Theme>
-          {this.props.children}
-        </Theme>
+        <MediaContext
+          queries={{
+            xsmall: `screen and (max-width: ${breakpoints.small}px)`,
+            small: `screen and (min-width: ${breakpoints.small}px)`,
+            medium: `screen and (min-width: ${breakpoints.medium}px)`,
+            large: `screen and (min-width: ${breakpoints.large}px)`
+          }}
+        >
+          <Theme>
+            {this.props.children}
+          </Theme>
+        </MediaContext>
       </div>
     )
   }

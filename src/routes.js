@@ -1,81 +1,17 @@
 import React from 'react'
-import * as views from './components'
-import { IndexRoute, Route } from 'react-router'
+import * as c from 'components'
+import * as Work from 'Work'
+import { IndexRedirect, Route } from 'react-router'
 
 export default (
-  <Route component={views.App} path='/'>
-    <IndexRoute component={views.Home} />
-    <Route
-      component={views.BetterReactSpinKit}
-      path='better-react-spinkit'
-    />
-    <Route
-      component={views.BRSKCircle}
-      path='better-react-spinkit/circle'
-    />
-    <Route
-      component={views.BRSKChasingDots}
-      path='better-react-spinkit/chasing-dots'
-    />
-    <Route
-      component={views.BRSKCubeGrid}
-      path='better-react-spinkit/cube-grid'
-    />
-    <Route
-      component={views.BRSKDoubleBounce}
-      path='better-react-spinkit/double-bounce'
-    />
-    <Route
-      component={views.BRSKPulse}
-      path='better-react-spinkit/pulse'
-    />
-    <Route
-      component={views.BRSKRotatingPlane}
-      path='better-react-spinkit/rotating-plane'
-    />
-    <Route
-      component={views.BRSKThreeBounce}
-      path='better-react-spinkit/three-bounce'
-    />
-    <Route
-      component={views.BRSKWanderingCubes}
-      path='better-react-spinkit/wandering-cubes'
-    />
-    <Route
-      component={views.BRSKWordpress}
-      path='better-react-spinkit/wordpress'
-    />
-    <Route
-      component={views.BRSKWave}
-      path='better-react-spinkit/wave'
-    />
-    <Route
-      component={views.Contact}
-      path='contact'
-    />
-    <Route
-      component={views.ContactFailure}
-      path='contact/failure'
-    />
-    <Route
-      component={views.ContactSuccess}
-      path='contact/success'
-    />
-    <Route
-      component={views.PortfolioContainer}
-      path='portfolio'
-    />
-    <Route
-      component={views.ReduxSimpleStorage}
-      path='redux-simplestorage'
-    />
-    <Route
-      component={views.Resume}
-      path='resume'
-    />
-    <Route
-      component={views.Error404}
-      path='*'
-    />
+  <Route path='/' component={c.App}>
+    <Route path='work' component={c.Work}>
+      <Route path=':slug' component={Work.ExhibitPage} />
+    </Route>
+    <IndexRedirect to='/work' />
+    <Route path='articles' component={c.Articles} />
+    <Route path='about' component={c.About} />
+    <Route path='contact' component={c.Contact} />
+    <Route path='*' component={c.Error404} />
   </Route>
 )
