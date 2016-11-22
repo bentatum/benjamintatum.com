@@ -20,8 +20,8 @@ export default props =>
     flexColumn
     align='center'
     {...props}>
-    {items.map(i =>
-      <Box p={1}>
+    {items.map((i, key) =>
+      <Box p={1} key={key}>
         <Link to={i.url}>
           <Button style={{ width: 150 }}>
             {i.children}

@@ -67,7 +67,8 @@ export default class Theme extends Component {
       colors,
       fontSizes,
       reactIconBase: {
-        size: 24
+        size: 24,
+        color: colors.black
       },
       reflexbox: { breakpoints, scale },
       rebass: {
@@ -88,9 +89,6 @@ export default class Theme extends Component {
         Container: {
           width: '100%'
         },
-        DropdownMenu: {
-          boxShadow: shadows.lightBlue
-        },
         Pre: {
           backgroundColor: colors.black,
           borderLeft: 0,
@@ -108,6 +106,9 @@ export default class Theme extends Component {
         },
         Heading: {
           fontWeight: fontWeightBase
+        },
+        Drawer: {
+          boxShadow: shadows[0]
         },
         Label: {
           display: 'block',
@@ -165,8 +166,8 @@ export default class Theme extends Component {
             .Button {
               min-height: ${inputHeight}px !important;
             }
-            .Input {
-              min-height: ${inputHeight}px !important;
+            .Input input {
+              height: ${inputHeight}px !important;
             }
           `)}
         </style>

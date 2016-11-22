@@ -3,9 +3,9 @@ import { breakpoints } from 'theme'
 import { default as Joi } from 'joi'
 import { connect } from 'react-redux'
 import { Form, Input } from 'joiful-react-forms'
-import { Heading, Button, Text } from 'rebass'
+import { Base, Heading, Button, Text } from 'rebass'
 import { Page } from 'components/page'
-import { BackButton, PrimaryNav, StatusIndicator } from 'components'
+import { BackButton, PrimaryNav, StatusIndicator, MenuButton } from 'components'
 import { submitLead, SUBMIT_LEAD } from 'redux/modules/app'
 import { default as React, Component, PropTypes } from 'react'
 
@@ -51,54 +51,60 @@ export default class Contact extends Component {
         navbar={{
           nav: <PrimaryNav />,
           leftComponent: <BackButton />,
-          centerComponent: <Heading>Contact</Heading>
+          centerComponent: <Heading>Contact</Heading>,
+          rightComponent: <MenuButton />
         }}>
-        <Text mb={3} style={{ textAlign: 'center' }}>
+        <Text
+          px={2}
+          mb={3}
+          style={{ textAlign: 'center' }}>
           Need help on your next project?
           <br />
           Send me a message and I'll get back to you as soon as I can.
         </Text>
-        <Form
-          onSubmit={::this.handleSubmit}
-          schema={{
-            name: Joi.string().required(),
-            email: Joi.string().email().required(),
-            message: Joi.string().required()
-          }}
-          values={this.state}
-          onChange={::this.handleChange}
-          style={{
-            margin: 'auto',
-            maxWidth: breakpoints.small
-          }}>
-          <Input name='name' />
-          <Input name='email' />
-          <Input name='message' is='textarea' />
-          <Button
-            type='submit'
-            style={{ width: '100%' }}
-            disabled={status === 'pending' || status === 'success'}
-          >
-            <Choose>
-              <When condition={status}>
-                <StatusIndicator
-                  status={status}
-                  messages={{
-                    success: 'Thanks!'
-                  }}
-                  indicatorProps={{
-                    pending: {
-                      color: this.context.colors.white
-                    }
-                  }}
-                />
-              </When>
-              <Otherwise>
-                Submit
-              </Otherwise>
-            </Choose>
-          </Button>
-        </Form>
+        <Base px={2}>
+          <Form
+            onSubmit={::this.handleSubmit}
+            schema={{
+              name: Joi.string().required(),
+              email: Joi.string().email().required(),
+              message: Joi.string().required()
+            }}
+            values={this.state}
+            onChange={::this.handleChange}
+            style={{
+              margin: 'auto',
+              maxWidth: breakpoints.small
+            }}>
+            <Input name='name' />
+            <Input name='email' />
+            <Input name='message' is='textarea' />
+            <Button
+              type='submit'
+              style={{ width: '100%' }}
+              disabled={status === 'pending' || status === 'success'}
+            >
+              <Choose>
+                <When condition={status}>
+                  <StatusIndicator
+                    status={status}
+                    messages={{
+                      success: 'Thanks!'
+                    }}
+                    indicatorProps={{
+                      pending: {
+                        color: this.context.colors.white
+                      }
+                    }}
+                  />
+                </When>
+                <Otherwise>
+                  Submit
+                </Otherwise>
+              </Choose>
+            </Button>
+          </Form>
+        </Base>
       </Page>
     )
   }
