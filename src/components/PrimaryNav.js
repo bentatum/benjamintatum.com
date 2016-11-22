@@ -6,12 +6,20 @@ import { Button } from 'rebass'
 
 const items = [
   {
-    url: '/work',
-    children: 'work'
+    to: '/work',
+    children: 'Work'
   },
   {
-    url: '/contact',
-    children: 'contact'
+    to: '/contact',
+    children: 'Contact'
+  },
+  {
+    href: 'https://github.com/bentatum',
+    children: 'Github'
+  },
+  {
+    href: 'https://www.linkedin.com/in/benjamintatum',
+    children: 'LinkedIn'
   }
 ]
 
@@ -20,13 +28,30 @@ export default props =>
     flexColumn
     align='center'
     {...props}>
-    {items.map((i, key) =>
-      <Box p={1} key={key}>
-        <Link to={i.url}>
-          <Button style={{ width: 150 }}>
-            {i.children}
-          </Button>
-        </Link>
-      </Box>
-    )}
+    {items.map((i, key) => {
+      const item = (
+        <Button style={{ width: 150 }}>
+          {i.children}
+        </Button>
+      )
+      return (
+        <Box p={1} key={key}>
+          <Choose>
+            <When condition={i.to}>
+              <Link to={i.to}>
+                {item}
+              </Link>
+            </When>
+            <When condition={i.href}>
+              <a href={i.href} target='_blank'>
+                {item}
+              </a>
+            </When>
+            <Otherwise>
+              {item}
+            </Otherwise>
+          </Choose>
+        </Box>
+      )
+    })}
   </Flex>

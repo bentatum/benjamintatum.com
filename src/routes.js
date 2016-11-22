@@ -9,7 +9,7 @@ export default (
     <Route path='work' component={c.Work}>
       <Route path=':slug' component={Work.ExhibitPage} />
     </Route>
-    <Route path='contact' component={c.Contact} />
+    <Route path='contact' component={c.ContactPage} />
     <Route path='*' component={c.Error404} />
   </Route>
 )
