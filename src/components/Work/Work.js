@@ -1,12 +1,18 @@
 
 import { find } from 'lodash'
-import { default as React } from 'react'
+import React from 'react'
 import { ExhibitCard, data } from 'Work'
 import { Page } from 'components/page'
-import { PrimaryNav } from 'components'
+import { BackButton, PrimaryNav } from 'components'
+import { Heading } from 'rebass'
 
 export default ({ children, params: { slug } }) =>
-  <Page navbar={{ nav: <PrimaryNav /> }}>
+  <Page
+    navbar={{
+      nav: <PrimaryNav />,
+      leftComponent: <BackButton />,
+      centerComponent: <Heading>Work</Heading>
+    }}>
     <Choose>
       <When condition={!slug}>
         <ExhibitCard

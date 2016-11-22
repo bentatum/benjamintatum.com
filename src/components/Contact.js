@@ -3,9 +3,9 @@ import { breakpoints } from 'theme'
 import { default as Joi } from 'joi'
 import { connect } from 'react-redux'
 import { Form, Input } from 'joiful-react-forms'
-import { Button, Container, Text } from 'rebass'
-import { Header } from 'components/page'
-import { StatusIndicator } from 'components'
+import { Heading, Button, Text } from 'rebass'
+import { Page } from 'components/page'
+import { BackButton, PrimaryNav, StatusIndicator } from 'components'
 import { submitLead, SUBMIT_LEAD } from 'redux/modules/app'
 import { default as React, Component, PropTypes } from 'react'
 
@@ -47,10 +47,16 @@ export default class Contact extends Component {
   render () {
     const { status } = this.props
     return (
-      <Container>
-        <Header heading={{ children: 'Contact' }} mb={2} />
+      <Page
+        navbar={{
+          nav: <PrimaryNav />,
+          leftComponent: <BackButton />,
+          centerComponent: <Heading>Contact</Heading>
+        }}>
         <Text mb={3} style={{ textAlign: 'center' }}>
-          Need help on your next project? Send me a message and I'll get back to you as soon as I can.
+          Need help on your next project?
+          <br />
+          Send me a message and I'll get back to you as soon as I can.
         </Text>
         <Form
           onSubmit={::this.handleSubmit}
@@ -64,8 +70,7 @@ export default class Contact extends Component {
           style={{
             margin: 'auto',
             maxWidth: breakpoints.small
-          }}
-        >
+          }}>
           <Input name='name' />
           <Input name='email' />
           <Input name='message' is='textarea' />
@@ -94,7 +99,7 @@ export default class Contact extends Component {
             </Choose>
           </Button>
         </Form>
-      </Container>
+      </Page>
     )
   }
 }

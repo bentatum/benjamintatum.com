@@ -1,24 +1,19 @@
 
-import { Header } from 'components/page'
-import { Container, Base } from 'rebass'
+import { Page } from 'components/page'
 import { default as React } from 'react'
 import { default as content } from './content'
+import { Heading, Base } from 'rebass'
+import { BackButton, PrimaryNav } from 'components'
 
-const About = () =>
-  <div>
-    <Header
-      heading={{ children: 'About' }}
-      mb={2}
-    />
-    <Container>
-      <Base
-        mt={2}
-        style={{
-          textAlign: 'center'
-        }}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    </Container>
-  </div>
-
-export default About
+export default () =>
+  <Page
+    navbar={{
+      nav: <PrimaryNav />,
+      leftComponent: <BackButton />,
+      centerComponent: <Heading>About</Heading>
+    }}>
+    <Base
+      mt={2}
+      style={{ textAlign: 'center' }}
+      dangerouslySetInnerHTML={{ __html: content }} />
+  </Page>

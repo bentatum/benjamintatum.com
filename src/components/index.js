@@ -1,6 +1,7 @@
 
 export { default as About } from './About'
 export { default as App } from './App'
+export { default as Home } from './Home'
 export { default as Articles } from './Articles'
 export { default as Contact } from './Contact'
 export { default as DevTools } from './DevTools'
@@ -11,3 +12,4 @@ export { default as Theme } from './theme'
 export { default as Work } from './Work'
 export { default as PrimaryNav } from './PrimaryNav'
 export { default as NavItemLink } from './NavItemLink'
+export { default as BackButton } from './BackButton'

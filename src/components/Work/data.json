@@ -4,6 +4,7 @@
     "name": "Costimize",
     "slug": "costimize",
     "path": "/work/costimize",
+    "link": "https://costimize.com",
     "base": {
       "backgroundColor": "#043555",
       "color": "#fff"
@@ -28,6 +29,7 @@
     "name": "Skipstone",
     "slug": "skipstone",
     "path": "/work/skipstone",
+    "link": "https://share.skip.st/one/d37776c75fe8971103bfca44ce63a7ab",
     "base": {
       "backgroundColor": "#005695",
       "color": "#fff"

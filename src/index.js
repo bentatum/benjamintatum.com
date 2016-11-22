@@ -10,13 +10,6 @@ import { default as createStore } from './redux/create'
 import { default as withScroll } from 'scroll-behavior'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Router, RouterContext, match, browserHistory } from 'react-router'
-// import { whyDidYouUpdate } from 'why-did-you-update'
-
-// if (process.env.DEVELOPMENT && process.env.DEVTOOLS) {
-//   whyDidYouUpdate(React, {
-//     exclude: /Base|Connect|MdClose/
-//   })
-// }
 
 if (typeof document !== 'undefined') {
   let history = withScroll(browserHistory)

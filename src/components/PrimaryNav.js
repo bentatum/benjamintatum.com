@@ -1,20 +1,32 @@
 
 import React from 'react'
-import { Menu } from 'rebass'
-import { NavItemLink } from 'components'
+import { Flex, Box } from 'reflexbox'
+import { Link } from 'react-router'
+import { Button } from 'rebass'
 
-export default () =>
-  <Menu>
-    <NavItemLink to='/work'>
-      work
-    </NavItemLink>
-    <NavItemLink to='/articles'>
-      articles
-    </NavItemLink>
-    <NavItemLink to='/about'>
-      about
-    </NavItemLink>
-    <NavItemLink to='/contact'>
-      contact
-    </NavItemLink>
-  </Menu>
+const items = [
+  {
+    url: '/work',
+    children: 'work'
+  },
+  {
+    url: '/contact',
+    children: 'contact'
+  }
+]
+
+export default props =>
+  <Flex
+    flexColumn
+    align='center'
+    {...props}>
+    {items.map(i =>
+      <Box p={1}>
+        <Link to={i.url}>
+          <Button style={{ width: 150 }}>
+            {i.children}
+          </Button>
+        </Link>
+      </Box>
+    )}
+  </Flex>

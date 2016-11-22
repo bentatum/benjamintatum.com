@@ -39,6 +39,8 @@ const shadows = [
   `0px 0px 14px 3px ${color(colors.lightBlue).alpha(0.9).rgbString()}`
 ]
 
+const inputHeight = 36
+
 export default class Theme extends Component {
 
   static propTypes = {
@@ -73,6 +75,10 @@ export default class Theme extends Component {
         colors,
         fontSizes,
         scale,
+        Button: {
+          paddingTop: scale[0],
+          paddingBottom: scale[0]
+        },
         Block: {
           marginBottom: scale[0],
           marginTop: scale[0],
@@ -155,6 +161,12 @@ export default class Theme extends Component {
             :-ms-input-placeholder {
               color: ${colors.darkGray};
               font-weight: ${fontWeightBase};
+            }
+            .Button {
+              min-height: ${inputHeight}px !important;
+            }
+            .Input {
+              min-height: ${inputHeight}px !important;
             }
           `)}
         </style>

@@ -1,35 +1,24 @@
 
-import React from 'react'
-import { Flex, Box, Reflex as withReflex } from 'reflexbox'
-import { Base, Breadcrumbs, Heading } from 'rebass'
 import compose from 'recompose/compose'
+import React, { PropTypes } from 'react'
 import setPropTypes from 'recompose/setPropTypes'
+import { Base, Breadcrumbs } from 'rebass'
+import { Reflex as withReflex } from 'reflexbox'
 
 const enhance = compose(
   setPropTypes({
-    breadcrumbs: React.PropTypes.shape({
-      links: React.PropTypes.arrayOf(React.PropTypes.object)
+    breadcrumbs: PropTypes.shape({
+      links: PropTypes.arrayOf(PropTypes.object)
     }),
-    heading: React.PropTypes.shape({
-      children: React.PropTypes.string.isRequired
-    })
+    rightComponent: PropTypes.node,
+    centerComponent: PropTypes.node,
+    leftComponent: PropTypes.node
   }),
   withReflex
 )
 
-export default enhance(({ rightComponent, leftComponent, breadcrumbs, heading, ...props }) =>
-  <Base py={2} {...props}>
-    <Flex align='center'>
-      <Box col={4}>
-        {leftComponent}
-      </Box>
-      <Box col={4} flex justify='center'>
-        <Heading level={2} {...heading} style={{ textAlign: 'center' }} />
-      </Box>
-      <Box col={4}>
-        {rightComponent}
-      </Box>
-    </Flex>
+export default enhance(({ rightComponent, leftComponent, breadcrumbs, centerComponent, ...props }) =>
+  <Base py={3} {...props}>
     <If condition={breadcrumbs}>
       <Breadcrumbs {...breadcrumbs} />
     </If>

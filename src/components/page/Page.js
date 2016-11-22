@@ -7,6 +7,8 @@ export default props =>
     <If condition={props.navbar}>
       <Navbar {...props.navbar} />
     </If>
-    <Header {...props.header} />
+    <If condition={props.header}>
+      <Header {...props.header} />
+    </If>
     {props.children}
   </div>

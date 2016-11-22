@@ -1,20 +1,25 @@
 
+import React from 'react'
+import data from './data'
 import { find } from 'lodash'
 import { Flex } from 'reflexbox'
 import { Error404 } from 'components'
-import { default as data } from './data'
-import { default as React } from 'react'
 import { Base, Container, Heading } from 'rebass'
+import getContext from 'recompose/getContext'
 
-const ExhibitPage = ({ params: { slug } }) => {
-  const project = find(data, { slug })
+const enhance = getContext({
+  colors: React.PropTypes.object
+})
+
+export default enhance(props => {
+  const project = find(data, { slug: props.params.slug })
   const content = require(project.content)
 
   if (!project || !content) {
     return <Error404 />
   }
 
-  const { base, name, heading, logo } = project
+  const { base, name, heading, logo, link } = project
 
   return (
     <div>
@@ -26,16 +31,20 @@ const ExhibitPage = ({ params: { slug } }) => {
         style={{ minHeight: '25vh' }}
         {...base}
       >
-        <Flex align='center'>
-          <Base mr={1} {...logo} />
-          <Heading {...heading}>
-            {name}
-          </Heading>
-        </Flex>
+        <a href={link}
+          target='_blank'
+          style={{ color: props.colors.white }}>
+          <Flex align='center' py={3}>
+            <Base mr={1} {...logo} />
+            <Heading {...heading}>
+              {name}
+            </Heading>
+          </Flex>
+        </a>
       </Base>
-      <Container dangerouslySetInnerHTML={{ __html: content }} />
+      <div style={{ textAlign: 'center' }}>
+        <Container dangerouslySetInnerHTML={{ __html: content }} />
+      </div>
     </div>
   )
-}
-
-export default ExhibitPage
+})
