@@ -20,6 +20,10 @@ const items = [
   {
     href: 'https://www.linkedin.com/in/benjamintatum',
     children: 'LinkedIn'
+  },
+  {
+    href: '//media.benjamintatum.com/ben-tatum-resume.pdf',
+    children: 'Resumé'
   }
 ]
 
