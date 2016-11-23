@@ -71,3 +71,8 @@ blockquote {
     background-color: $colors-blue;
   }
 }
+
+.buttonFx button {
+  transition: box-shadow 0.1s ease-in-out;
+  &:hover { box-shadow: 0 0 3px 2px transparentize($colors-black, 0.9); }
+}

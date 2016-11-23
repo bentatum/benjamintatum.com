@@ -35,7 +35,7 @@ const fontSizes = [64, 47, 25, 19, 16, 14, 12]
 const fontWeightBase = 200
 
 const shadows = [
-  `0 0 18px 4px ${color(colors.black).alpha(0.1).rgbString()}`,
+  `0 0 3px 2px ${color(colors.black).alpha(0.1).rgbString()}`,
   `0px 0px 14px 3px ${color(colors.lightBlue).alpha(0.9).rgbString()}`
 ]
 
@@ -152,6 +152,12 @@ export default class Theme extends Component {
             }
             p {
               font-size: ${fontSizes[5]}px;
+            }
+            button {
+              outline: none;
+            }
+            button:active {
+              box-shadow: none;
             }
             button[disabled] {
               cursor: not-allowed !important;

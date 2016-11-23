@@ -3,6 +3,7 @@ import React from 'react'
 import { Flex, Box } from 'reflexbox'
 import { Link } from 'react-router'
 import { Button } from 'rebass'
+import style from 'components/theme/style'
 
 const items = [
   {
@@ -39,7 +40,7 @@ export default props =>
         </Button>
       )
       return (
-        <Box p={1} key={key}>
+        <Box p={1} key={key} className={style.buttonFx}>
           <Choose>
             <When condition={i.to}>
               <Link to={i.to}>
