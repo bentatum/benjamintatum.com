@@ -5,13 +5,25 @@ import { ExhibitCard, data } from 'Work'
 import { Page } from 'components/page'
 import { BackButton, PrimaryNav, MenuButton } from 'components'
 import { Heading } from 'rebass'
+import { Link } from 'react-router'
+import getContext from 'recompose/getContext'
 
-export default props =>
+const enhance = getContext({
+  colors: React.PropTypes.object
+})
+
+export default enhance(props =>
   <Page
     navbar={{
       nav: <PrimaryNav />,
       leftComponent: <BackButton />,
-      centerComponent: <Heading>Work</Heading>,
+      centerComponent: (
+        <Heading>
+          <Link to='/work' style={{ color: props.colors.black }}>
+            Work
+          </Link>
+        </Heading>
+      ),
       rightComponent: <MenuButton />
     }}>
     <Choose>
@@ -30,3 +42,4 @@ export default props =>
       </Otherwise>
     </Choose>
   </Page>
+)
