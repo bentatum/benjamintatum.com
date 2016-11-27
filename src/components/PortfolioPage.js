@@ -2,9 +2,9 @@
 import { colors } from 'theme'
 import { values } from 'lodash'
 import { Heading } from 'rebass'
-import { IndexLink } from 'react-router'
-import * as exhibits from './exhibits'
+import { Link } from 'react-router'
 import React, { cloneElement} from 'react'
+import * as exhibits from 'portfolio/exhibits'
 import { page, BackButton, PrimaryNav, MenuButton } from 'components'
 
 const enhance = page(props => ({
@@ -14,9 +14,9 @@ const enhance = page(props => ({
     leftComponent: <BackButton />,
     centerComponent: (
       <Heading level={1}>
-        <IndexLink to='/work' style={{ color: colors.black }}>
+        <Link to='/work' style={{ color: colors.black }}>
           Work
-        </IndexLink>
+        </Link>
       </Heading>
     ),
     rightComponent: <MenuButton />

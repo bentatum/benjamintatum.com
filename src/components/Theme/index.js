@@ -1,11 +1,9 @@
 
 import './style.scss'
-import { default as color } from 'color'
-import { default as css } from 'minify-css-string'
-import { default as React, Component, PropTypes } from 'react'
-
-export { default as Input } from './Input'
-export { default as Textarea } from './Textarea'
+import color from 'color'
+import minifyCSS from 'minify-css-string'
+import withContext from 'recompose/withContext'
+import React, { PropTypes } from 'react'
 
 export const breakpoints = {
   small: 425,
@@ -56,13 +54,50 @@ const shadows = [
 
 const inputHeight = 36
 
-export default class Theme extends Component {
+const css = `
+  * { box-sizing: border-box; }
+  html, body {
+    background-color: ${colors.white};
+    color: ${colors.black};
+    font-family: ${fontFamily};
+    font-weight: ${fontWeightBase};
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: ${fontFamilyBold};
+  }
+  a {
+    color: ${colors.primary};
+    text-decoration: none;
+  }
+  p {
+    font-size: ${fontSizes[5]}px;
+  }
+  button {
+    outline: none;
+  }
+  button:active {
+    box-shadow: none;
+  }
+  button[disabled] {
+    cursor: not-allowed !important;
+  }
+  ::-webkit-input-placeholder,
+  :-moz-placeholder,
+  ::-moz-placeholder,
+  :-ms-input-placeholder {
+    color: ${colors.darkGray};
+    font-weight: ${fontWeightBase};
+  }
+  .Button {
+    min-height: ${inputHeight}px !important;
+  }
+  .Input input {
+    height: ${inputHeight}px !important;
+  }
+`
 
-  static propTypes = {
-    children: PropTypes.node
-  };
-
-  static childContextTypes = {
+const enhance = withContext(
+  {
     betterReactSpinkit: PropTypes.object,
     breakpoints: PropTypes.object,
     colors: PropTypes.object,
@@ -71,130 +106,82 @@ export default class Theme extends Component {
     rebass: PropTypes.object,
     reflexbox: PropTypes.object,
     shadows: PropTypes.array
-  };
-
-  getChildContext () {
-    return {
-      betterReactSpinkit: {
-        color: colors.primary
-      },
-      breakpoints,
+  },
+  () => ({
+    betterReactSpinkit: {
+      color: colors.primary
+    },
+    breakpoints,
+    colors,
+    fontSizes,
+    reactIconBase: {
+      size: 24,
+      color: colors.black
+    },
+    reflexbox: { breakpoints, scale },
+    rebass: {
+      bold: 500,
       colors,
       fontSizes,
-      reactIconBase: {
-        size: 24,
+      scale,
+      Button: {
+        paddingTop: scale[0],
+        paddingBottom: scale[0]
+      },
+      Block: {
+        marginBottom: scale[0],
+        marginTop: scale[0],
+        paddingBottom: scale[3],
+        paddingTop: scale[3]
+      },
+      Container: {
+        width: '100%'
+      },
+      Pre: {
+        backgroundColor: colors.black,
+        borderLeft: 0,
+        color: colors.white,
+        margin: 0,
+        overflowX: 'auto',
+        paddingLeft: 0
+      },
+      SectionHeader: {
+        borderBottomColor: colors.lightGray,
+        borderBottomStyle: 'dashed'
+      },
+      Badge: {
+        fontWeight: 'lighter'
+      },
+      Heading: {
+        fontWeight: fontWeightBase
+      },
+      Drawer: {
+        boxShadow: shadows[0]
+      },
+      Label: {
+        display: 'block',
+        marginBottom: 10
+      },
+      Menu: {
+        borderColor: colors.white,
+        marginBottom: 'inherit'
+      },
+      NavItem: {
         color: colors.black
       },
-      reflexbox: { breakpoints, scale },
-      rebass: {
-        bold: 500,
-        colors,
-        fontSizes,
-        scale,
-        Button: {
-          paddingTop: scale[0],
-          paddingBottom: scale[0]
-        },
-        Block: {
-          marginBottom: scale[0],
-          marginTop: scale[0],
-          paddingBottom: scale[3],
-          paddingTop: scale[3]
-        },
-        Container: {
-          width: '100%'
-        },
-        Pre: {
-          backgroundColor: colors.black,
-          borderLeft: 0,
-          color: colors.white,
-          margin: 0,
-          overflowX: 'auto',
-          paddingLeft: 0
-        },
-        SectionHeader: {
-          borderBottomColor: colors.lightGray,
-          borderBottomStyle: 'dashed'
-        },
-        Badge: {
-          fontWeight: 'lighter'
-        },
-        Heading: {
-          fontWeight: fontWeightBase
-        },
-        Drawer: {
-          boxShadow: shadows[0]
-        },
-        Label: {
-          display: 'block',
-          marginBottom: 10
-        },
-        Menu: {
-          borderColor: colors.white,
-          marginBottom: 'inherit'
-        },
-        NavItem: {
-          color: colors.black
-        },
-        Toolbar: {
-          backgroundColor: 'transparent',
-          paddingLeft: 0,
-          paddingRight: 0
-        }
-      },
-      shadows
-    }
-  }
+      Toolbar: {
+        backgroundColor: 'transparent',
+        paddingLeft: 0,
+        paddingRight: 0
+      }
+    },
+    shadows
+  })
+)
 
-  render () {
-    return (
-      <div>
-        <style>
-          {css(`
-            * { box-sizing: border-box; }
-            html, body {
-              background-color: ${colors.white};
-              color: ${colors.black};
-              font-family: ${fontFamily};
-              font-weight: ${fontWeightBase};
-            }
-            h1, h2, h3, h4, h5, h6 {
-              font-family: ${fontFamilyBold};
-            }
-            a {
-              color: ${colors.primary};
-              text-decoration: none;
-            }
-            p {
-              font-size: ${fontSizes[5]}px;
-            }
-            button {
-              outline: none;
-            }
-            button:active {
-              box-shadow: none;
-            }
-            button[disabled] {
-              cursor: not-allowed !important;
-            }
-            ::-webkit-input-placeholder,
-            :-moz-placeholder,
-            ::-moz-placeholder,
-            :-ms-input-placeholder {
-              color: ${colors.darkGray};
-              font-weight: ${fontWeightBase};
-            }
-            .Button {
-              min-height: ${inputHeight}px !important;
-            }
-            .Input input {
-              height: ${inputHeight}px !important;
-            }
-          `)}
-        </style>
-        {this.props.children}
-      </div>
-    )
-  }
-}
-
+export default enhance(props =>
+  <div>
+    <style>{minifyCSS(css)}</style>
+    {props.children}
+  </div>
+)

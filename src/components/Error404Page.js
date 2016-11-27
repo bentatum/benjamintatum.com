@@ -2,15 +2,13 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Heading, Text } from 'rebass'
-import { page, MenuButton, BackButton, PrimaryNav } from 'components'
+import { page, BackButton, PrimaryNav } from 'components'
 
 const enhance = page(props => ({
   ...props,
   navbar: {
-    nav: <PrimaryNav />,
     leftComponent: <BackButton />,
-    centerComponent: <Heading>404</Heading>,
-    rightComponent: <MenuButton />
+    centerComponent: <Heading level={1}>404</Heading>
   }
 }))
 

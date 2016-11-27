@@ -20,7 +20,6 @@
     "clean-webpack-plugin": "^0.1.10",
     "color": "^0.11.1",
     "css-loader": "^0.26.0",
-    "deep-diff": "^0.3.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.3",
@@ -36,12 +35,11 @@
     "react-icons": "^2.2.1",
     "react-media-context": "^1.0.0",
     "react-redux": "^4.4.5",
-    "react-router": "^2.7.0",
+    "react-router": "^4.0.0-alpha.6",
     "react-router-redux": "^4.0.4",
     "rebass": "^0.3.1",
     "recompose": "^0.20.2",
     "redux": "^3.3.1",
-    "redux-async-connect": "^1.0.0-rc4",
     "redux-await": "^5.0.1",
     "redux-devtools": "^3.1.1",
     "redux-devtools-dock-monitor": "^1.1.0",
@@ -52,7 +50,6 @@
     "redux-simplestorage": "1.0.1",
     "reflexbox": "^2.1.0",
     "sass-loader": "^4.0.2",
-    "scroll-behavior": "^0.8.1",
     "serialize-javascript": "^1.2.0",
     "sitemap-webpack-plugin": "^0.1.0",
     "standard": "^8.6.0",
@@ -62,15 +59,15 @@
     "superagent": "^3.0.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.14.1",
-    "why-did-you-update": "0.0.8"
+    "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
     "start": "npm run start-dev",
     "lint": "standard",
     "dev": "better-npm-run start-dev",
     "build-prod": "better-npm-run build-prod",
-    "deploy-prod": "npm run build-prod; aws s3 sync ./dist s3://benjamintatum.com --exclude '.DS_Store' --profile home"
+    "deploy-prod": "npm run build-prod; aws s3 sync ./dist s3://benjamintatum.com --exclude '.DS_Store' --profile home",
+    "invalidate-prod": "aws cloudfront create-invalidation --distribution-id E2WUZ23XNM4HCX --paths \"/*\" --profile home"
   },
   "betterScripts": {
     "start-dev": {
