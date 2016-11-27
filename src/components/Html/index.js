@@ -1,10 +1,10 @@
 
-import { default as React, PropTypes } from 'react'
+import React from 'react'
+import Segment from './Segment'
+import Helmet from 'react-helmet'
 import { renderToString } from 'react-dom/server'
-import { default as Helmet } from 'react-helmet'
-import { default as Segment } from './Segment'
 
-const Html = ({ assets, component }) => {
+export default ({ assets, component }) => {
   const content = component ? renderToString(component) : ''
   const head = Helmet.rewind()
   return (
@@ -24,10 +24,3 @@ const Html = ({ assets, component }) => {
     </html>
   )
 }
-
-Html.propTypes = {
-  assets: PropTypes.object.isRequired,
-  component: PropTypes.node
-}
-
-export default Html

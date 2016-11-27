@@ -39,10 +39,10 @@ export default class App extends Component {
           ]}
           meta={[
             { name: 'description', content: 'Software application and web developer located in Ann Arbor, Michigan and available for remote hire. Services include product design, development & deployment.' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0' }
+            { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0' },
+            { name: 'charset', content: 'UTF-8' }
           ]}
           script={[
-            { src: '//code.jquery.com/jquery-2.1.4.min.js' },
             { src: '//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.7.0/lodash.min.js' }
           ]}
           title='Software Development'

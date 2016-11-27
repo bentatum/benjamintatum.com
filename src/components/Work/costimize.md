@@ -1,2 +1,0 @@
-
-[Costimize.com](https://costimize.com) Costimize is a revolutionary purchase ordering platform for vendors and restaurants. Our technology stack on the front-end is React / Redux / Webpack and the backend is ran on MongoDB. All of which is hosted using AWS tools. Today we’re putting the final touches on our IOS and Android apps and populating our platform with vendors in the Southeastern Michigan area.

@@ -1,17 +1,27 @@
 
-import { Header } from 'components/page'
-import { Container, Text } from 'rebass'
-import { default as React } from 'react'
-import { default as Helmet } from 'react-helmet'
+import React from 'react'
+import Helmet from 'react-helmet'
+import { Heading, Text } from 'rebass'
+import { page, MenuButton, BackButton, PrimaryNav } from 'components'
 
-export default () =>
-  <Container>
+const enhance = page(props => ({
+  ...props,
+  navbar: {
+    nav: <PrimaryNav />,
+    leftComponent: <BackButton />,
+    centerComponent: <Heading>404</Heading>,
+    rightComponent: <MenuButton />
+  }
+}))
+
+export default enhance(() =>
+  <div>
     <Helmet
       meta={[{ name: '404', content: 'This page does not exist.' }]}
-      title='404'
-    />
-    <Header heading={{ children: '404' }} mb={2} />
-    <Text style={{ textAlign: 'center' }}>
-      Sorry, that page doesn't exist.
+      title='404' />
+    <Text style={{ textAlign: 'center' }} mb={2}>
+      Sorry, that page doesn't exist. Try one of the links below.
     </Text>
-  </Container>
+    <PrimaryNav />
+  </div>
+)

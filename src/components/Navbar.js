@@ -29,7 +29,10 @@ export default enhance(props =>
           open={props.drawer}
           onDismiss={() => props.toggleDrawer(false)}
           backgroundColor='white'>
-          <Flex justify='flex-end' mb={2} style={{ width: '100%' }}>
+          <Flex
+            mb={2}
+            justify='flex-end'
+            style={{ height: 41, width: '100%' }}>
             <CloseButton onClick={() => props.toggleDrawer(!props.drawer)} />
           </Flex>
           {props.nav}

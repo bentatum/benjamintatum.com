@@ -1,13 +1,13 @@
 
+import React from 'react'
+import routes from './routes'
 import { render } from 'react-dom'
 import { Html } from './components'
 import { Provider } from 'react-redux'
-import { default as React } from 'react'
-import { default as routes } from './routes'
+import createStore from './redux/create'
+import withScroll from 'scroll-behavior'
 import { createMemoryHistory } from 'history'
 import { renderToString } from 'react-dom/server'
-import { default as createStore } from './redux/create'
-import { default as withScroll } from 'scroll-behavior'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Router, RouterContext, match, browserHistory } from 'react-router'
 
