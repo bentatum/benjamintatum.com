@@ -23,18 +23,22 @@ const enhance = page(props => ({
   }
 }))
 
-export default enhance(props =>
-  <div>
-    <Match exactly pattern='/work' render={() =>
-      <div>
-        {values(exhibits).map(({ Card }, key) => cloneElement(Card, { key }))}
-      </div>
-    } />
-    {values(exhibits).map(({ url, Page }, key) =>
-      <Match
-        key={key}
-        pattern={url}
-        component={Page} />
-    )}
-  </div>
-)
+export default enhance(props => {
+  const Cards = () =>
+    <div>
+      {values(exhibits).map(({ Card }, key) => cloneElement(Card, { key }))}
+    </div>
+
+  return (
+    <div>
+      <Match exactly pattern='/work' render={Cards} />
+      <Match exactly pattern='/work/' render={Cards} />
+      {values(exhibits).map(({ url, Page }, key) =>
+        <Match
+          key={key}
+          pattern={url}
+          component={Page} />
+      )}
+    </div>
+  )
+})
