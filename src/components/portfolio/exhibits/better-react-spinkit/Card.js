@@ -6,7 +6,8 @@ import { Heading } from 'rebass'
 import { FadingCircle } from 'better-react-spinkit'
 
 const enhance = card({
-  href: 'http://better-react-spinkit.benjamintatum.com/',
+  // href: 'http://better-react-spinkit.benjamintatum.com/',
+  to: '/work/better-react-spinkit',
   style: { backgroundColor: colors.betterReactSpinkitRed },
   logo: <FadingCircle color={colors.white} size={70} />
 })

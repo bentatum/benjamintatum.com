@@ -33,7 +33,7 @@ export default props =>
       }}>
       <Theme>
         <Match pattern='/' exactly component={HomePage} />
-        <Match pattern='/work' exactly component={PortfolioPage} />
+        <Match pattern='/work' component={PortfolioPage} />
         <Match pattern='/contact' exactly component={ContactPage} />
         <Miss component={Error404Page} />
       </Theme>

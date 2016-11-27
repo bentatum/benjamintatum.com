@@ -1,3 +1,9 @@
 
 import Card from './Card'
-export default { Card }
+import Page from './Page'
+
+export default {
+  url: '/work/skipstone',
+  Card,
+  Page
+}

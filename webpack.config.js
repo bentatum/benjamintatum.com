@@ -10,6 +10,9 @@ const localStylesQuery = 'sourceMap&localIdentName=[path][name]---[local]---[has
 const routes = [
   '/',
   '/work',
+  '/work/costimize',
+  '/work/skipstone',
+  '/work/better-react-spinkit',
   '/contact'
 ]
 

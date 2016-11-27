@@ -5,18 +5,8 @@ import { card } from 'portfolio'
 import { Heading } from 'rebass'
 
 const enhance = card({
-  href: 'https://costimize.com',
-  style: { backgroundColor: colors.costimizeBlue },
-  logo: (
-    <div
-      style={{
-        backgroundImage: 'url(//media.benjamintatum.com/costimize-logo-white-100.svg)',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        height: 77,
-        width: 68
-      }} />
-  )
+  to: '/work/costimize',
+  style: { backgroundColor: colors.costimizeBlue }
 })
 
 export default enhance(props =>
