@@ -24,7 +24,7 @@ const items = [
   },
   {
     href: '//media.benjamintatum.com/ben-tatum-resume.pdf',
-    children: 'Resumé'
+    children: 'CV'
   }
 ]
 
