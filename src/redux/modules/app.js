@@ -1,16 +1,15 @@
 
 const { REDUX_PREFIX } = process.env
-import { AWAIT_MARKER } from 'redux-await'
-export const SUBMIT_LEAD = `${REDUX_PREFIX}/createLead`
+// import { AWAIT_MARKER } from 'redux-await'
 export const TOGGLE_DRAWER = `${REDUX_PREFIX}/toggleDrawer`
 import { LOCATION_CHANGE } from 'react-router-redux'
-import client from 'api-bro'
 
 const initialState = {
   drawer: false
 }
 
 export function reducer (state = initialState, action) {
+  console.log(action)
   switch (action.type) {
     case LOCATION_CHANGE:
       return {
@@ -24,16 +23,6 @@ export function reducer (state = initialState, action) {
       }
     default:
       return state
-  }
-}
-
-export function submitLead (data) {
-  return {
-    type: SUBMIT_LEAD,
-    AWAIT_MARKER,
-    payload: {
-      [SUBMIT_LEAD]: client.post('lead', { data })
-    }
   }
 }
 

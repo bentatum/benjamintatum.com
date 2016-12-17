@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { breakpoints } from 'theme'
 import { Match, Miss } from 'react-router'
 import MediaContext from 'react-media-context'
-import { Error404Page, PortfolioPage, HomePage, Theme, ContactPage } from 'components'
+import { BlogPage, Error404Page, PortfolioPage, HomePage, Theme, ContactPage } from 'components'
 
 export default props =>
   <div>
@@ -33,6 +33,7 @@ export default props =>
       }}>
       <Theme>
         <Match pattern='/' exactly component={HomePage} />
+        <Match pattern='/blog' exactly component={BlogPage} />
         <Match pattern='/work' component={PortfolioPage} />
         <Match pattern='/contact' exactly component={ContactPage} />
         <Miss component={Error404Page} />

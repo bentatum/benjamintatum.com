@@ -3,6 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 const SitemapPlugin = require('sitemap-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 const localStylesQuery = 'sourceMap&localIdentName=[path][name]---[local]---[hash:base64:5]'
@@ -13,7 +14,8 @@ const routes = [
   '/work/costimize',
   '/work/skipstone',
   '/work/better-react-spinkit',
-  '/contact'
+  '/contact',
+  '/blog'
 ]
 
 module.exports = {
@@ -95,6 +97,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('style.css'),
     new StaticSiteGeneratorPlugin('main', routes),
+    new CompressionPlugin(),
     new SitemapPlugin('http://benjamintatum.com', routes, 'sitemap.xml'),
     new webpack.NormalModuleReplacementPlugin(/^(net|dns|crypto)$/, function () { return {} }),
     new CleanWebpackPlugin(['dist'], {

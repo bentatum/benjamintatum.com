@@ -14,5 +14,6 @@ export { default as HomePage } from './HomePage'
 export { default as Error404Page } from './Error404Page'
 export { default as PortfolioPage } from './PortfolioPage'
 export { default as ContactPage } from './ContactPage'
+export { default as BlogPage } from './BlogPage'
 
 export { default as App } from './App'
