@@ -37,11 +37,12 @@ export default class PrimaryNav extends React.Component {
   buttons = []
 
   componentDidMount () {
-    const { TimelineLite } = require('gsap')
+    const { Quint, TimelineLite } = require('gsap')
     const tl = new TimelineLite()
 
-    tl.staggerFrom(this.buttons, 0.2, {
-      x: 9999
+    tl.staggerFrom(this.buttons, 0.3, {
+      x: 9999,
+      ease: Quint.easeOut
     }, 0.1)
   }
 
