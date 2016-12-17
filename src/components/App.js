@@ -33,9 +33,9 @@ export default props =>
       }}>
       <Theme>
         <Match pattern='/' exactly component={HomePage} />
-        <Match pattern='/blog' exactly component={BlogPage} />
+        <Match pattern='/blog' component={BlogPage} />
         <Match pattern='/work' component={PortfolioPage} />
-        <Match pattern='/contact' exactly component={ContactPage} />
+        <Match pattern='/contact' component={ContactPage} />
         <Miss component={Error404Page} />
       </Theme>
     </MediaContext>

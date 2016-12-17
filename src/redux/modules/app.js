@@ -9,7 +9,6 @@ const initialState = {
 }
 
 export function reducer (state = initialState, action) {
-  console.log(action)
   switch (action.type) {
     case LOCATION_CHANGE:
       return {
