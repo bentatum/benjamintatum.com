@@ -16,7 +16,7 @@ export const fontFamily = 'Avenir Next Regular, sans-serif'
 export const fontFamilyLight = 'Avenir Next UltraLight, sans-serif'
 
 const baseColors = {
-  black: '#4A4A4A',
+  black: '#000',
   white: '#fff',
   lightGray: '#f2f2f2',
   gray: '#ddd',
@@ -28,7 +28,8 @@ const baseColors = {
   green: '#1c7',
   skipstoneBlue: '#005695',
   costimizeBlue: '#043555',
-  betterReactSpinkitRed: '#bb453e'
+  betterReactSpinkitRed: '#bb453e',
+  reactIconsPink: '#e62465'
 }
 
 export const colors = {

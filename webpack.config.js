@@ -14,6 +14,7 @@ const routes = [
   '/work/costimize/',
   '/work/skipstone/',
   '/work/better-react-spinkit/',
+  '/work/react-icons/',
   '/contact/',
   '/blog/'
 ]

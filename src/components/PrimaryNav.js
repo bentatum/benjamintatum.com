@@ -5,6 +5,7 @@ import { Link } from 'react-router'
 import { Button } from 'rebass'
 import style from 'components/theme/style'
 import canUseDOM from 'can-use-dom'
+import pure from 'recompose/pure'
 
 const items = [
   {
@@ -28,11 +29,16 @@ const items = [
     children: 'LinkedIn'
   },
   {
+    children: 'Code Mentor',
+    href: 'https://www.codementor.io/benjamintatum'
+  },
+  {
     href: '//media.benjamintatum.com/ben-tatum-resume.pdf',
     children: 'CV'
   }
 ]
 
+@pure
 export default class PrimaryNav extends React.Component {
   buttons = []
 
